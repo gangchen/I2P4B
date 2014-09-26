@@ -1,0 +1,209 @@
+\documentclass[UTF8]{beamer}
+\usepackage{graphicx, color}
+\usepackage{algorithm2e}
+\usepackage{zhspacing}
+\usepackage{amsmath}
+
+\usepackage{underscore}
+\usetheme{JuanLesPins}
+\usepackage{fontspec}
+\setsansfont{Microsoft YaHei}
+
+\usepackage{enumerate}
+
+\AtBeginSection[]{
+  \frame{
+    \frametitle{Next}
+    \tableofcontents[currentsection, subsectionstyle=show/shaded/hide]
+  }
+}
+
+\AtBeginSubsection[]{
+  \frame{
+    \frametitle{Next}
+    \tableofcontents[currentsubsection]
+  }
+}
+
+\title{Introduction to Perl}
+
+\author{Gang Chen\\ chengang@bgitechsolutions.com}
+
+\logo{\includegraphics[width=1.3cm]{bgi-logo.png}\includegraphics[width=2.5cm]{cuhklogo.png}}
+\date{\today}
+
+
+
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}[t]\frametitle{Outline}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Overview}
+
+\begin{frame}[t]{What is Perl?}
+\begin{block}{Perl}
+  \begin{itemize}
+    \item Practical Extraction and Report Language
+    \item Pathologically Eclectic Rubbish Lister
+  \end{itemize}
+\end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Perl: History 1}
+\begin{columns}
+  \begin{column}{.7\textwidth}
+\begin{itemize}
+  \item 1.0: December 18, 1987, Larry Page
+  \item 2.0: 1988, a better regular expression
+  \item 3.0: 1989, support binary data streams
+  \item 4.0, 1991
+  \item Programming Perl, Camel Book, for Perl 4.0
+\end{itemize}
+\end{column}
+\begin{column}{.3\textwidth}
+\includegraphics[width=\textwidth]{programmingperl.jpg}
+\end{column}
+\end{columns}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Perl: History 2}
+\begin{block}{Perl 5}
+  \begin{itemize}
+    \item 5.000: October 17, 1994, rewrite of the interpreter\\
+    Objects, lexical variables, modules and references are added.
+    \item 5.002: new prototypes feature.
+    \item Comprehensive Perl Archive Network(CPAN), 1995.
+    \item 5.004: May 15, 1997, UNIVERSAL package and CGI.pm module.
+    \item 5.8: July 18, 2002, unicode, a new I/O, thread
+    \item 5.10: December 18, 2007
+    \item 5.20: May 27, 2014, subroutin signature, slice.
+  \end{itemize}
+\end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Perl: History 3}
+\begin{block}{Perl 6}
+  \begin{itemize}
+    \item Perl 6 design process was first announced on July 19, 2000
+    \item As of 2014, none of Perl 6 implementation are considered ``complete''.
+    \begin{itemize}
+      \item Rakudo Perl: Perl 6 for virtual machines.
+      \item Pugs: Perl 6 written in Haskell.
+      \item v6.pm: a pure Perl 5 implementation of Perl 6.
+      \item Yapsi: a Perl 6 compiler and runtime written in Perl 6 itself.
+    \end{itemize}
+  \end{itemize}
+\end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Applications}
+\begin{block}{Applications}
+  \begin{itemize}
+    \item text processing
+    \item CGI programming: Craigslist, IMDb, Slashdot and so on;
+    \item graphics programming: Perl/Tk, WxPerl
+    \item system administration
+    \item network programming
+    \item bioinformatics
+  \end{itemize}
+\end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{References}
+\begin{block}{Books}
+  \begin{itemize}
+    \item Learning Perl sixth Edition;
+    \item Mastering Perl;
+    \item Advanced Perl;
+    \item Programming Perl;
+  \end{itemize}
+\end{block}
+\begin{block}{Official Website}
+  http://www.perl.org/
+\end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\section{Quick Get Started}
+
+\begin{frame}[t]{Install}
+\begin{block}{Download and Install}
+  Download: http://www.perl.org/get.html
+  \begin{itemize}
+    \item Unix/Linux: preinstalled
+    \item Mac OS: preinstalled
+    \item Windows:
+    \begin{itemize}
+      \item ActiveState Perl: A binary distribution for Win
+      \item StrawBerry Perl: Open source
+      \item DWIM Perl: based on StrawBerry and include many useful CPAN modules
+    \end{itemize}
+  \end{itemize}
+\end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Install: editor}
+\begin{block}{Editors}
+  \begin{itemize}
+    \item Vim: editor god
+    \item Emacs: god's editor
+    \item Notepad++: fast and easy to use
+    \item Atom, sublime text, textmate \ldots
+  \end{itemize}
+\end{block}
+\end{frame}
+%--- Next Frame ---%
+
+
+\begin{frame}[t]{Hello Perl!}
+  \centerline{\includegraphics[height=.6\textheight]{hello.png}}
+  see hello.pl
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Input and Run}
+  \begin{enumerate}
+    \item Input the source codes by using a editor
+    \item Save the source codes to a file named hello.pl
+    \item Execute the file:
+    \begin{itemize}
+      \item Add execution permission to the file and execute directly
+      \item Execute the file by using perl interpreter
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+%--- Next Frame ---%
+
+\section{Syntax}
+\subsection{Basic Syntax}
+\subsection{Regular Expression}
+\subsection{Input and Output}
+\subsection{Object Oriented Programming}
+
+\section{Examples}
+
+\subsection{System Administration}
+
+\subsection{String Processing}
+
+\subsection{CGI Programming}
+
+\begin{frame}
+  \centerline{\Huge{Thanks!}}
+\end{frame}
+%--- Next Frame ---%
+
+\end{document}
