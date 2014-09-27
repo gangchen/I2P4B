@@ -190,45 +190,127 @@
 \section{Syntax}
 
 \subsection{Basic Syntax}
-\begin{frame}[t]{Scalar Data: Number}
-  body
+\begin{frame}[fragile]{Scalar Data: Number}
+\begin{verbatim}
+  $a = 1;
+  $b = 1.2;
+  print $a + $b, "\n";
+\end{verbatim}
 \end{frame}
 %--- Next Frame ---%
 
 \begin{frame}[t]{Scalar Data: String}
-  body
+  \centerline{\includegraphics[height=.6\textheight]{string.png}}
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}[t]{Conversion between Numbers and Strings}
-  body
+\begin{frame}[fragile]{Conversion between Numbers and Strings}
+\begin{verbatim}
+  # conversion between numbers and strings
+  print 1 + 2, "\n";
+  print "1" + 2, "\n";
+  print "1" + "2", "\n";
+  print "1 + 2", "\n";
+
+  print "00001" + "002", "\n";
+
+  print "one" + 2, "\n";
+  print "one" + "two", "\n";
+\end{verbatim}
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}[t]{if Control Structure}
-  body
+\begin{frame}[fragile]{if Control Structure}
+\begin{verbatim}
+  # if control structure
+  my $num1 = 5;
+  my $num2 = 3;
+
+  if($num1 > $num2){
+    print "Success\n";
+  }else{
+    print "failed\n";
+  }
+
+  $num1 > $num2 ? print "Success\n" : print "Failed\n";
+
+  print "Success\n" if ($num1 > $num2);
+\end{verbatim}
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}[t]{while and for}
-  body
+\begin{frame}[fragile]{while and for}
+\begin{verbatim}
+# while and for
+my $num = 1;
+while($num < 10){
+  print $num, "\n";
+  $num++;
+}
+
+for($num = 1;$num<10;$num++){
+  print $num, "\n";
+}
+\end{verbatim}
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}[t]{List}
-  body
+\begin{frame}[t]{List and Array}
+\begin{block}{List and Array}
+  \begin{description}
+    \item[List] A list is an ordered collection of scalars.
+    \item[Array] An array is a variable that contains a list.
+  \end{description}
+\end{block}
+\centerline{\includegraphics[height=.4\textheight]{list.png}}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[fragile]{List and Array}
+\begin{verbatim}
+  # list and array
+  my @list1 = (1,2,3,4,5);
+  my @list2 = ("one", "two", "three");
+  my @list3 = (1..10);
+  print $list1[0], "\n";
+  print $list2[1], "\n";
+  print $list3[3], "\n";
+\end{verbatim}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[fragile]{List and Array}
+\begin{itemize}
+  \item Operate to the start of the array: shift, unshift
+  \item Operate to the end of the array: pop, push
+  \item Any place: splice
+\end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[fragile]{foreach}
+\begin{verbatim}
+  foreach (@list1){
+    print $_, "\n";
+  }
+
+  for(@list1){
+    print $_, "\n";
+  }
+
+  print $_, "\n" for(@list1);
+
+  print $_, "\n" for(1..10);
+\end{verbatim}
 \end{frame}
 %--- Next Frame ---%
 
 \begin{frame}[t]{Hash}
-  body
+  \centerline{\includegraphics[height=.8\textheight]{hash.png}}
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}[t]{foreach}
-  body
-\end{frame}
-%--- Next Frame ---%
+
 
 \begin{frame}[t]{Context}
   body
