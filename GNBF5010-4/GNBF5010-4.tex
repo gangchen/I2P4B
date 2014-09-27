@@ -306,48 +306,114 @@ for($num = 1;$num<10;$num++){
 %--- Next Frame ---%
 
 \begin{frame}[t]{Hash}
-  \centerline{\includegraphics[height=.8\textheight]{hash.png}}
+  \centerline{\includegraphics[height=.6\textheight]{hash.png}}
 \end{frame}
 %--- Next Frame ---%
 
+\begin{frame}[fragile]{Hash}
+\begin{verbatim}
+  # hash
+  my %scores = (
+    'Gang' => 60,
+    'Chen' => 70,
+    'Xu' => 80,
+    'Lu' => 90,
+  );
 
+  print $scores{'Chen'}, "\n";
 
-\begin{frame}[t]{Context}
-  body
-\end{frame}
-%--- Next Frame ---%
+  for (keys %scores){
+    print $_,":",$scores{$_},"\n";
+  }
 
-\begin{frame}[t]{Subroutines}
-  body
-\end{frame}
-%--- Next Frame ---%
+  print $_,":",$scores{$_},"\n" for (keys %scores);
 
-
-
-
-\subsection{Regular Expression}
-
-\begin{frame}[t]{Regular Expression}
-  body
-\end{frame}
-%--- Next Frame ---%
-
-\begin{frame}[t]{References}
-  \begin{itemize}
-    \item Mastering Regular Expression
-  \end{itemize}
+  print $_, "\n" for(values %scores);
+\end{verbatim}
 \end{frame}
 %--- Next Frame ---%
 
 \subsection{Input and Output}
 
-\subsection{Object Oriented Programming}
+\begin{frame}[fragile]{Input from User}
+\begin{verbatim}
+  print "What's your name?\n";
+
+  my $name = <STDIN>;
+  print "Hello ", $name;
+
+  my @names = <STDIN>;
+
+  print "Hello ", $_ for(@names);
+\end{verbatim}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[fragile]{Interact with Filesystem}
+  see io.pl
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{Regular Expression}
+
+\begin{frame}[t]{Regular Expression}
+\begin{block}{Regular Expression}
+  Regular Expression is a template or pattern of strings.
+\end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Match}
+  see regex.pl
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{References}
+  \begin{itemize}
+    \item Mastering Regular Expressions
+    \item 精通正则表达式
+    \item 正则指引
+  \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
 
 \section{Examples}
 
 \subsection{System Administration}
 
-\subsection{String Processing}
+\begin{frame}[fragile]{Command Options of perl}
+\begin{block}{Options}
+  \begin{itemize}
+    \item -e
+    \item -n
+    \begin{verbatim}
+while (<>) {
+  # your code goes here
+}
+    \end{verbatim}
+    \item -p
+\begin{verbatim}
+  while (<>) {
+      # your code goes here
+    } continue {
+      print or die "-p destination: $!\n";
+    }
+\end{verbatim}
+  \end{itemize}
+\end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[fragile]{Process file content}
+\begin{block}{Adding Line Number to file content}
+  \begin{verbatim}
+    perl -ne 'print "$. $_"' names.txt
+    perl -pe '$_ = "$. $_"' names.txt
+  \end{verbatim}
+\end{block}
+\end{frame}
+%--- Next Frame ---%
 
 \subsection{CGI Programming}
 

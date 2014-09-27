@@ -81,3 +81,21 @@ for(@list1){
 print $_, "\n" for(@list1);
 
 print $_, "\n" for(1..10);
+
+# hash
+my %scores = (
+  'Gang' => 60,
+  'Chen' => 70,
+  'Xu' => 80,
+  'Lu' => 90,
+);
+
+print $scores{'Chen'}, "\n";
+
+for (keys %scores){
+  print $_,":",$scores{$_},"\n";
+}
+
+print $_,":",$scores{$_},"\n" for (keys %scores);
+
+print $_, "\n" for(values %scores);
