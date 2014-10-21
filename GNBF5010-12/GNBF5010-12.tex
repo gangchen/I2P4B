@@ -1,0 +1,48 @@
+cumentclass[UTF8]{beamer}
+\usepackage{graphicx, color}
+\usepackage{algorithm2e}
+\usepackage{zhspacing}
+\usepackage{amsmath}
+
+\usepackage{underscore}
+\usetheme{JuanLesPins}
+\usepackage{fontspec}
+\setsansfont{Microsoft YaHei}
+
+\usepackage{enumerate}
+
+\AtBeginSection[]{
+  \frame{
+    \frametitle{Next}
+    \tableofcontents[currentsection, subsectionstyle=show/shaded/hide]
+  }
+}
+
+\AtBeginSubsection[]{
+  \frame{
+    \frametitle{Next}
+    \tableofcontents[currentsubsection]
+  }
+}
+
+\title{Programming in Real Bioinformatics}
+
+\author{Gang Chen\\ chengang@bgitechsolutions.com}
+
+\logo{\includegraphics[width=1.3cm]{bgi-logo.png}\includegraphics[width=2.5cm]{cuhklogo.png}}
+\date{\today}
+
+
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}[t]\frametitle{Outline}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\end{document}
