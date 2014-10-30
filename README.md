@@ -1,3 +1,17 @@
+# Software for Python
+
+* Text Editor:
+
+  * Notepad++ for Windows.
+  * VIM for Linux and Mac OS.
+  * Or any other text editor you like.
+
+* Python intepreter:
+
+  * Download: www.python.org
+  * Version: Please install Python 2.
+
+
 # Ouline
 
 * GNBF5010-1: Introduction
