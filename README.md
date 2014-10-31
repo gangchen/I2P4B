@@ -10,6 +10,7 @@
 
   * Download: www.python.org
   * Version: Please install Python 2.
+  * For most Linux distributions and Mac OS, Python 2.7 is preinstalled.
 
 
 # Ouline
