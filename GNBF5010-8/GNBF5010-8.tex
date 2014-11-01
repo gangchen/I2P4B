@@ -98,7 +98,8 @@
   \begin{itemize}
     \item Lovely Python, 可爱的Python
     \item Think Python: How to think like a computer scientist\\
-    http://www.greenteapress.com/thinkpython/thinkpython.html
+    http://www.greenteapress.com/thinkpython/thinkpython.html\\
+    see thinkpython.pdf file
 
   \end{itemize}
 \end{block}
@@ -128,6 +129,23 @@
   \end{block}
 \end{frame}
 
+\begin{frame}[t]{Download and installation}
+  \begin{itemize}
+    \item Download: www.python.org
+    \item Version: Please install CPython 2.
+    \item For most Linux distributions and Mac OS, Python 2.7 is preinstalled.
+  \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Package Management}
+  \begin{itemize}
+    \item easy_install
+    \item pip
+  \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
 \subsection{Hello Python}
 \begin{frame}[fragile]
   \begin{verbatim}
@@ -135,13 +153,140 @@
 
     print "Hello, Python!";
   \end{verbatim}
+  see HelloPython.py
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{verbatim}
+    python HelloPython.py
+  \end{verbatim}
 \end{frame}
 
 \subsection{Python Shell}
+\begin{frame}[t, fragile]{Interactive Shell}
+  \begin{verbatim}
+$ python
+Python 2.7.6 (default, Sep  9 2014, 15:04:36)
+[GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.39)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print "Hello Python!"
+Hello Python!
+>>>
+  \end{verbatim}
+\end{frame}
+%--- Next Frame ---%
+
+
+
 
 \section{Syntax}
 
-\section{iPython}
+\begin{frame}[t, fragile]{Types and Variables}
+  \begin{verbatim}
+    print(type(2))
+    print(type(1.3))
+    print(type("Hello"))
 
+    print(type(type(1.3)))
+
+    message = "Hello"
+  \end{verbatim}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t, fragile]{Operators}
+\begin{verbatim}
+  1.3 - 0.6 == 0.7?
+  import math
+  math.sqrt(2)
+  math.sin(2)
+\end{verbatim}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t, fragile]{Package}
+  \begin{verbatim}
+    sin(2)
+    from math import sin
+    sin(2)
+  \end{verbatim}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Conditional and loop}
+  \begin{itemize}
+    \item if-else
+    \item for
+  \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Next}
+  \begin{itemize}
+    \item Iteration
+    \item String
+    \item Lists
+    \item Dict
+    \item Tuples
+    \item Files
+    \item Object Oriented Programming
+    \item \textit{Think Python} is highly recommended.
+  \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\section{iPython}
+\begin{frame}[t]
+  IPython provides a rich architecture for interactive computing with:
+\begin{itemize}
+\item Powerful interactive shells (terminal and Qt-based).
+\item A browser-based notebook with support for code, text, mathematical expressions, inline plots and other rich media.
+\item Support for interactive data visualization and use of GUI toolkits.
+\item Flexible, embeddable interpreters to load into your own projects.
+\item Easy to use, high performance tools for parallel computing.
+\end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{matplotlib}
+  \begin{block}{matplotlib}
+    \begin{itemize}
+      \item matplotlib is a library for making 2D plots of arrays in Python.
+      \item matplotlib is designed with the philosophy that you should be able
+      to create simple plots with just a few commands, or just one!
+      \item Plots should look great - publication quality. One important
+      requirement for me is that the text looks good (antialiased, etc.)
+      \item Postscript output for inclusion with TeX documents
+      \item Embeddable in a graphical user interface for application development
+      \item Code should be easy enough that I can understand it and extend it
+      \item Making plots should be easy
+    \end{itemize}
+  \end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{ipython + matplotlib}
+  \centerline{\huge{ipython + matplotlib}}
+  \vspace{1.5cm}
+  \centerline{\huge{Python based Interactive data analysis and visualization}}
+  Example: see animate_decay.py
+\end{frame}
+%--- Next Frame ---%
+
+
+\begin{frame}[t]{Tutorial}
+  \url{http://www.labri.fr/perso/nrougier/teaching/matplotlib/}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Next}
+  \begin{itemize}
+    \item scipy: a Python-based ecosystem of open-source software for scientific
+    computing
+    \item Biopython and other python-based bioinformatics projects
+    \item Bioinformatics in the cloud: Python SDK of SBGenomics and DNAnexus
+  \end{itemize}
+\end{frame}
+%--- Next Frame ---%
 
 \end{document}

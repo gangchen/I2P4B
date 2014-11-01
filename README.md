@@ -12,6 +12,13 @@
   * Version: Please install Python 2.
   * For most Linux distributions and Mac OS, Python 2.7 is preinstalled.
 
+* Other softwares:
+
+  Not required, but highly recommended.
+
+  * ipython
+  * matplotlib
+  * Integrated Develop Environment for Python
 
 # Ouline
 
