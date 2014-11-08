@@ -1,3 +1,18 @@
+# Software for PythonII
+
+No additional software is required for this lecture.
+
+Following projects are recommended to visit:
+
+* Rabix
+* DNANexus
+* Seven Bridges Genomics
+* GeneDock
+* L3-Bioinfo
+* BioPython
+* scikit-learn and pyml
+* pymol
+
 # Software for Python
 
 * Text Editor:
