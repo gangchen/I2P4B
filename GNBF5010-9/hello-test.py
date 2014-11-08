@@ -1,4 +1,5 @@
-import hello
+from hello import *
 
-print hello.init()
-hello.fib(200)
+print init()
+
+print fib(200)
