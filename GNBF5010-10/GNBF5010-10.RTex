@@ -1,0 +1,893 @@
+\documentclass[UTF8]{beamer}
+\usepackage{graphicx, color}
+\usepackage{algorithm2e}
+\usepackage{zhspacing}
+\usepackage{amsmath}
+
+\usepackage{underscore}
+\usetheme{JuanLesPins}
+\usepackage{fontspec}
+\setsansfont{Microsoft YaHei}
+
+\usepackage{enumerate}
+
+\AtBeginSection[]{
+  \frame{
+    \frametitle{Next}
+    \tableofcontents[currentsection, subsectionstyle=show/shaded/hide]
+  }
+}
+
+\AtBeginSubsection[]{
+  \frame{
+    \frametitle{Next}
+    \tableofcontents[currentsubsection]
+  }
+}
+
+\title{R}
+
+\author{Gang Chen\\ chengang@bgitechsolutions.com}
+
+\logo{\includegraphics[width=1.3cm]{bgi-logo.png}\includegraphics[width=2.5cm]{cuhklogo.png}}
+\date{\today}
+
+
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}[t]\frametitle{Outline}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Overview}
+\subsection{Data Analysis}
+\begin{frame}
+\frametitle{Data Analysis}
+\begin{block}{Wikipedia}
+Analysis of data is a process of inspecting, cleaning, transforming, and modeling data with the goal of discovering useful information, suggesting conclusions, and supporting decision making.
+\end{block}
+
+\begin{block}{Data Analysis}
+Collecting $\rightarrow$ cleaning $\rightarrow$ transforming $\rightarrow$ modeling $\rightarrow$ visualizing
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Biological Data Analysis}
+  \begin{block}{NGS and Complex Diseases}
+Sequencing $\rightarrow$ QC $\rightarrow$ Alignment and Variant Calling$\rightarrow$ GWAS, EWAS \ldots $\rightarrow$ Manhattan Plot, Q-Q plot \ldots
+
+\pause $\rightarrow$ paper
+  \end{block}
+\end{frame}
+
+\subsection{Data Aanlysis and R}
+
+\begin{frame}
+  \frametitle{What is R?}
+\begin{block}{R}
+R is a \textbf{free} software environment for statistical computing and graphics.
+
+----R-project.org
+\end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{History}
+\begin{itemize}
+\item April 1st, 1997, R0.16，奥克兰大学的Ihaka和Gentleman发布了第一版本的R
+\item 1997年4月23日，0.49，CRAN网站发布，提供12个R的扩展包
+\item 1997年12月5日，0.60，R成文GNU项目的一部分
+\item 2000年2月29日，1.0，第一个可用于生产环境的版本发布
+\item 2010年4月22日，2.11，支持64位Windows操作系统
+\item 2011年10月31日，2.14，提供全新的并行计算包
+\item 2013年4月，3.0.0
+\item Now, 3.0.2
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]\frametitle{R语言在中国}
+\begin{itemize}
+\item 2004年，国内专业人员开始翻译R语言官方文档
+\item 2006年，国内开始出版R语言书籍
+\item 2008年，在北京中国人民大学召开第一届中国R语言会议
+\item 2009年-2012年，每年分别在北京和上海举办中国R语言会议，迄今已举办五届
+\item 2012年，国人开发的Knitr包几乎成为R语言文档自动化的新标准，同时大量R语言畅销书籍被引进到国内翻译出版。
+\item 2013年，《R语言实战》、《ggplot2》、《R in a nutshell》 \ldots
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]\frametitle{R语言的现状}
+\begin{itemize}
+\item 使用领域囊括统计分析、数据挖掘、生命科学、商业智能、数据可视化、社交网络分析、电子商务、集成电路、金融、烟草、传媒、咨询等
+\item 赞助R语言开发工作的机构包括AT\&T、默沙东、Google、新西兰电信，以及诸多大学及科研机构。
+\item 在商业产品中提供R语言支持的企业包括SAP、甲骨文、Teredata、IBM、Revolution、Matlab、SAS、SPSS等。
+\item 2012第五届中国R语言会议（上海会场）获得大量赞助，吸引了400多人注册，到会人员几乎涉及R所有应用领域的国内知名企业。
+\item 2013年第六届中国R语言会议（北京，5月；上海，11\~12月）。
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Pros and Cons}
+
+\end{frame}
+
+\subsection{Hello R!}
+
+\begin{frame}[fragile]
+  \frametitle{Hello R!}
+%% begin.rcode
+% print("Hello R!")
+%% end.rcode
+\end{frame}
+
+\begin{frame}
+  \frametitle{Hello Plot}
+%% begin.rcode helloplot, out.height='.6\\textheight',  out.width='.6\\textheight', fig.align='center'
+% plot(rnorm(100),rnorm(100))
+%% end.rcode
+\end{frame}
+
+\subsection{Development Environment}
+
+\begin{frame}
+\frametitle{Download and Installation}
+\begin{block}{Download}
+\centerline{\huge{CRAN}}
+\end{block}
+
+\begin{block}{Installation}
+\begin{itemize}
+\item R: Linux, Mac OS, Windows
+\item Rtools: Windows
+\item packages: CRAN, devtools, github, local file
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Editors and IDEs}
+\begin{block}{Editors}
+\begin{itemize}
+\item R terminal
+\item Rgui
+\item VIM + Vim-R-plugin
+\item Emacs + ESS
+\item Notepad++ + NppToR
+\item \ldots
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{R Terminal and Rgui}
+\begin{columns}
+
+\begin{column}{.5\textwidth}
+\begin{block}{R}
+\begin{itemize}
+\item Ctrl +　Ｒ: run
+\item Tab: auto complete
+\item arrow up and down: history
+\end{itemize}
+\end{block}
+\end{column}
+
+\begin{column}{.5\textwidth}
+\begin{block}{R and Texteditor}
+\begin{itemize}
+\item copy and paste
+\item
+%% begin.rcode, eval=F
+% source("source.R")
+%% end.rcode
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+
+\begin{block}{source}
+\tiny
+%% begin.rcode, eval=F
+%  sourceDir <- function(path, trace = TRUE, ...) {
+%         for (nm in list.files(path, pattern = "[.][RrSsQq]$")) {
+%            if(trace) cat(nm,":")
+%            source(file.path(path, nm), ...)
+%            if(trace) cat("\n")
+%         }
+%      }
+%% end.rcode
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{VIM + Vim-R-plugin}
+\end{frame}
+
+\begin{frame}
+\frametitle{Notepad++ + NppToR}
+\end{frame}
+
+\begin{frame}
+\frametitle{Emacs + ESS}
+\begin{block}{What is ESS?}
+ESS: Emacs Speak Statistics
+\end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{IDEs}
+\begin{block}{IDEs}
+\begin{itemize}
+\item RStudio: local and cloud-based
+\item TinnR
+\item StatET: eclipse for R
+\item \ldots
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{RStudio}
+\end{frame}
+
+\subsection{References}
+\begin{frame}
+\frametitle{Books}
+\begin{itemize}
+  \item R in action (also in Chinese)
+  \item Introduction to R (also in Chinese)
+        \item R for beginner (also in Chinese)
+  \item R in a Nutshell (Chinese version is in press)
+  \item The art of R programming (also in Chinese)
+        \item ggplot2. Elegant Graphics for Data Analysis (also in Chinese)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Websites}
+\begin{itemize}
+\item R-project and CRAN
+\item COS.name (Chinese)
+\item Quick-R
+\item http://had.co.nz/, Hadley Wickham
+\item Twitter, github, RForge
+\item Google
+\pause Baidu?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Journals}
+\begin{itemize}
+\item The R Journal
+\item Journal of Statistical Software
+\end{itemize}
+\end{frame}
+
+
+
+\section{Quick Get Started}
+\section{Data Types}
+\begin{frame}[fragile]
+\frametitle{Class, Type and Dimension}
+\begin{block}{Class, Type and Dimension}
+Everything in R is a object, every object has \textit{class}, \textit{type} and \textit{dimension}.
+%% begin.rcode, eval=F
+% class(obj)
+% typeof(obj)
+% dim(obj)
+%% end.rcode
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\tiny
+\frametitle{Data Types}
+\begin{columns}
+\begin{column}{.5\textwidth}
+%% begin.rcode, echo=F, results=F, warning=F, message=F
+% library(GenomicRanges)
+%% end.rcode
+%% begin.rcode
+% obj <- 1
+% class(obj)
+% obj <- "Gang Chen"
+% class(obj)
+% obj <- 1:3
+% class(obj)
+% ranges <- GRanges(seqnames = c("chr1", "chr2"),
+% ranges = IRanges(start = c(1013, 4351),
+% end = c(2314, NA), width = c(NA, 1)),
+% strand = c("+", "-"))
+% class(ranges)
+%% end.rcode
+\end{column}
+\begin{column}{.5\textwidth}
+%% begin.rcode
+% class(list(a = 1, b = 2))
+% class(matrix(1:16, ncol=4))
+% class(array(1:64, c(4,4,4)))
+% obj <- as.data.frame(obj)
+% class(obj)
+% obj <- as.factor(c("male", "female"))
+% class(obj)
+%% end.rcode
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Numeric}
+\begin{frame}[fragile]
+\frametitle{Types}
+%% begin.rcode, tidy=F, highlight=F
+% obj <- 1
+% class(obj)
+% obj <- 1:3
+% class(obj)
+% obj <- 1+2i
+% class(obj)
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Operations}
+\begin{block}{Operators}
+\begin{itemize}
+\item
+%% begin.rcode, eval=F
+% +, -, *, /, ==, =, <-
+%% end.rcode
+\item
+%% begin.rcode, eval=F
+% ^
+%% end.rcode
+\item
+%% begin.rcode, eval=F
+% exp(), log(), log10(), log2()
+%% end.rcode
+\item
+%% begin.rcode, eval=F
+% sqrt(), abs(), sin(), cos()
+%% end.rcode, eval=F
+\item
+%% begin.rcode, eval=F
+% round(), floor(), ceriling()
+%% end.rcode
+\item
+%% begin.rcode, eval=F
+% factorial()
+%% end.rcode
+\end{itemize}
+\end{block}
+\end{frame}
+
+\subsection{Character}
+\begin{frame}[fragile]
+\begin{block}{Character}
+A character object is used to represent string values in R.
+\end{block}
+\begin{columns}
+\begin{column}{.5\textwidth}
+%% begin.rcode
+% fname <- "Gang"
+% lname <- "Chen"
+% class(fname)
+%% end.rcode
+\end{column}
+\begin{column}{.5\textwidth}
+%% begin.rcode
+% myPI <- 3.14
+% class(myPI)
+% myPI <- as.character(myPI)
+% class(myPI)
+%% end.rcode
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Character Operators}
+%% begin.rcode
+% paste(fname, lname)
+% substr("I am learning R", start=6, stop=13)
+% sub("I am", "We are", "I am learning R")
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Regular Expression}
+\begin{block}{Regular Expressions == Problem}
+\huge
+Some people,\\
+\large
+when confronted with a problem, \\
+\huge
+think "I know, I'll use \textbf{regular expressions.}"\\
+Now they have \textbf{two} problems.
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Regular Expression in R}
+\begin{block}{Regular Expression Functions}
+%% begin.rcode, eval=F
+% help(regex)
+% grep(), grepl(), regexpr(), gregexpr(), sub(), gsub()
+%% end.rcode
+\end{block}
+\begin{block}{Example}
+%% begin.rcode
+% grep("a.", c("Gang","Chen","aab", "Ag","ga"))
+%% end.rcode
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Logical}
+%% begin.rcode
+% u = TRUE; v = FALSE
+% u & v # u AND v
+% u | v # u OR v
+% !u # negation of u
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{block}{?}
+\begin{columns}
+\begin{column}{.5\textwidth}
+%% begin.rcode
+% 4.3 - 0.7
+% 4.3 - 0.7 == 3.6
+% 0.7 + 3.6 == 4.3
+%% end.rcode
+\end{column}
+\begin{column}{.5\textwidth}
+%% begin.rcode
+% 4.2 / 6
+% 0.7 * 6
+% 4.2 / 6 == 0.7
+%% end.rcode
+\end{column}
+\end{columns}
+\end{block}
+\end{frame}
+
+\subsection{Vector}
+\begin{frame}[fragile]
+\begin{block}{Vector}
+A \textbf{vector} is a sequence of data elements of the same basic type.
+%% begin.rcode
+% a = c(1,2,3)
+% b = c(T, F, F, T)
+% chars = c("Gang", "Chen", "AA", "Aa","aB")
+%% end.rcode
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+Arithmetic operations of vectors are performed memberwise.
+\begin{block}{All operators are applied to vectors}
+%% begin.rcode
+% a^2
+% !b
+% grep("a.",chars)
+%% end.rcode
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{block}{Vector Arithmetic}
+\begin{columns}
+\begin{column}{.5\textwidth}
+%% begin.rcode
+% a = c(1,2,3,4,5)
+% b = c(5,4,3,2,1)
+% c(a, b)
+% a + b
+% a * b
+%% end.rcode
+\end{column}
+\begin{column}{.5\textwidth}
+Recycling Rule:
+%% begin.rcode
+% d = c(1,2)
+% a + d
+%% end.rcode
+\end{column}
+\end{columns}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{block}{Vector Index}
+%% begin.rcode
+% a = c("one", "two", "three", "four", "five")
+% a[3]
+% a[2:4]
+% a[-3]
+% a[8]
+%% end.rcode
+\end{block}
+\end{frame}
+
+\subsection{Matrix and Array}
+\begin{frame}[fragile]
+\frametitle{Matrix Construction}
+%% begin.rcode
+% mat = matrix(1:24, ncol=6, nrow=4, byrow=T)
+% mat
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Matrix Index}
+\begin{columns}
+\begin{column}{.5\textwidth}
+%% begin.rcode
+% mat[3,3]
+% mat[2,]
+% mat[,4]
+%% end.rcode
+\end{column}
+\begin{column}{.5\textwidth}
+%% begin.rcode
+% mat[2:3, 3:4]
+% dim(mat)
+% ncol(mat)
+% nrow(mat)
+%% end.rcode
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+%% begin.rcode, echo=F
+% A = matrix(1:16, ncol=4)
+% B = matrix(1:16, ncol=4)
+%% end.rcode
+\frametitle{Matrix  Arithmetic}
+\begin{columns}
+\begin{column}{.5\textwidth}
+%% begin.rcode
+% A
+% A * B
+%% end.rcode
+\end{column}
+\begin{column}{.5\textwidth}
+%% begin.rcode
+% B
+% A %*% B
+%% end.rcode
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{List}
+\begin{frame}[fragile]
+\frametitle{List}
+A list is a generic vector containing other objects.
+\begin{columns}
+\begin{column}{.5\textwidth}
+%% begin.rcode
+% n = c(2, 3, 5)
+% s = c("aa", "bb", "cc", "dd", "ee")
+% b = c(TRUE, FALSE, TRUE, FALSE, FALSE)
+% x = list(n, s, b, 3)
+%% end.rcode
+\end{column}
+\begin{column}{.5\textwidth}
+%% begin.rcode
+% x
+%% end.rcode
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{List Slice}
+%% begin.rcode
+% x[1]
+% x[c(2,4)]
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{List Member}
+%% begin.rcode
+% x[[3]]
+% x[3]
+%% end.rcode
+\end{frame}
+
+\subsection{Data Frame}
+
+\begin{frame}[fragile]
+\frametitle{Data Frame}
+A data frame is used for storing data tables. It is a list of vectors of equal length.
+%% begin.rcode
+% head(mtcars)
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Data Frame}
+%% begin.rcode
+% mtcars[1,2]
+% mtcars["Mazda RX4", "wt"]
+% ncol(mtcars)
+% nrow(mtcars)
+% colnames(mtcars)
+% rownames(mtcars)
+%% end.rcode
+\end{frame}
+
+\subsection{Factor}
+\begin{frame}[fragile]
+\frametitle{Factor}
+%% begin.rcode
+% gender <- c("male", "female")
+% class(gender)
+% gender <- as.factor(gender)
+% class(gender)
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Factor}
+%% begin.rcode
+% group <- c(1, 2)
+% group[1] < group[2]
+% class(group)
+% group <- as.factor(group)
+% group[1] < group[2]
+% class(group)
+%% end.rcode
+\end{frame}
+
+\section{Programming Structures}
+\subsection{Control Statements}
+\begin{frame}[fragile]
+\frametitle{If else}
+%% begin.rcode, eval=F
+% if(something){
+%       # do something
+% }else if(something){
+%       # do something
+%}else{
+%       # do something
+%}
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{ifelse}
+%% begin.rcode, eval=F
+% ifelse(test, yes, no)
+%% end.rcode
+
+%% begin.rcode
+% a <- c(2,3,4,2,5,6,7,12)
+% ifelse(a%%2==0, a+1, 0)
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Loop}
+%% begin.rcode, eval=F
+% for (var in seq) expr
+% while(cond) expr
+% repeat
+% break
+% next
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Loop}
+%% begin.rcode
+% for(i in a){
+%   if(i %% 2 == 0){
+%     print(i + 1)
+%   }else{
+%     print(0)
+%   }
+% }
+%
+% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\textit{apply} functions}
+%% begin.rcode, eval=F
+% apply()
+% lapply()
+% sapply()
+% tapply()
+%% end.rcode
+\end{frame}
+
+\subsection{Function}
+\begin{frame}[fragile]
+\frametitle{Function}
+%% begin.rcode
+% add <- function(a, b){
+%   a+b
+%}
+% add(1, 2)
+% sapply(1:8, add, 3)
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Anonymous Function}
+%% begin.rcode
+% sapply(1:8, function(a, b){a+b}, 3)
+%% end.rcode
+\end{frame}
+
+\section{Object-Oriented Programming}
+\subsection{History}
+\begin{frame}
+\frametitle{S4 Classes and methods}
+\begin{block}{History}
+\begin{itemize}
+\item 1976, Rick Becker and John Chambers, S on Honeywell OS
+\item Ported to UNIX, S2
+\item Around 1986, functional programming and object self-description, S3
+\item 1992, concept of classes and methods, S4
+\item 2010, Reference Classes (RC), R 2.12
+\end{itemize}
+appendix in \textit{Software for Data Analysis} by Chambers
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{S4 Classes and methods}
+\begin{block}{OO Systems in R}
+\begin{itemize}
+\item S3
+\item S4
+\item RC
+\item Base Types
+\end{itemize}
+Best Reference: http://adv-r.had.co.nz/OO-essentials.html
+\end{block}
+\end{frame}
+
+\subsection{S3}
+\begin{frame}
+\frametitle{S3}
+%% begin.rcode
+%% end.rcode
+\end{frame}
+
+\subsection{S4}
+\begin{frame}[fragile]
+\frametitle{S4 Classes and methods}
+\begin{block}{S4 in R}
+\scriptsize
+%% begin.rcode
+% library(stats4)
+% library(pryr)
+% y <- c(26, 17, 13, 12, 20, 5, 9, 8, 5, 4, 8)
+% nLL <- function(lambda) -sum(dpois(y, lambda, log = TRUE))
+% fit <- mle(nLL, start = list(lambda = 5), nobs = length(y))
+% isS4(fit)
+% otype(fit)
+% isS4(nobs)
+% ftype(nobs)
+% mle_nobs <- method_from_call(nobs(fit))
+% isS4(mle_nobs)
+% ftype(mle_nobs)
+%% end.rcode
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{S4 Classes and methods}
+\begin{block}{Defining classes and creating objects}
+\small
+%% begin.rcode, eval=F
+% setClass("Person",
+%  slots = list(name = "character", age = "numeric"))
+% setClass("Employee",
+%  slots = list(boss = "Person"),
+%  contains = "Person")
+%
+% alice <- new("Person", name = "Alice", age = 40)
+% john <- new("Employee", name = "John", age = 20, boss = alice)
+%% end.rcode
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{S4 Classes and methods}
+\begin{block}{access slots of an S4 object }
+%% begin.rcode, eval=F
+% alice@age
+% slot(john, "boss")
+%% end.rcode
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{S4 Classes and methods}
+\begin{block}{Creating new methods and generics}
+\small
+%% begin.rcode, eval=F
+% setGeneric("union")
+% setMethod("union",
+%  c(x = "data.frame", y = "data.frame"),
+%  function(x, y) {
+%    unique(rbind(x, y))
+%  }
+% )
+% setGeneric("myGeneric", function(x) {
+%  standardGeneric("myGeneric")
+% })
+%% end.rcode
+\end{block}
+\end{frame}
+
+
+\section{Input and Output}
+\subsection{Standard Input and Output}
+\begin{frame}[fragile]
+\frametitle{Standard I/O}
+%% begin.rcode,eval=F
+% scan()
+% print()
+% cat()
+%% end.rcode
+\end{frame}
+\subsection{File Input and Output}
+\begin{frame}[fragile]
+\frametitle{File I/O}
+\begin{columns}
+\begin{column}{.5\textwidth}
+\begin{block}{Input}
+%% begin.rcode, eval=F
+% read.table()
+% readLines()
+% readChar()
+% readBin()
+% scan()
+%% end.rcode
+\end{block}
+\end{column}
+\begin{column}{.5\textwidth}
+\begin{block}{Output}
+%% begin.rcode, eval=F
+% write.table()
+% write()
+%% end.rcode
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+\subsection{Database Input and Output}
+\begin{frame}[fragile]
+\frametitle{Database I/O}
+%% begin.rcode, eval=F
+% library(RMySQL) # for MySQL
+% library(RPostgreSQL) # for PostgreSQL
+% library(XLConnect) # for Excel
+%% end.rcode
+\end{frame}
+
+\section{Data Visualization}
+
+\section{R Packages}
+
+\end{document}
