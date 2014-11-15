@@ -89,7 +89,7 @@ R is a \textbf{free} software environment for statistical computing and graphics
 \item 2010年4月22日，2.11，支持64位Windows操作系统
 \item 2011年10月31日，2.14，提供全新的并行计算包
 \item 2013年4月，3.0.0
-\item Now, 3.0.2
+\item Now, 3.1.2
 \end{itemize}
 \end{frame}
 
@@ -117,8 +117,15 @@ R is a \textbf{free} software environment for statistical computing and graphics
 
 \begin{frame}
   \frametitle{Pros and Cons}
+The best thing about R is that it was developed by statisticians. The worst
+thing about R is that\ldots it was developed by statisticians.
 
+
+--- Bo Cowgill
 \end{frame}
+
+
+\section{Quick Get Started}
 
 \subsection{Hello R!}
 
@@ -174,7 +181,7 @@ R is a \textbf{free} software environment for statistical computing and graphics
 \begin{column}{.5\textwidth}
 \begin{block}{R}
 \begin{itemize}
-\item Ctrl +　Ｒ: run
+\item Ctrl + R: run
 \item Tab: auto complete
 \item arrow up and down: history
 \end{itemize}
@@ -238,6 +245,7 @@ ESS: Emacs Speak Statistics
 
 \begin{frame}
 \frametitle{RStudio}
+\includegraphics[width=\textwidth]{rstudio.png}
 \end{frame}
 
 \subsection{References}
@@ -276,8 +284,7 @@ ESS: Emacs Speak Statistics
 
 
 
-\section{Quick Get Started}
-\section{Data Types}
+\subsection{Data Types}
 \begin{frame}[fragile]
 \frametitle{Class, Type and Dimension}
 \begin{block}{Class, Type and Dimension}
@@ -632,7 +639,7 @@ A data frame is used for storing data tables. It is a list of vectors of equal l
 %% end.rcode
 \end{frame}
 
-\subsection{Factor}
+\subsubsection{Factor}
 \begin{frame}[fragile]
 \frametitle{Factor}
 %% begin.rcode
@@ -655,8 +662,8 @@ A data frame is used for storing data tables. It is a list of vectors of equal l
 %% end.rcode
 \end{frame}
 
-\section{Programming Structures}
-\subsection{Control Statements}
+\subsection{Programming Structures}
+\subsubsection{Control Statements}
 \begin{frame}[fragile]
 \frametitle{If else}
 %% begin.rcode, eval=F
@@ -887,7 +894,206 @@ Best Reference: http://adv-r.had.co.nz/OO-essentials.html
 \end{frame}
 
 \section{Data Visualization}
+\subsection{散点图}
 
-\section{R Packages}
+\begin{frame}[t]\frametitle{plot}
+
+%% begin.rcode scatterplot1, out.height='.8\\textheight',  out.width='.8\\textheight', echo=F, fig.align='center'
+%  x = rnorm(100)
+%
+%  y = rnorm(100)
+%
+% plot(x, y)
+%% end.rcode
+
+\end{frame}
+
+\begin{frame}[t]\frametitle{plot}
+
+%% begin.rcode scatterplot2, out.height='.5\\textheight',  out.width='.5\\textheight', echo=T, fig.align='center'
+%  x = rnorm(100)
+%
+%  y = rnorm(100)
+%
+% plot(x, y)
+%% end.rcode
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{dotchart}
+
+%% begin.rcode dotchart, out.height='.5\\textheight',  out.width='.5\\textheight', echo=T, fig.align='center'
+%
+% x = rnorm(30)
+% dotchart(x, groups = rep(1:3,10))
+%
+%% end.rcode
+\end{frame}
+
+\subsection{时间序列}
+
+
+\subsection{柱状图}
+\begin{frame}
+\frametitle{barplot}
+%% begin.rcode barplot1, out.height='.5\\textheight',  out.width='.5\\textheight', echo=T, fig.align='center'
+%
+% barplot(x[1:20])
+%
+%% end.rcode
+\end{frame}
+
+\begin{frame}
+\frametitle{barplot}
+%% begin.rcode barplot2, out.height='.5\\textheight',  out.width='.5\\textheight', echo=T, fig.align='center'
+%
+% barplot(x[1:20], width=2, horiz=T, col=rainbow(10))
+%
+%% end.rcode
+\end{frame}
+
+
+
+
+\subsection{饼图}
+\begin{frame}
+\frametitle{pie}
+%% begin.rcode pie1, out.height='.5\\textheight',  out.width='.5\\textheight', echo=T, fig.align='center'
+%
+% pie(c(10,10,10,20,30,20), c("Nature","Science","Cell","NG","Nature Cancer","Other"),col=2:7)
+%
+%% end.rcode
+\end{frame}
+
+\begin{frame}
+\frametitle{pie}
+%% begin.rcode pie2, out.height='.5\\textheight',  out.width='.5\\textheight', echo=T, fig.align='center'
+% library(plotrix)
+%
+% pie3D(c(10,10,10,20,30,20), labels=c("Nature","Science","Cell","NG","Nature Cancer","Other"),col=2:7)
+%
+%% end.rcode
+\end{frame}
+
+\subsection{分类数据绘图}
+
+\begin{frame}
+  \frametitle{cdplot}
+
+%% begin.rcode, echo=F
+%
+%fail <- factor(c(2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1,
+%                 1, 2, 1, 1, 1, 1, 1),
+%               levels = 1:2, labels = c("no", "yes"))
+%temperature <- c(53, 57, 58, 63, 66, 67, 67, 67, 68, 69, 70, 70,
+%                 70, 70, 72, 73, 75, 75, 76, 76, 78, 79, 81)
+%%% end.rcode
+
+%% begin.rcode cdplot, out.height='.5\\textheight',  out.width='.5\\textheight', echo=T, fig.align='center'
+%
+%cdplot(temperature, fail)
+%
+%% end.rcode
+\end{frame}
+
+
+\begin{frame}
+\frametitle{cdplot}
+%% begin.rcode cdplot1, out.height='.5\\textheight',  out.width='.5\\textheight', echo=T, fig.align='center'
+%
+%cdplot(temperature, fail, col=c("green", "red"))
+%
+%% end.rcode
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{mosaicplot}
+
+%% begin.rcode mosaicplot, out.height='.6\\textheight',  out.width='.6\\textheight', echo=T, fig.align='center'
+% require(stats)
+%
+%mosaicplot(Titanic, main = "Survival on the Titanic", color = TRUE)
+%% end.rcode
+\end{frame}
+
+\subsection{绘制分布}
+
+\begin{frame}
+\frametitle{hist}
+%% begin.rcode hist, out.height='.6\\textheight',  out.width='.6\\textheight', echo=T, fig.align='center'
+%
+% hist(rnorm(10000), col="lightblue")
+%% end.rcode
+\end{frame}
+
+\begin{frame}
+\frametitle{hist}
+%% begin.rcode hist2, out.height='.6\\textheight',  out.width='.6\\textheight', echo=T, fig.align='center'
+%
+% hist(rnorm(10000), breaks=100)
+%% end.rcode
+\end{frame}
+
+
+\begin{frame}
+\frametitle{density + rug}
+%% begin.rcode density, out.height='.6\\textheight',  out.width='.6\\textheight', echo=T, fig.align='center'
+% x = rnorm(1000)
+%
+% plot(density(x))
+%
+% rug(x)
+%% end.rcode
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Q-Q plot}
+%% begin.rcode qqnorm, out.height='.6\\textheight',  out.width='.6\\textheight', echo=T, fig.align='center'
+%
+% qqnorm(rnorm(10000))
+%% end.rcode
+\end{frame}
+
+\subsection{箱线图}
+\begin{frame}
+\frametitle{boxplot}
+%% begin.rcode boxplot, out.height='.6\\textheight',  out.width='.6\\textheight', echo=T, fig.align='center'
+%
+% boxplot(rnorm(1000))
+%% end.rcode
+\end{frame}
+
+\begin{frame}
+\frametitle{boxplot}
+%% begin.rcode boxplot1, out.height='.6\\textheight',  out.width='.6\\textheight', echo=T, fig.align='center'
+%
+% boxplot(cbind(rnorm(1000),rnorm(1000)+rnorm(1000)), col=c("red","green"))
+%% end.rcode
+\end{frame}
+
+
+
+\begin{frame}[t]{next}
+  \begin{itemize}
+    \item R package
+    \begin{itemize}
+      \item R package development
+      \item devtools
+    \end{itemize}
+    \item Bioconductor
+    \item Reproducible Research in R
+    \item Advanced Topics
+    \begin{itemize}
+      \item Machine Learning
+      \item Interactive Report
+      \item Big Data
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+%--- Next Frame ---%
 
 \end{document}
