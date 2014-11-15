@@ -1,3 +1,25 @@
+# Software for R
+
+R software:
+
+R-core is required:
+
+* Visit www.r-project.org to download the latest version.
+
+For Windows user, Rtools is recommended.
+
+IDE and Editors:
+
+For beginner, RStudio, which is the most popular IDE for R, is highly recommended.
+
+All text editors, such as VIM, Notepad++ or ATOM, can be used to edit R codes. There are
+some plugins are available to help you edit and debug R codes:
+
+* For VIM users, VIM-R-Plugin is recommended.
+* For Emacs users, ESS(Emacs Speak Statistics) is recommended.
+* For notepad++ users, NppToR is recommended.
+
+
 # Software for PythonII
 
 No additional software is required for this lecture.
@@ -11,7 +33,7 @@ Following projects are recommended to visit:
 * L3-Bioinfo
 * BioPython
 * scikit-learn and pyml
-* pymol
+* scipy
 
 # Software for Python
 
