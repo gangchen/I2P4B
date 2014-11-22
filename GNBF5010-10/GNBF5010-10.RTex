@@ -218,10 +218,12 @@ thing about R is that\ldots it was developed by statisticians.
 
 \begin{frame}
 \frametitle{VIM + Vim-R-plugin}
+\includegraphics[width=\textwidth]{vim.png}
 \end{frame}
 
 \begin{frame}
 \frametitle{Notepad++ + NppToR}
+\includegraphics[width=\textwidth]{npp.png}
 \end{frame}
 
 \begin{frame}
@@ -229,6 +231,7 @@ thing about R is that\ldots it was developed by statisticians.
 \begin{block}{What is ESS?}
 ESS: Emacs Speak Statistics
 \end{block}
+\includegraphics[height=\textheight]{ess.png}
 \end{frame}
 
 \begin{frame}
@@ -255,7 +258,7 @@ ESS: Emacs Speak Statistics
   \item R in action (also in Chinese)
   \item Introduction to R (also in Chinese)
         \item R for beginner (also in Chinese)
-  \item R in a Nutshell (Chinese version is in press)
+  \item R in a Nutshell (also in Chinese)
   \item The art of R programming (also in Chinese)
         \item ggplot2. Elegant Graphics for Data Analysis (also in Chinese)
 \end{itemize}
@@ -333,7 +336,6 @@ Everything in R is a object, every object has \textit{class}, \textit{type} and 
 \end{columns}
 \end{frame}
 
-\subsection{Numeric}
 \begin{frame}[fragile]
 \frametitle{Types}
 %% begin.rcode, tidy=F, highlight=F
@@ -378,7 +380,6 @@ Everything in R is a object, every object has \textit{class}, \textit{type} and 
 \end{block}
 \end{frame}
 
-\subsection{Character}
 \begin{frame}[fragile]
 \begin{block}{Character}
 A character object is used to represent string values in R.
@@ -470,7 +471,6 @@ Now they have \textbf{two} problems.
 \end{block}
 \end{frame}
 
-\subsection{Vector}
 \begin{frame}[fragile]
 \begin{block}{Vector}
 A \textbf{vector} is a sequence of data elements of the same basic type.
@@ -528,7 +528,6 @@ Recycling Rule:
 \end{block}
 \end{frame}
 
-\subsection{Matrix and Array}
 \begin{frame}[fragile]
 \frametitle{Matrix Construction}
 %% begin.rcode
@@ -580,7 +579,6 @@ Recycling Rule:
 \end{columns}
 \end{frame}
 
-\subsection{List}
 \begin{frame}[fragile]
 \frametitle{List}
 A list is a generic vector containing other objects.
@@ -617,7 +615,6 @@ A list is a generic vector containing other objects.
 %% end.rcode
 \end{frame}
 
-\subsection{Data Frame}
 
 \begin{frame}[fragile]
 \frametitle{Data Frame}
@@ -639,7 +636,6 @@ A data frame is used for storing data tables. It is a list of vectors of equal l
 %% end.rcode
 \end{frame}
 
-\subsubsection{Factor}
 \begin{frame}[fragile]
 \frametitle{Factor}
 %% begin.rcode
@@ -743,8 +739,8 @@ A data frame is used for storing data tables. It is a list of vectors of equal l
 %% end.rcode
 \end{frame}
 
-\section{Object-Oriented Programming}
-\subsection{History}
+\subsection{Object-Oriented Programming}
+\subsubsection{History}
 \begin{frame}
 \frametitle{S4 Classes and methods}
 \begin{block}{History}
@@ -772,14 +768,14 @@ Best Reference: http://adv-r.had.co.nz/OO-essentials.html
 \end{block}
 \end{frame}
 
-\subsection{S3}
+\subsubsection{S3}
 \begin{frame}
 \frametitle{S3}
 %% begin.rcode
 %% end.rcode
 \end{frame}
 
-\subsection{S4}
+\subsubsection{S4}
 \begin{frame}[fragile]
 \frametitle{S4 Classes and methods}
 \begin{block}{S4 in R}
@@ -848,8 +844,8 @@ Best Reference: http://adv-r.had.co.nz/OO-essentials.html
 \end{frame}
 
 
-\section{Input and Output}
-\subsection{Standard Input and Output}
+\subsection{Input and Output}
+\subsubsection{Standard Input and Output}
 \begin{frame}[fragile]
 \frametitle{Standard I/O}
 %% begin.rcode,eval=F
@@ -858,7 +854,7 @@ Best Reference: http://adv-r.had.co.nz/OO-essentials.html
 % cat()
 %% end.rcode
 \end{frame}
-\subsection{File Input and Output}
+\subsubsection{File Input and Output}
 \begin{frame}[fragile]
 \frametitle{File I/O}
 \begin{columns}
@@ -883,7 +879,7 @@ Best Reference: http://adv-r.had.co.nz/OO-essentials.html
 \end{column}
 \end{columns}
 \end{frame}
-\subsection{Database Input and Output}
+\subsubsection{Database Input and Output}
 \begin{frame}[fragile]
 \frametitle{Database I/O}
 %% begin.rcode, eval=F
@@ -894,7 +890,7 @@ Best Reference: http://adv-r.had.co.nz/OO-essentials.html
 \end{frame}
 
 \section{Data Visualization}
-\subsection{散点图}
+\subsection{Scatter Plot}
 
 \begin{frame}[t]\frametitle{plot}
 

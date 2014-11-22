@@ -1,3 +1,22 @@
+# Software for R in Bioinformaitcs
+
+* Bioconductor: http://bioconductor.org
+
+  Installation instructions: http://www.bioconductor.org/install/
+
+    source("http://bioconductor.org/biocLite.R")
+    biocLite()
+
+* (Optional) knitr package: http://yihui.name/knitr/
+
+  Installation:
+
+    install.packages("knitr")
+
+* (Optional)  LaTeX System: MacTex for MacOS, and TexLive for Windows and Linux.
+
+* (Optional)  R packages: ggbio from Bioconductor, shiny
+
 # Software for R
 
 R software:

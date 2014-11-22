@@ -45,4 +45,18 @@ cumentclass[UTF8]{beamer}
 \tableofcontents[hideallsubsections]
 \end{frame}
 
+\section{R Package}
+\subsection{R Package Development}
+\subsection{devtools}
+
+\section{Bioconductor}
+
+\section{Reproducible Research in R}
+\subsection{sweave and knitr}
+\subsection{Interactive Report and Shiny}
+
+\section{Advanced Topics}
+\subsection{Machine Learning}
+\subsection{Big Data}
+
 \end{document}
