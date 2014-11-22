@@ -83,7 +83,31 @@
 
 \section{Bioconductor}
 \subsection{Overview}
-\subsection{GenomicsRanges}
+\begin{frame}
+  \frametitle{Overview}
+  \begin{block}{Bioconductor}
+  Bioconductor provides tools for the analysis and comprehension of
+  high-throughput genomic data. Bioconductor uses the R statistical programming
+  language, and is open source and open development. It has two releases each
+  year, 934 software packages, and an active user community.
+\end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Goals}
+  \begin{itemize}
+    \item To provide widespread access to a broad range of powerful statistical and graphical methods for the analysis of genomic data.
+    \item To facilitate the inclusion of biological metadata in the analysis of genomic data, e.g. literature data from PubMed, annotation data from Entrez genes.
+    \item To provide a common software platform that enables the rapid development and deployment of extensible, scalable, and interoperable software.
+    \item To further scientific understanding by producing high-quality documentation and reproducible research.
+    \item To train researchers on computational and statistical methods for the analysis of genomic data.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  see GNBF5010-2013/4. Biological Data Analysis and Visualization in R/slides.pdf
+\end{frame}
+
 \subsection{ggbio}
 \begin{frame}
   \frametitle{ggplot2}
@@ -138,6 +162,25 @@
 % qplot(gear, mpg, data=mtcars, geom=c("boxplot", "jitter"),
 %   fill=gear, main="Mileage by Gear Number",
 %   xlab="", ylab="Miles per Gallon")
+%% end.rcode
+\end{frame}
+
+\begin{frame}
+  \frametitle{ggbio}
+  \begin{itemize}
+    \item ggplot2 + bioconductor = ggbio
+    \item Website: http://www.tengfei.name/ggbio/
+    \item Author: Tengfei Yin at Seven Bridges Genomics
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{ggbio Examples}
+%% begin.rcode, eval=F
+% source("http://bioconductor.org/biocLite.R")
+% biocLite("ggbio")
+% library(ggbio)
+% examples(autoplot)
 %% end.rcode
 \end{frame}
 
@@ -224,6 +267,7 @@
     \item Task View: High-Performance and Parallel Computing with R\\
     http://cran.r-project.org/web/views/HighPerformanceComputing.html
     \begin{itemize}
+      \item Revolution R Enterprise
       \item Rcpp
       \item Multi-core
       \item GPU
