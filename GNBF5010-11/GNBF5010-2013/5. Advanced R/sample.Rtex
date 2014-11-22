@@ -1,0 +1,37 @@
+\documentclass{article}
+
+\title{A knitr and \LaTeX example}
+\author{Gang Chen}
+
+\begin{document}
+\maketitle
+\section{Embed R Codes and Execution Results}
+%%begin.rcode
+% data(mtcars)
+% attach(mtcars)
+% mean(mtcars$mpg)
+% sd(mtcars$wt)
+%%end.rcode
+
+\section{Embed Results Only}
+%%begin.rcode, echo=F
+% mean(mtcars$mpg)
+% sd(mtcars$wt)
+%%end.rcode
+
+\section{Embed Plots}
+%%begin.rcode, out.width=".8\\textwidth", fig.align='center'
+% plot(mpg, wt, pch=19, cex=2, main="MPG VS. WT", sub="Created by G. Chen", xlab="MPG", ylab="WT", col=c("red","blue","green")[as.factor(gear)])
+% legend("topright",legend=paste("Gear", unique(gear)), lwd=2,  col=c("red","black","blue","green"), bty="n")
+% lines(loess.smooth(mtcars$mpg, mtcars$wt), col=rgb(1, 0, 0, 0.6), lwd=10)
+% text(mpg[1],wt[1],rownames(mtcars)[1],cex=2)
+%%end.rcode
+
+\section{Embed Plots without codes}
+%%begin.rcode, out.width=".8\\textwidth", fig.align='center', echo=F
+% plot(mpg, wt, pch=19, cex=2, main="MPG VS. WT", sub="Created by G. Chen", xlab="MPG", ylab="WT", col=c("red","blue","green")[as.factor(gear)])
+% legend("topright",legend=paste("Gear", unique(gear)), lwd=2,  col=c("red","black","blue","green"), bty="n")
+% lines(loess.smooth(mtcars$mpg, mtcars$wt), col=rgb(1, 0, 0, 0.6), lwd=10)
+% text(mpg[1],wt[1],rownames(mtcars)[1],cex=2)
+%%end.rcode
+\end{document}

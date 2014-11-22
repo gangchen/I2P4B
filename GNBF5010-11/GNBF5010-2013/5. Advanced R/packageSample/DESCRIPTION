@@ -1,0 +1,9 @@
+Package: chen
+Type: Package
+Title: Chen is package for CUHK-R Courses
+Version: 0.1
+Date: 2013-11-30
+Author: Gang
+Maintainer: Gang Chen <chengang@bgitechsolutions.om>
+Description: No Thing here
+License: GPLv3 or above
