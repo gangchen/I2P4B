@@ -1,4 +1,4 @@
-cumentclass[UTF8]{beamer}
+\documentclass[UTF8]{beamer}
 \usepackage{graphicx, color}
 \usepackage{algorithm2e}
 \usepackage{zhspacing}
@@ -15,13 +15,6 @@ cumentclass[UTF8]{beamer}
   \frame{
     \frametitle{Next}
     \tableofcontents[currentsection, subsectionstyle=show/shaded/hide]
-  }
-}
-
-\AtBeginSubsection[]{
-  \frame{
-    \frametitle{Next}
-    \tableofcontents[currentsubsection]
   }
 }
 
@@ -47,12 +40,110 @@ cumentclass[UTF8]{beamer}
 
 \section{R Package}
 \subsection{R Package Development}
+\begin{frame}
+  \frametitle{R Package}
+  \begin{itemize}
+    \item Hadley: In R, the fundamental unit of shareable code is the package.
+    \item Hilary Parker: Seriously, it doesn’t have to be about sharing your code (although that is an
+    added benefit!). It is about saving yourself time.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{References}
+  \begin{itemize}
+    \item Writing R Extensions: \\
+    http://cran.r-project.org/manuals.html
+    \item R Packages from Hadley: \\
+    http://r-pkgs.had.co.nz/
+    \item Writing an R package from scratch: \\
+    http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/
+    \item 开发R程序包之忍者篇: \\
+    http://cos.name/2011/05/write-r-packages-like-a-ninja/
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{R Package from Scratch}
+  see cgr directory
+\end{frame}
+
 \subsection{devtools}
 
+\begin{frame}
+  \frametitle{Why devtools?}
+  \begin{itemize}
+    \item This book espouses my philosophy of package development:
+    \item anything that can be automated, should be automated.
+    \item Do as little as possible by hand.
+    \item Do as much as possible with functions. 
+  \end{itemize}
+\end{frame}
+
+
 \section{Bioconductor}
+\subsection{Overview}
+\subsection{GenomicsRanges}
+\subsection{ggbio}
+\begin{frame}
+  \frametitle{ggplot2}
+%% begin.rcode loadggplot2, echo=F, warning=F, message=F, error=F
+% # ggplot2 examples
+%library(ggplot2)
+%
+%# create factors with value labels
+%mtcars$gear <- factor(mtcars$gear,levels=c(3,4,5),
+%  	 labels=c("3gears","4gears","5gears"))
+%mtcars$am <- factor(mtcars$am,levels=c(0,1),
+%  	 labels=c("Automatic","Manual"))
+%mtcars$cyl <- factor(mtcars$cyl,levels=c(4,6,8),
+%   labels=c("4cyl","6cyl","8cyl"))
+%
+%# Kernel density plots for mpg
+%# grouped by number of gears (indicated by color)
+%% end.rcode
+
+%% begin.rcode ggplot2, out.height='.6\\textheight',  out.width='.6\\textheight', echo=T, fig.align='center'
+%qplot(mpg, data=mtcars, geom="density", fill=gear, alpha=I(.5),
+%   main="Distribution of Gas Milage", xlab="Miles Per Gallon",
+%   ylab="Density")
+%% end.rcode
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{ggplot2}
+
+%% begin.rcode ggplot2-1, out.height='.6\\textheight',  out.width='.6\\textheight', echo=T, fig.align='center'
+% qplot(hp, mpg, data=mtcars, shape=am, color=am,
+%   facets=gear~cyl, size=I(3),
+%   xlab="Horsepower", ylab="Miles per Gallon")
+%% end.rcode
+\end{frame}
+
+\begin{frame}
+  \frametitle{ggplot2}
+%% begin.rcode ggplot2-2, out.height='.6\\textheight',  out.width='.6\\textheight', echo=T, fig.align='center'
+% qplot(wt, mpg, data=mtcars, geom=c("point", "smooth"),
+%   method="lm", formula=y~x, color=cyl,
+%   main="Regression of MPG on Weight",
+%   xlab="Weight", ylab="Miles per Gallon")
+%% end.rcode
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{ggplot2}
+%% begin.rcode ggplot2-3, out.height='.6\\textheight',  out.width='.6\\textheight', echo=T, fig.align='center'
+% qplot(gear, mpg, data=mtcars, geom=c("boxplot", "jitter"),
+%   fill=gear, main="Mileage by Gear Number",
+%   xlab="", ylab="Miles per Gallon")
+%% end.rcode
+\end{frame}
 
 \section{Reproducible Research in R}
-\subsection{sweave and knitr}
+\subsection{knitr}
+
 \subsection{Interactive Report and Shiny}
 
 \section{Advanced Topics}
