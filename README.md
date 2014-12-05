@@ -2,15 +2,19 @@
 ## C
 * Write a program to print Fibonacci sequence.The length of output sequence is specified by the first command line parameter. (fibonacci.c)
 * Implement Smith-Waterman algorithm in C. Given that the cost of GAP, MATCH and MISMATCH is -1, 2 and 0.5, separately. Calculate the alignment of “ACGTGGCCTTGTGA” and “GGTGGGTCTTGTCG”.
+
 ## Perl
 * Write a program to print Fibonacci sequence.The
 length of output sequence is specified by the first command line parameter. (fibonacci.pl)
 * Try to optimize the pos\_annotate.pl as much as you can. (pos\_annotateV3.pl)
+
 ## Java
 * Fibonacci Sequence generator in Java
+
 ## Python
 * Fibonacci Sequence generator in Python
 * Package the generator as a Python module
+
 ## R
 * Fibonacci Sequence generator in R
 * Package it as a R package.
