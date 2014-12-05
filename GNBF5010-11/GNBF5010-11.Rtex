@@ -180,7 +180,7 @@
 % source("http://bioconductor.org/biocLite.R")
 % biocLite("ggbio")
 % library(ggbio)
-% examples(autoplot)
+% example(autoplot)
 %% end.rcode
 \end{frame}
 

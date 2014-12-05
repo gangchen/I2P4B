@@ -6,5 +6,5 @@ cgFibsum <- function(n){
     if ((n == 0) | (n == 1))
         return(1)
     else
-        return(cgFib(n-1) + cgFib(n-2))
+        return(cgFibsum(n-1) + cgFibsum(n-2))
 }

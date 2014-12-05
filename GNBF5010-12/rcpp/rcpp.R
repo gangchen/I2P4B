@@ -26,7 +26,7 @@ src <- '
 
 fibcxx <- cxxfunction(signature(a = "numeric"), src, plugin="Rcpp")
 start = Sys.time()
-r = fibcxx(1000)
+fibcxx(2000)
 end = Sys.time()
 print(end-start)
 
@@ -39,7 +39,8 @@ fibR <- function(n){
   }
   fibvals
 }
+
 start = Sys.time()
-r = fibR(1000)
+fibR(2000)
 end = Sys.time()
 print(end-start)
