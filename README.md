@@ -1,3 +1,5 @@
+I am revise the course for 2015 Fall. Currently, the outline is not consistent with the content of the slides, assignments and exam.
+
 # Assignments List
 ## C
 * Write a program to print Fibonacci sequence.The length of output sequence is specified by the first command line parameter. (fibonacci.c)
@@ -8,16 +10,17 @@
 length of output sequence is specified by the first command line parameter. (fibonacci.pl)
 * Try to optimize the pos\_annotate.pl as much as you can. (pos\_annotateV3.pl)
 
-## Java
-* Fibonacci Sequence generator in Java
-
-## Python
-* Fibonacci Sequence generator in Python
-* Package the generator as a Python module
-
 ## R
 * Fibonacci Sequence generator in R
 * Package it as a R package.
+
+
+# Softwares
+
+## for C
+* Mac OS: XCodes
+* Windows: Visual Studio
+* \*unix: GCC and text editor
 
 
 # Software for R in Bioinformaitcs
@@ -100,18 +103,18 @@ Following projects are recommended to visit:
 
 # Ouline
 
-* GNBF5010-1: Introduction
+* GNBF5010-1: Introduction to Programming
 * GNBF5010-2: The C Programming Language I
 * GNBF5010-3: The C Programming Language II
 * GNBF5010-4: Perl I
 * GNBF5010-5: Perl II
-* GNBF5010-6: Java I
-* GNBF5010-7: Java II
-* GNBF5010-8: Python I
-* GNBF5010-9: Python II
-* GNBF5010-10: R I
-* GNBF5010-11: R II
-* GNBF5010-12: Programming in Real Bioinformaitcs
+* GNBF5010-6: Perl III
+* GNBF5010-7: R I
+* GNBF5010-8: R II
+* GNBF5010-9: R III
+* GNBF5010-10: Other languages: Java, Python and ...
+* GNBF5010-11: Best Practices of Programming I
+* GNBF5010-12: Best Practices of Programming II
 * GNBF5010-13: Final examnation
 
 
