@@ -1,0 +1,119 @@
+\documentclass[UTF8]{beamer}
+\usepackage{graphicx, color}
+\usepackage{algorithm2e}
+\usepackage{zhspacing}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20,
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+    text width=5em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+
+\usepackage{underscore}
+\usetheme{JuanLesPins}
+\usepackage{fontspec}
+\setsansfont{Microsoft YaHei}
+
+\usepackage{enumerate}
+
+\AtBeginSection[]{
+  \frame{
+    \frametitle{Next}
+    \tableofcontents[currentsection, subsectionstyle=show/shaded/hide]
+  }
+}
+
+\AtBeginSubsection[]{
+  \frame{
+    \frametitle{Next}
+    \tableofcontents[currentsubsection]
+  }
+}
+
+\title{Introduction to C}
+
+\subtitle{Development Environment and Quick Get Started}
+
+\author{Gang Chen\\ chengang@genomics.cn}
+
+\logo{\includegraphics[width=1.3cm]{bgi-logo.png}\includegraphics[width=2.5cm]{cuhklogo.png}}
+\date{\today}
+
+
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}[t]\frametitle{Outline}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Overview}
+\subsection{What is C?}
+\begin{frame}[t]{C}
+    body
+\end{frame}
+%--- Next Frame ---%
+
+
+\section{Get Started}
+\subsection{C Compilers}
+\subsection{Download and Install}
+\subsection{Hello World!}
+
+\section{Syntax}
+\begin{frame}[t]{Variable and Data Type}
+    \begin{itemize}
+        \item char
+        \item int
+        \item float
+        \item double
+        \item array
+        \item pointer
+    \end{itemize}
+    variables.c
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Operations}
+    body
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{Flow Control}
+\begin{frame}[t]{Conditional Statements}
+    \begin{itemize}
+        \item if-else
+        \item switch
+    \end{itemize}
+    flow.c
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{loop statement}
+    \begin{itemize}
+        \item \textit{while}
+        \item for
+        \item break and continue
+    \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\section{Libraries}
+\section{tools}
+
+\begin{frame}
+  \centerline{\Huge{Thanks!}}
+\end{frame}
+%--- Next Frame ---%
+
+\end{document}
