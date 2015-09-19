@@ -4,6 +4,7 @@
 \usepackage{zhspacing}
 \usepackage{amsmath}
 \usepackage{tikz}
+\usepackage{url}
 \usetikzlibrary{shapes,arrows}
 
 % Define block styles
@@ -53,6 +54,18 @@
 \begin{frame}
 \titlepage
 \end{frame}
+
+\begin{frame}[t]{Assignment of C}
+\begin{enumerate}
+    \item Download and install a C compiler on your computer;
+    \item Write a program to print Fibonacci sequence.The length of output sequence is specified by the first command line parameter. (fibonacci.c)
+    \item Implement Smith-Waterman algorithm in C. Given that the cost of GAP, MATCH and MISMATCH is -1, 2 and 0.5, separately. Calculate the alignment of “ACGTGGCCTTGTGA” and “GGTGGGTCTTGTCG”.
+\end{enumerate}
+
+
+\end{frame}
+%--- Next Frame ---%
+
 \begin{frame}[t]\frametitle{Outline}
 \tableofcontents[hideallsubsections]
 \end{frame}
@@ -60,15 +73,126 @@
 \section{Overview}
 \subsection{What is C?}
 \begin{frame}[t]{C}
-    body
+C is widely used in various environments, including network programming, operating systems, implementing programming language, embedded devices, high performance numerical computing and so on.
+
+In this course, all other programming languages, Java, Python, Perl and R, are based on the C programming language.
+
+C is fundamental to modern computer software, including bioinformatics software.
+
 \end{frame}
 %--- Next Frame ---%
 
 
 \section{Get Started}
 \subsection{C Compilers}
+\begin{frame}[t]{C Compilers}
+    \begin{itemize}
+        \item gcc in GCC: GNU Compiler Collection
+        \item Clang in LLVM
+        \item Microsoft Visual C++
+        \item Intel C++ Compiler
+        \item Turbo C from Borland
+        \item List: \url{https://en.wikipedia.org/wiki/List_of_compilers\#C_compilers}
+    \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{gcc}
+    \begin{itemize}
+        \item http://gcc.gnu.org/
+        \item GCC 5.2, GCC 4.9.3
+        \item The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Java, Ada, and Go, as well as libraries for these languages.
+    \end{itemize}
+
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Clang}
+    \begin{itemize}
+        \item http://clang.llvm.org/
+        \item Supported by Apple
+        \item The goal of the Clang project is to create a new C, C++, Objective C and Objective C++ front-end for the LLVM compiler.
+    \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
 \subsection{Download and Install}
+\begin{frame}[t]{Linux}
+    \begin{itemize}
+        \item GCC: Most linux distributions are shipped with GCC
+        \item Clang: Pre-Built for Fedora, OpenSuSE, AArch and Ubuntu
+        \item GCC is recommeded for Linux
+    \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Mac OS}
+    \begin{itemize}
+        \item LLVM:
+        \begin{itemize}
+            \item included in Command Line Tools OS X from Apple
+            \item download from \url{http://llvm.org/releases/download.html}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Windows}
+    \begin{itemize}
+        \item Clang provides pre-built version for Windows
+        \item GCC for windows is included in MinGW (\url{http://mingw.org/})
+    \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
 \subsection{Hello World!}
+
+\begin{frame}[t,fragile]{Hello World!}
+    \begin{verbatim}
+#include <stdio.h>
+
+int main(){
+
+	printf(“Hello!\n”);
+
+	int a = 1, b = 2;
+	printf(“The sum of a and b is %i\n”, a+b);
+
+	return 0; // return 0 to system
+
+}
+    \end{verbatim}
+    hello.c
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t, fragile]{Compile and Execute}
+    \begin{verbatim}
+gcc hello.c -o hello
+./hello
+Hello
+    \end{verbatim}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t,fragile]{Hello World!}
+    \begin{verbatim}
+#include <stdio.h> // import library for I/O
+
+int main(){ // define main function
+
+	printf(“Hello!\n”);   // print something to the screen
+
+	 int a = 1, b = 2;    // define two variables and assign values
+	printf(“The sum of a and b is %i\n”, a+b);
+	// print the sum of the two variables to the screen
+
+	return 0; // return 0 to system
+
+}
+    \end{verbatim}
+\end{frame}
+%--- Next Frame ---%
 
 \section{Syntax}
 \begin{frame}[t]{Variable and Data Type}
@@ -85,11 +209,26 @@
 %--- Next Frame ---%
 
 \begin{frame}[t]{Operations}
-    body
+    \begin{itemize}
+        \item +, \-, *, \/, \%
+        \item >, >=, <, <=
+        \item ==, !=
+        \item ++, \-\-
+        \item !
+        \item \&\&, ||
+    \end{itemize}
 \end{frame}
 %--- Next Frame ---%
 
-\subsection{Flow Control}
+\begin{frame}[t]{Puzzle}
+    \begin{itemize}
+        \item 1.3 - 0.7 = 0.600000
+        \item 1.3 - 0.7 == 0.6 is false
+        \item 1.3 - 0.7 != 0.6 is true
+    \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
 \begin{frame}[t]{Conditional Statements}
     \begin{itemize}
         \item if-else
@@ -105,12 +244,77 @@
         \item for
         \item break and continue
     \end{itemize}
+    flow.c
 \end{frame}
 %--- Next Frame ---%
 
-\section{Libraries}
-\section{tools}
+\begin{frame}[t,fragile]{Function}
+\begin{verbatim}
+int add(int a, int b){
+    return a+b;
+}
+\end{verbatim}
+    function.c
+\end{frame}
+%--- Next Frame ---%
 
+\begin{frame}[t,fragile]{Struct}
+\begin{verbatim}
+struct point{
+    int x;
+    int y;
+}
+\end{verbatim}
+\end{frame}
+%--- Next Frame ---%
+
+
+\section{Libraries}
+\begin{frame}[t]{Input/Output}
+    stdio.h
+    \begin{itemize}
+        \item printf
+        \item scanf
+        \item fopen
+        \item fprintf and fscanf
+    \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Math}
+    math.h
+    \begin{itemize}
+        \item sin, cos, tan, asin \ldots
+        \item exp, log, log10 \ldots
+        \item pow, sqrt \ldots
+        \item floor, ceil, fabs \ldots
+    \end{itemize}
+    math.c
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{String}
+    string.h
+    \begin{itemize}
+        \item strcpy
+        \item strcat
+        \item strcmp
+        \item strlen
+    \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+\section*{Summary}
+\begin{frame}[t]{Summary}
+    Summary
+\begin{enumerate}
+    \item C is fundamental to modern computer software.
+    \item Almost everything is based on C, including most programming languages.
+    \item C is a simple, cross-platform and efficient programming language.
+    \item C is widely used the development of various software, from small tools and big data systems.
+\end{enumerate}
+\end{frame}
+%--- Next Frame ---%
 \begin{frame}
   \centerline{\Huge{Thanks!}}
 \end{frame}
