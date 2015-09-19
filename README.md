@@ -1,4 +1,4 @@
-I am revise the course for 2015 Fall. Currently, the outline is not consistent with the content of the slides, assignments and exam.
+GNBF5010 2015 Fall
 
 # Assignments List
 ## C
@@ -18,9 +18,11 @@ length of output sequence is specified by the first command line parameter. (fib
 # Softwares
 
 ## for C
-* Mac OS: XCodes
-* Windows: Visual Studio
-* \*unix: GCC and text editor
+* Mac OS: Clang
+* Windows: MinGW or Clang
+* \*unix: GCC
+* IDE: Code Blocks; Visual Studio; XCode;
+* Editor: Notepad++ for Windows; ATOM for MacOS; VIM and Emacs;
 
 
 # Software for R in Bioinformaitcs
@@ -121,7 +123,5 @@ Following projects are recommended to visit:
 # Assignment Deadlines
 
 * C: Oct 10th;
-* Perl: Oct 24th;
-* Java: Nov 7th;
-* Python: Nov 21th;
-* R: Dec 5th;
+* Perl: Oct 31th;
+* R: Nov 21th;
