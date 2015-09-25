@@ -10,5 +10,5 @@ int main(){
     printf("i1 + i2 = %i\n", i1 + i2);
     printf("add(i1, i2) = %i\n", add(i1, i2));
 
-    return 1;
+    return 0;
 }
