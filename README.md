@@ -24,6 +24,16 @@ length of output sequence is specified by the first command line parameter. (fib
 * IDE: Code Blocks; Visual Studio; XCode;
 * Editor: Notepad++ for Windows; ATOM for MacOS; VIM and Emacs;
 
+C Compiler and Tools for Windows User:
+
+Visit http://nuwen.net/mingw.html ;
+Download mingw-13.0.exe ;
+Double Click the downloaded package to decompress it;
+Start CMD and switch to the directory;
+Execute set_distro_path.bat script.
+
+Tested on Windows 8 and Windows 10.
+
 
 # Software for R in Bioinformaitcs
 
