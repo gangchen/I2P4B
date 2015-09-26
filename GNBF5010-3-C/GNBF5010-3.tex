@@ -77,13 +77,52 @@
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}[t]{Design}
+\begin{frame}[t]{Algorithm}
+\begin{block}{Example}
+    \begin{itemize}
+        \item Sequence 1: ACACACTA
+        \item Sequence 2: AGCACACA
+        \item Similarity scoring scheme:
+        \begin{itemize}
+            \item $s(a, b) = 2$ if $a = b$
+            \item $s(a, b) = -1$ if $a \neq b$
+        \end{itemize}
+        \item Gap score: -2
+    \end{itemize}
+\end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Algorithm}
+    \centerline{\includegraphics[height=.7\textheight]{matrix.png}}
+\end{frame}
+%--- Next Frame ---%
+
+
+\begin{frame}[t]{Algorithm}
+    \centerline{\includegraphics[height=.6\textheight]{path.png}}
+    \begin{itemize}
+        \item A-CACACTA
+        \item AGCACAC-A
+    \end{itemize}
+\end{frame}
+%--- Next Frame ---%
+
+
+
+\begin{frame}[t]{Data Structure}
 \begin{columns}
   \begin{column}{.5\textwidth}
 \begin{block}{I/O}
   \begin{itemize}
-    \item Input: Two sequences: two string;
+    \item Input:
+    \begin{itemize}
+        \item Two sequences: two string
+        \item Similarity scoring scheme
+        \item Gap score
+    \end{itemize}
     \item Output: alignment results;
+    \item Internal: score matrix;
   \end{itemize}
 \end{block}
 \end{column}
@@ -118,7 +157,7 @@
 \end{frame}
 %--- Next Frame ---%
 
-\subsection{Project Management: Makefile}
+\subsection{Project Management: make and git}
 
 \begin{frame}[t]{GNU Make}
 \begin{block}{GNU Make}
@@ -146,8 +185,13 @@
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}[t]
-  \centerline{\includegraphics[width=.8\textwidth]{baba.png}}
+\begin{frame}[t]{Git}
+    \begin{itemize}
+        \item Git: \url{http://www.git-scm.com/}
+        \item SourceTree: \url{https://www.sourcetreeapp.com/}
+        \item GitHub Desktop: \url{https://desktop.github.com/}
+        \item How to get the latest sources of GNBF5010?
+    \end{itemize}
 \end{frame}
 %--- Next Frame ---%
 
@@ -160,15 +204,7 @@
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}[t]{Git}
-    \begin{itemize}
-        \item Git: \url{http://www.git-scm.com/}
-        \item SourceTree: \url{https://www.sourcetreeapp.com/}
-        \item GitHub Desktop: \url{https://desktop.github.com/}
-        \item How to get the latest sources of GNBF5010?
-    \end{itemize}
-\end{frame}
-%--- Next Frame ---%
+
 
 \section{Bioinformatics Software in C}
 \subsection{seqtk}
