@@ -26,11 +26,11 @@ length of output sequence is specified by the first command line parameter. (fib
 
 C Compiler and Tools for Windows User:
 
-Visit http://nuwen.net/mingw.html ;
-Download mingw-13.0.exe ;
-Double Click the downloaded package to decompress it;
-Start CMD and switch to the directory;
-Execute set_distro_path.bat script.
+1. Visit http://nuwen.net/mingw.html ;
+2. Download mingw-13.0.exe ;
+3. Double Click the downloaded package to decompress it;
+4. Start CMD and switch to the directory;
+5. Execute set_distro_path.bat script.
 
 Tested on Windows 8 and Windows 10.
 

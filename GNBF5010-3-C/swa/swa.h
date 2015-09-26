@@ -9,7 +9,7 @@
 
 #define GAP -2.0
 #define MATCH 4.0
-#define MISMATCH -1.0
+#define MISMATCH -2.0
 
 typedef enum { true, false } bool;
 
