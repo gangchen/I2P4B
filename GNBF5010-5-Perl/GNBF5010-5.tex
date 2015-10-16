@@ -38,30 +38,13 @@
 \begin{document}
 
 \begin{frame}
-  \frametitle{Science: An Explosion Of Bioinformatics Careers}
-\begin{block}{Programming}
-  \small
-  Additional critical skills are required for big data careers in industry, such
-   as text mining, ontology, data integration, machine learning, and information
-    architecture. A superior “quantitative ability,” as Gentleman calls it,
-    which covers a range of statistical capabilities, is a must, as are
-    overarching computing skills. These include core programming abilities,
-    such as coding in C++ or Java, or scripting in PERL or Python, says Van
-    Criekinge. It is vital to be able to navigate operating systems like UNIX
-    and Linux as well as have knowledge of common tools such as Hadoop and NoSQL
-     databases, adds Mohan. Experience in data visualization and building
-     effective user interfaces, as well as familiarity with hardware, buttresses
-    your marketability.
-\end{block}
-\end{frame}
-
-\begin{frame}
 \begin{block}{Assignment of Perl}
 \begin{itemize}
 \item Write a program to print Fibonacci sequence.The length of output sequence
 is specified by the first command line parameter. (fibonacci.pl)
 \item Try to optimize the pos_annotate.pl as much as you can. (pos_annotateV3.pl)
 \end{itemize}
+All assignments should be sent to chengang@genomics.cn
 \end{block}
 \end{frame}
 
@@ -71,6 +54,54 @@ is specified by the first command line parameter. (fibonacci.pl)
 \begin{frame}[t]\frametitle{Outline}
 \tableofcontents[hideallsubsections]
 \end{frame}
+
+
+\section{Examples}
+
+\subsection{System Administration}
+
+\begin{frame}[fragile]{Command Options of perl}
+\begin{block}{Options}
+  \begin{itemize}
+    \item -e
+    \item -n
+    \begin{verbatim}
+while (<>) {
+  # your code goes here
+}
+    \end{verbatim}
+    \item -p
+\begin{verbatim}
+  while (<>) {
+      # your code goes here
+    } continue {
+      print or die "-p destination: $!\n";
+    }
+\end{verbatim}
+  \end{itemize}
+\end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[fragile]{Process file content}
+\begin{block}{Adding Line Number to file content}
+  \begin{verbatim}
+    perl -ne 'print "$. $_"' names.txt
+    perl -pe '$_ = "$. $_"' names.txt
+  \end{verbatim}
+\end{block}
+\end{frame}
+%--- Next Frame ---%
+
+\subsection{CGI Programming}
+\begin{frame}[t]{CGI Programming}
+    \begin{block}{CGI}
+        Common Gateway Interface (CGI) is a standard environment for web servers to interface with executable programs installed on a server that generate web pages dynamically.
+    \end{block}
+
+\end{frame}
+%--- Next Frame ---%
+
 
 \section{Perl Modules}
 

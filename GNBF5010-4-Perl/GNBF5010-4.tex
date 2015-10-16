@@ -27,7 +27,7 @@
 
 \title{Introduction to Perl}
 
-\author{Gang Chen\\ chengang@bgitechsolutions.com}
+\author{Gang Chen\\ chengang@genomics.cn}
 
 \logo{\includegraphics[width=1.3cm]{bgi-logo.png}\includegraphics[width=2.5cm]{cuhklogo.png}}
 \date{\today}
@@ -49,6 +49,7 @@
 
 \begin{frame}[t]{What is Perl?}
 \begin{block}{Perl}
+    Perl is a family of high-level, general-purpose, interpreted, dynamic programming languages.
   \begin{itemize}
     \item Practical Extraction and Report Language
     \item Pathologically Eclectic Rubbish Lister
@@ -57,7 +58,7 @@
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}[t]{Perl: History 1}
+\begin{frame}{Perl: History 1}
 \begin{columns}
   \begin{column}{.7\textwidth}
 \begin{itemize}
@@ -66,10 +67,11 @@
   \item 3.0: 1989, support binary data streams
   \item 4.0, 1991
   \item Programming Perl, Camel Book, for Perl 4.0
+
 \end{itemize}
 \end{column}
 \begin{column}{.3\textwidth}
-\includegraphics[width=\textwidth]{programmingperl.jpg}
+\includegraphics[width=.3\textwidth]{programmingperl.jpg}
 \end{column}
 \end{columns}
 \end{frame}
@@ -84,8 +86,10 @@
     \item Comprehensive Perl Archive Network(CPAN), 1995.
     \item 5.004: May 15, 1997, UNIVERSAL package and CGI.pm module.
     \item 5.8: July 18, 2002, unicode, a new I/O, thread
-    \item 5.10: December 18, 2007
+    \item 5.10: Dec 18, 2007
     \item 5.20: May 27, 2014, subroutin signature, slice.
+    \item 5.22: Jun 1, 2015
+    \item \textit{perdoc perlhist}
   \end{itemize}
 \end{block}
 \end{frame}
@@ -95,7 +99,8 @@
 \begin{block}{Perl 6}
   \begin{itemize}
     \item Perl 6 design process was first announced on July 19, 2000
-    \item As of 2014, none of Perl 6 implementation are considered ``complete''.
+    %\item As of 2014, none of Perl 6 implementation are considered ``complete''.
+    \item As of 2015, none of Perl 6 implementation are considered ``complete''.
     \begin{itemize}
       \item Rakudo Perl: Perl 6 for virtual machines.
       \item Pugs: Perl 6 written in Haskell.
@@ -103,6 +108,7 @@
       \item Yapsi: a Perl 6 compiler and runtime written in Perl 6 itself.
     \end{itemize}
   \end{itemize}
+  Perl 5 will be used in the rest of this course.
 \end{block}
 \end{frame}
 %--- Next Frame ---%
@@ -128,6 +134,7 @@
     \item Mastering Perl;
     \item Advanced Perl;
     \item Programming Perl;
+    \item \textit{perldoc} command;
   \end{itemize}
 \end{block}
 \begin{block}{Official Website}
@@ -155,18 +162,6 @@
 \end{frame}
 %--- Next Frame ---%
 
-\begin{frame}[t]{Install: editor}
-\begin{block}{Editors}
-  \begin{itemize}
-    \item Vim: editor god
-    \item Emacs: god's editor
-    \item Notepad++: fast and easy to use
-    \item Atom, sublime text, textmate \ldots
-  \end{itemize}
-\end{block}
-\end{frame}
-%--- Next Frame ---%
-
 
 \begin{frame}[t]{Hello Perl!}
   \centerline{\includegraphics[height=.6\textheight]{hello.png}}
@@ -184,6 +179,11 @@
       \item Execute the file by using perl interpreter
     \end{itemize}
   \end{enumerate}
+\end{frame}
+%--- Next Frame ---%
+
+\begin{frame}[t]{Just for Fun}
+    Open and execute \textit{fun.pl}
 \end{frame}
 %--- Next Frame ---%
 
@@ -416,6 +416,14 @@ while (<>) {
 %--- Next Frame ---%
 
 \subsection{CGI Programming}
+\begin{frame}[t]{CGI Programming}
+    \begin{block}{CGI}
+        Common Gateway Interface (CGI) is a standard environment for web servers to interface with executable programs installed on a server that generate web pages dynamically.
+    \end{block}
+
+\end{frame}
+%--- Next Frame ---%
+
 
 \begin{frame}
   \centerline{\Huge{Thanks!}}
