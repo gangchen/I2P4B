@@ -25,9 +25,9 @@
   }
 }
 
-\title{Perl in Bioinformatics}
+\title{Perl in Bioinformatics I}
 
-\author{Gang Chen\\ chengang@bgitechsolutions.com}
+\author{Gang Chen\\ chengang@genomics.cn}
 
 \logo{\includegraphics[width=1.3cm]{bgi-logo.png}\includegraphics[width=2.5cm]{cuhklogo.png}}
 \date{\today}
@@ -56,11 +56,11 @@ All assignments should be sent to chengang@genomics.cn
 \end{frame}
 
 
-\section{Examples}
+\section{Perl Use Cases}
 
 \subsection{System Administration}
 
-\begin{frame}[fragile]{Command Options of perl}
+\begin{frame}[fragile]{Perl One Liners}
 \begin{block}{Options}
   \begin{itemize}
     \item -e
@@ -88,17 +88,28 @@ while (<>) {
   \begin{verbatim}
     perl -ne 'print "$. $_"' names.txt
     perl -pe '$_ = "$. $_"' names.txt
+    perl -pe 'tr/a-z/A-Z/' names.txt
+    perl -le 'print "PRIME" if (1 x shift) !~ /^(11+)\1+$/' 19
   \end{verbatim}
 \end{block}
 \end{frame}
+%--- Next Frame ---%I
+
+\begin{frame}[t]{References}
+    \begin{itemize}
+        \item Useful One-Line Scripts for Perl : \url{http://www.catonmat.net/download/perl1line.txt} \\
+        Chinese: \url{https://github.com/vinian/perl1line.txt/blob/master/perl1line-ch.txt}
+    \end{itemize}
+\end{frame}
 %--- Next Frame ---%
+
 
 \subsection{CGI Programming}
 \begin{frame}[t]{CGI Programming}
     \begin{block}{CGI}
         Common Gateway Interface (CGI) is a standard environment for web servers to interface with executable programs installed on a server that generate web pages dynamically.
     \end{block}
-
+    see cgi.pl
 \end{frame}
 %--- Next Frame ---%
 
@@ -213,47 +224,6 @@ while (<>) {
   \begin{itemize}
     \item SNPAnno.pm
     \item run_SNPAnno.pl
-  \end{itemize}
-\end{frame}
-
-\section{Bioinformatics Project in Perl}
-\subsection{Annovar}
-\begin{frame}
-  \frametitle{Annovar}
-  \begin{block}{Annovar}
-    ANNOVAR: Functional annotation of genetic variants from high-throughput
-    sequencing data
-  \end{block}
-  \centerline{http://www.openbioinformatics.org/annovar/}
-\end{frame}
-
-\subsection{Cirocs}
-\begin{frame}
-  \frametitle{Circos}
-  \begin{block}{Circos}
-    Circos is a software package for visualizing data and information. It
-    visualizes data in a circular layout — this makes Circos ideal for
-    exploring relationships between objects or positions.
-  \end{block}
-  \centerline{http://circos.ca}
-\end{frame}
-
-\begin{frame}
-  \includegraphics[width=\textwidth]{circos.jpg}
-\end{frame}
-
-\subsection{BioPerl}
-
-\begin{frame}
-  \frametitle{BioPerl}
-  \centerline{http://bioperl.org}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Installation}
-  \begin{itemize}
-    \item from source
-    \item cpan (recommended)
   \end{itemize}
 \end{frame}
 
