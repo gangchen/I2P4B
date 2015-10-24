@@ -30,7 +30,7 @@ sub getTitles($){
     chomp;
 
     my $content = get("http://www.ncbi.nlm.nih.gov/pubmed/".$_);
-
+    print "Modified\n";
     $content =~ m/<h1>(.+)<\/h1>/;
 
     print $_,"\t",$1,"\n";

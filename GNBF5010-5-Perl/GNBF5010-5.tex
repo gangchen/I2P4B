@@ -84,16 +84,25 @@ while (<>) {
 %--- Next Frame ---%
 
 \begin{frame}[fragile]{Process file content}
-\begin{block}{Adding Line Number to file content}
   \begin{verbatim}
     perl -ne 'print "$. $_"' names.txt
     perl -pe '$_ = "$. $_"' names.txt
     perl -pe 'tr/a-z/A-Z/' names.txt
     perl -le 'print "PRIME" if (1 x shift) !~ /^(11+)\1+$/' 19
   \end{verbatim}
-\end{block}
+
 \end{frame}
 %--- Next Frame ---%I
+
+\begin{frame}[fragile]{Windows}
+    \begin{verbatim}
+      perl -ne "print \"$. $_\"" names.txt
+      perl -pe "$_ = $. .\" \". $_" names.txt
+      perl -pe "tr/a-z/A-Z/" names.txt
+      perl -le "print \"PRIME\" if (1 x shift) !~ /^(11+)\1+$/" 19
+    \end{verbatim}
+\end{frame}
+%--- Next Frame ---%
 
 \begin{frame}[t]{References}
     \begin{itemize}
@@ -109,7 +118,7 @@ while (<>) {
     \begin{block}{CGI}
         Common Gateway Interface (CGI) is a standard environment for web servers to interface with executable programs installed on a server that generate web pages dynamically.
     \end{block}
-    see cgi.pl
+    see cgi.plpe
 \end{frame}
 %--- Next Frame ---%
 

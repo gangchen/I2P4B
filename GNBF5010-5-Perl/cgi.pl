@@ -37,8 +37,8 @@ if (param()) {
     print
 	"Your name is",em(param('name')),
 	p,
-	"The keywords are: ",em(join(", ",param('language'))),
+	"The languages are: ",em(join(", ",param('language'))),
 	p,
-	"Your favorite color is ",em("Gang CHEN"),
+	"Your favorite lecturer is ",em("Gang CHEN"),
 	hr;
 }

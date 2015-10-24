@@ -2,6 +2,8 @@ use warnings;
 use strict;
 
 
+print localtime(), "\n";
+
 open snpFile, "pos.txt" or die $!;
 my @snp = <snpFile>;
 close snpFile;
@@ -26,3 +28,6 @@ for my $snp (@snp){
   }
   close annoDB;
 }
+
+
+print localtime(), "\n";
