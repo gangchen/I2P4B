@@ -2,8 +2,6 @@ use warnings;
 use strict;
 
 
-print localtime(), "\n";
-
 open snpFile, "pos.txt" or die $!;
 my @snp = <snpFile>;
 close snpFile;
@@ -16,7 +14,8 @@ for my $snp (@snp){
   #print $chr, "\t", $pos, "\n";
   while(<annoDB>){
     my @fields = split "\t";
-    my $refChr = $fields[2] =~ m/chr(\d+)/;
+    $fields[2] =~ m/chr(\d+)/;
+    my $refChr = $1;
     my $strand = $fields[3];
     my $start = $fields[4];
     my $end = $fields[5];
@@ -28,6 +27,3 @@ for my $snp (@snp){
   }
   close annoDB;
 }
-
-
-print localtime(), "\n";

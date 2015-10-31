@@ -10,10 +10,12 @@ open annoDB, "hg19_refGene.txt" or die $!;
 my %anno;
 while(<annoDB>){
   my @fields = split "\t";
-  my $refChr = $fields[2] =~ m/chr(\d+)/;
+  $fields[2] =~ m/chr(\d+)/;
+  my $refChr = $1;
   my $start = $fields[4];
   my $end = $fields[5];
   $anno{$refChr."\t".$start."\t".$end} = $fields[12];
+  #print $refChr, "\n";
 }
 close annoDB;
 

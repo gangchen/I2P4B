@@ -286,7 +286,7 @@ ESS: Emacs Speak Statistics
 \end{frame}
 
 
-
+\section{Syntax}
 \subsection{Data Types}
 \begin{frame}[fragile]
 \frametitle{Class, Type and Dimension}
@@ -739,8 +739,54 @@ A data frame is used for storing data tables. It is a list of vectors of equal l
 %% end.rcode
 \end{frame}
 
-\subsection{Object-Oriented Programming}
-\subsubsection{History}
+\subsection{Input and Output}
+\subsubsection{Standard Input and Output}
+\begin{frame}[fragile]
+\frametitle{Standard I/O}
+%% begin.rcode,eval=F
+% scan()
+% print()
+% cat()
+%% end.rcode
+\end{frame}
+\subsubsection{File Input and Output}
+\begin{frame}[fragile]
+\frametitle{File I/O}
+\begin{columns}
+\begin{column}{.5\textwidth}
+\begin{block}{Input}
+%% begin.rcode, eval=F
+% read.table()
+% readLines()
+% readChar()
+% readBin()
+% scan()
+%% end.rcode
+\end{block}
+\end{column}
+\begin{column}{.5\textwidth}
+\begin{block}{Output}
+%% begin.rcode, eval=F
+% write.table()
+% write()
+%% end.rcode
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+\subsubsection{Database Input and Output}
+\begin{frame}[fragile]
+\frametitle{Database I/O}
+%% begin.rcode, eval=F
+% library(RMySQL) # for MySQL
+% library(RPostgreSQL) # for PostgreSQL
+% library(XLConnect) # for Excel
+%% end.rcode
+\end{frame}
+
+
+\section{Object-Oriented Programming}
+\subsection{History}
 \begin{frame}
 \frametitle{S4 Classes and methods}
 \begin{block}{History}
@@ -841,52 +887,6 @@ Best Reference: http://adv-r.had.co.nz/OO-essentials.html
 % })
 %% end.rcode
 \end{block}
-\end{frame}
-
-
-\subsection{Input and Output}
-\subsubsection{Standard Input and Output}
-\begin{frame}[fragile]
-\frametitle{Standard I/O}
-%% begin.rcode,eval=F
-% scan()
-% print()
-% cat()
-%% end.rcode
-\end{frame}
-\subsubsection{File Input and Output}
-\begin{frame}[fragile]
-\frametitle{File I/O}
-\begin{columns}
-\begin{column}{.5\textwidth}
-\begin{block}{Input}
-%% begin.rcode, eval=F
-% read.table()
-% readLines()
-% readChar()
-% readBin()
-% scan()
-%% end.rcode
-\end{block}
-\end{column}
-\begin{column}{.5\textwidth}
-\begin{block}{Output}
-%% begin.rcode, eval=F
-% write.table()
-% write()
-%% end.rcode
-\end{block}
-\end{column}
-\end{columns}
-\end{frame}
-\subsubsection{Database Input and Output}
-\begin{frame}[fragile]
-\frametitle{Database I/O}
-%% begin.rcode, eval=F
-% library(RMySQL) # for MySQL
-% library(RPostgreSQL) # for PostgreSQL
-% library(XLConnect) # for Excel
-%% end.rcode
 \end{frame}
 
 \section{Data Visualization}

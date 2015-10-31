@@ -35,6 +35,12 @@ sub setRsid{
     $self->{rsid} = shift;
 }
 
+sub setChr{
+    print $_,"\n" for @_;
+    my $self = shift;
+    $self->{chr} = shift;
+}
+
 sub summary{
     my $self = shift;
     print "The rsid is ", $self->{rsid}, "\n";

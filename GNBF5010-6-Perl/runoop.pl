@@ -1,20 +1,15 @@
 use warnings;
 use strict;
 
-use snp;
 use wesnp;
 
+my $wesnp = new wesnp("rs671", "12", "1234567", "Gang CHEN");
 
-my $snpA = new snp("rs671", "12", "111803962");
+print $wesnp->getRsid, "\n";
 
-print $snpA->getRsid, "\n";
+print $wesnp->getAuthor, "\n";
+$wesnp->summary;
 
-$snpA->setRsid("rs672");
-
-print $snpA->getRsid, "\n";
-
-$snpA->summary;
-
-my $wesnpA = new wesnp("rs671", "12", "111803962", "Gang CHEN");
-print $wesnpA->getRsid, "\n";
-print $wesnpA->getAuthor, "\n";
+my $snp = new snp("rs671", "12", "1234567");
+print $snp->getRsid, "\n";
+print $snp->getAuthor, "\n";
