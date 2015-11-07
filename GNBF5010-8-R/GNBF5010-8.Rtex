@@ -400,7 +400,7 @@ Best Reference: http://adv-r.had.co.nz/OO-essentials.html
 %% begin.rcode loadggplot2, echo=F, warning=F, message=F, error=F
 % # ggplot2 examples
 %library(ggplot2)
-%
+%data(mtcars)
 %# create factors with value labels
 %mtcars$gear <- factor(mtcars$gear,levels=c(3,4,5),
 %  	 labels=c("3gears","4gears","5gears"))
