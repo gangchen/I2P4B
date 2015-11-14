@@ -144,7 +144,7 @@
 \begin{frame}
   \begin{columns}
 \begin{column}{.5\textwidth}
-  \includegraphics[width=.5\textwidth]{escc.jpg}
+  \includegraphics[width=\textwidth]{escc.jpg}
 \end{column}
 \begin{column}{.5\textwidth}
   \includegraphics[width=\textwidth]{esccNormal.jpg}
@@ -161,7 +161,7 @@
 
 
 \begin{frame}[fragile]
-\includegraphics[width=.7\textwidth]{humor.jpg}
+\includegraphics[width=\textwidth]{humor.jpg}
 \end{frame}
 
 \begin{frame}
@@ -305,12 +305,14 @@ Biological Knowledge
   \frametitle{Heat Map}
 
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=.6\textwidth,height=.7\textheight]{figure/heatmap-1} 
+
+}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(colorRamps): there is no package called 'colorRamps'}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in image.default(1L:nc, 1L:nr, x, xlim = 0.5 + c(0, nc), ylim = 0.5 + : 没有"{}green2red"{}这个函数}}\end{kframe}
 \end{knitrout}
 \end{frame}
 
@@ -2164,10 +2166,14 @@ Cluster analysis or clustering is the task of grouping a set of objects in such 
   \frametitle{How to read Heat Map}
 
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=.7\textwidth,height=.8\textheight]{figure/unnamed-chunk-12-1} 
+
+}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in image.default(1L:nc, 1L:nr, x, xlim = 0.5 + c(0, nc), ylim = 0.5 + : 没有"{}green2red"{}这个函数}}\end{kframe}
+
 \end{knitrout}
 \end{frame}
 
@@ -2332,6 +2338,7 @@ Class=0 & $f_{01}$ & $f_{00}$\\
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
  \hlkwd{library}\hlstd{(e1071)}
+
  \hlstd{model} \hlkwb{=} \hlkwd{svm}\hlstd{(}\hlkwc{x} \hlstd{= exprData[}\hlnum{1}\hlopt{:}\hlnum{400}\hlstd{,],} \hlkwc{y} \hlstd{= stages[}\hlnum{1}\hlopt{:}\hlnum{400}\hlstd{],} \hlkwc{cross}\hlstd{=}\hlnum{5}\hlstd{)}
 \end{alltt}
 \end{kframe}
@@ -2410,39 +2417,14 @@ Class=0 & $f_{01}$ & $f_{00}$\\
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{Advanced Courses}
-\begin{block}{Advaced Courses}
-\begin{itemize}
-\item Machine learning for Big Biological Data
-\item Implementing high performance machine learning algorithms
-\item Deep learning for bioinformatics
-\item Data integration
-\item Network based machine learning
-\item \ldots
-\end{itemize}
-\end{block}
-\end{frame}
-
-\subsection{Machine Learning}
-\begin{frame}
-  \frametitle{Machine Learning}
-  \begin{itemize}
-    \item Deep learning
-    \item Support Vector Machine
-    \item Decision Tree
-    \item Recommendation System
-    \item Expert System: Computer-aided diagnosis
-  \end{itemize}
-\end{frame}
-
 \section{Big Data}
 \begin{frame}
   \frametitle{High Performance Computing}
   \begin{itemize}
     \item Task View: High-Performance and Parallel Computing with R\\
-    http://cran.r-project.org/web/views/HighPerformanceComputing.html
+    \url{http://cran.r-project.org/web/views/HighPerformanceComputing.html}
     \begin{itemize}
+      \item compiler package and JIT
       \item Revolution R Enterprise
       \item Rcpp
       \item Multi-core
@@ -2451,6 +2433,24 @@ Class=0 & $f_{01}$ & $f_{00}$\\
     \end{itemize}
   \end{itemize}
 \end{frame}
+
+\begin{frame}[t]{compiler package}
+    These functions provide an interface to a byte code compiler for R.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlkwd{cmpfun}\hlstd{(f,} \hlkwc{options} \hlstd{=} \hlkwa{NULL}\hlstd{)}
+ \hlkwd{compile}\hlstd{(e,} \hlkwc{env} \hlstd{= .GlobalEnv,} \hlkwc{options} \hlstd{=} \hlkwa{NULL}\hlstd{)}
+ \hlkwd{cmpfile}\hlstd{(infile, outfile,} \hlkwc{ascii} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{env} \hlstd{= .GlobalEnv,}
+        \hlkwc{verbose} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{options} \hlstd{=} \hlkwa{NULL}\hlstd{)}
+ \hlkwd{enableJIT}\hlstd{(level)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+see compiler.R for example
+\end{frame}
+%--- Next Frame ---%
 
 \begin{frame}
   \frametitle{Big Data Framework}

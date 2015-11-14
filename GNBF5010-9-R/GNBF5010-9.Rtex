@@ -87,7 +87,7 @@
 \begin{frame}
   \begin{columns}
 \begin{column}{.5\textwidth}
-  \includegraphics[width=.5\textwidth]{escc.jpg}
+  \includegraphics[width=\textwidth]{escc.jpg}
 \end{column}
 \begin{column}{.5\textwidth}
   \includegraphics[width=\textwidth]{esccNormal.jpg}
@@ -104,7 +104,7 @@
 
 
 \begin{frame}[fragile]
-\includegraphics[width=.7\textwidth]{humor.jpg}
+\includegraphics[width=\textwidth]{humor.jpg}
 \end{frame}
 
 \begin{frame}
@@ -623,6 +623,7 @@ Class=0 & $f_{01}$ & $f_{00}$\\
 %% begin.rcode svmtraining
 %
 % library(e1071)
+%
 % model = svm(x = exprData[1:400,], y = stages[1:400], cross=5)
 %
 %% end.rcode
@@ -674,39 +675,14 @@ Class=0 & $f_{01}$ & $f_{00}$\\
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{Advanced Courses}
-\begin{block}{Advaced Courses}
-\begin{itemize}
-\item Machine learning for Big Biological Data
-\item Implementing high performance machine learning algorithms
-\item Deep learning for bioinformatics
-\item Data integration
-\item Network based machine learning
-\item \ldots
-\end{itemize}
-\end{block}
-\end{frame}
-
-\subsection{Machine Learning}
-\begin{frame}
-  \frametitle{Machine Learning}
-  \begin{itemize}
-    \item Deep learning
-    \item Support Vector Machine
-    \item Decision Tree
-    \item Recommendation System
-    \item Expert System: Computer-aided diagnosis
-  \end{itemize}
-\end{frame}
-
 \section{Big Data}
 \begin{frame}
   \frametitle{High Performance Computing}
   \begin{itemize}
     \item Task View: High-Performance and Parallel Computing with R\\
-    http://cran.r-project.org/web/views/HighPerformanceComputing.html
+    \url{http://cran.r-project.org/web/views/HighPerformanceComputing.html}
     \begin{itemize}
+      \item compiler package and JIT
       \item Revolution R Enterprise
       \item Rcpp
       \item Multi-core
@@ -715,6 +691,20 @@ Class=0 & $f_{01}$ & $f_{00}$\\
     \end{itemize}
   \end{itemize}
 \end{frame}
+
+\begin{frame}[t]{compiler package}
+    These functions provide an interface to a byte code compiler for R.
+%% begin.rcode compiler, eval=F
+% cmpfun(f, options = NULL)
+% compile(e, env = .GlobalEnv, options = NULL)
+% cmpfile(infile, outfile, ascii = FALSE, env = .GlobalEnv,
+%        verbose = FALSE, options = NULL)
+% enableJIT(level)
+%% end.rcode
+
+see compiler.R for example
+\end{frame}
+%--- Next Frame ---%
 
 \begin{frame}
   \frametitle{Big Data Framework}
