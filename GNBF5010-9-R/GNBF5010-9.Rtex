@@ -3,6 +3,17 @@
 \usepackage{algorithm2e}
 \usepackage{zhspacing}
 \usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20,
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+    text width=5em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
 
 \usepackage{underscore}
 \usetheme{JuanLesPins}
@@ -18,7 +29,8 @@
   }
 }
 
-\title{R}
+\title{R: Advanced Topics}
+\subtitle{Machine Learning and Big Data}
 
 \author{Gang Chen\\ chengang@genomics.cn}
 
@@ -38,7 +50,644 @@
 \tableofcontents[hideallsubsections]
 \end{frame}
 
-\section{Advanced Topics}
+\section{Overview of Machine Learning}
+
+\begin{frame}[fragile]
+  \frametitle{Biomarker for Tumor Stage}
+%% begin.rcode, echo=F, out.height='.8\\textheight', out.width='\\textwidth', fig.align='center', message=F
+%
+% library(curatedOvarianData)
+%
+% data(TCGA_eset)
+%
+% boxplot(log(exprs(TCGA_eset)[,1:2]), col=TCGA_eset$tumorstage)
+%
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Biomarker for Tumor Stage}
+
+%% begin.rcode, echo=F, out.height='.8\\textheight', out.width='\\textwidth', fig.align='center'
+%
+% boxplot(log(exprs(TCGA_eset)[,1:30]), col=TCGA_eset$tumorstage)
+%
+%% end.rcode
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{}
+
+%% begin.rcode, echo=F, out.height='.8\\textheight', out.width='\\textwidth', fig.align='center'
+%
+% boxplot(log(exprs(TCGA_eset)[,1:90]), col=TCGA_eset$tumorstage)
+%
+%% end.rcode
+\end{frame}
+
+\begin{frame}
+  \begin{columns}
+\begin{column}{.5\textwidth}
+  \includegraphics[width=.5\textwidth]{escc.jpg}
+\end{column}
+\begin{column}{.5\textwidth}
+  \includegraphics[width=\textwidth]{esccNormal.jpg}
+\end{column}
+\end{columns}
+
+\centerline{How to identify tumor from genomics perspective?}
+\centerline{Is it possible to predict tumor stage?}
+
+\centerline{\huge{The answer is Data Mining.}}
+\end{frame}
+
+\subsection{What is Data Mining?}
+
+
+\begin{frame}[fragile]
+\includegraphics[width=.7\textwidth]{humor.jpg}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What is Data Mining?}
+
+  \begin{block}{Pang-Ning Tan, Introduction to Data Mining}
+Data Mining is the process of automatically discovering useful information in large data repositories.
+  \end{block}
+
+  \begin{block}{Knowledge Discovery in Databases}
+Data Mining is an integral part of knowledge discovery in databases(KDD).
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Data Mining and KDD}
+\centerline{\includegraphics[width=\textwidth]{dmkdd.png}}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Machine Learning and Bioinformatics}
+\begin{columns}[c]
+\begin{column}{.2\textwidth}
+\small{Biological Experiments}\\
+\tiny{Microarray}\\
+\tiny{Sequencing}\\
+\tiny{Mass Spectrum}\\
+\ldots
+\end{column}
+\begin{column}{.05\textwidth}
+$\rightarrow$
+\end{column}
+\begin{column}{.2\textwidth}
+\small{Preprocssing}\\
+\tiny{base calling}\\
+\tiny{alignment}\\
+\tiny{variants}\\
+\ldots
+\end{column}
+\begin{column}{.05\textwidth}
+$\rightarrow$
+\end{column}
+\begin{column}{.25\textwidth}
+Data Mining\\
+\tiny{Classification}\\
+\tiny{Clustering}\\
+\tiny{Regression}\\
+\tiny{Feature Engineering}\\
+\ldots
+\end{column}
+
+\begin{column}{.05\textwidth}
+$\rightarrow$
+\end{column}
+
+\begin{column}{.2\textwidth}
+Biological Knowledge
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Traditional Data Analysis}
+
+  \begin{block}{Motivations}
+\begin{itemize}
+\item Scalability
+\item High Dimensionality
+\item Heterogeneous and Complex Data
+\item Data Ownership and Distribution
+\item Non-traditional analysis
+\end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Data Mining Tasks}
+\centerline{\includegraphics[height=.6\textheight]{dmtasks.jpg}}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Data Mining and Machine Learning}
+\begin{block}{Machine Learning}
+  Machine learning provides the technical basis of data mining.
+
+---\textit{Data Mining: Practical Machine Learning Tools and Techniques}
+\end{block}
+\end{frame}
+
+\subsection{Organization of the course}
+
+\begin{frame}
+  \frametitle{Schedule}
+
+  \begin{block}{Schedule}
+\begin{itemize}
+\item Introduction
+\item Unsupervised Learning: Clustering
+\item Supervised Learning: Classifition
+\item Discussion
+\end{itemize}
+  \end{block}
+\end{frame}
+
+
+\subsection{QucikStarts of R}
+\begin{frame}
+  \frametitle{Softwares}
+  \begin{block}{Softwares}
+\begin{itemize}
+\item R: R is an free platform for data analysis and visuaztion.
+\item R packages:
+\begin{itemize}
+\item \textbf{e1071} SVM
+\item \textbf{curatedOvarianData} Microarry data of tumor.[Database 2013]
+\item \textbf{mtcars} A small dataset for concept demonstration.
+\end{itemize}
+\item Rgui
+\item Emacs + ESS
+\item Vim + R-Plugin
+\item RStudio
+\item RStudio in the Cloud
+\end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{R}
+\begin{itemize}
+  \item Download from www.r-project.org.
+  \item Installation and start;
+  \item Install e1071 package.
+\end{itemize}
+\end{frame}
+
+\section{Unspervised Learning}
+
+\begin{frame}[fragile]
+  \frametitle{Heat Map}
+
+%% begin.rcode heatmap, echo=F, out.height='.7\\textheight', out.width='.6\\textwidth', fig.align='center'
+%
+% library(colorRamps)
+% exprData = log(exprs(TCGA_eset))
+% subdata = exprData[apply(exprData, 1, sd)>0.3,1:80]
+% heatmap(subdata,col=green2red(4), scale="none")
+%
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Unsupervised Learning: Clustering}
+\begin{block}{What is clustering?}
+Cluster analysis or clustering is the task of grouping a set of objects in such a way that objects in the same group (called cluster) are more similar (in some sense or another) to each other than to those in other groups (clusters).
+
+---Wikipedia
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Applications}
+\begin{block}{Applications of Clustering}
+\begin{itemize}
+	\item Clustering for Understanding
+		\begin{itemize}
+			\item Biology
+			\item Information Retrieval
+			\item Climate
+			\item Psychology and medicine
+			\item business
+			\item \ldots \ldots
+		\end{itemize}
+	\item Clustering for Utility
+		\begin{itemize}
+			\item Summarization
+			\item compression
+			\item Efficiently finding nearest neighbors
+			\item \ldots \ldots
+		\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Common Clustering Methods}
+\begin{block}{Clustering Methods}
+  \begin{itemize}
+  \item Density-based clustering
+  \item K-means
+  \item Hierarchical Clustering
+  \item Semi-supervised clustering
+  \item \ldots \ldots
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\subsection{Unsupervised Learning in Bioinformatics}
+\begin{frame}
+\frametitle{Unsupervised Learning in Bioinformatics}
+\begin{itemize}
+	\item Discovery of tumor subtypes by clustering gene expression, CNV, miRNA or integrated data.
+	\item Clonal evolution analysis of tumor
+	\item Mutation spectrum clustering
+	\item Pathway or functional annotation based clustering
+	\item Graph clustering for identification of protein functional module or protein complex
+	\item Clustering metagenomic sequences
+	\item Metabolomics
+	\item \ldots \ldots
+\end{itemize}
+\end{frame}
+
+\subsection{Hierarchical Clustering and its Applications in Bioinformatics}
+\begin{frame}[fragile]
+  \frametitle{Hierarchical Clustering}
+\begin{block}{Steps}
+  \begin{itemize}
+  \item Calculating distance between individuals
+  \item Combine closest individuals (optional, recaculate distance)
+  \item Visualization and annotation
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Clustering in Bioinformatics}
+\includegraphics[width=\textwidth]{mutation.pdf}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Hierarchical Clustering in R}
+
+%% begin.rcode, eval=FALSE
+% help(dist)
+% help(hclust)
+% help(heatmap)
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Distance Calculation}
+
+%% begin.rcode, eval=F, tidy=F
+%
+% dist(x, method = "euclidean",
+% diag = FALSE,
+% upper = FALSE,
+% p = 2)
+%
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Distance Calculation}
+\tiny
+%% begin.rcode
+%
+% exprDist = dist(t(subdata))
+% exprDist
+%
+%% end.rcode
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Clustering}
+
+%% begin.rcode clusting, eval=F
+%
+% hclust(d, method = "complete", members = NULL)
+%
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Clustering}
+%% begin.rcode
+% exprDist = dist(t(subdata))
+% exprClust = hclust(exprDist)
+% exprClust
+%% end.rcode
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Visualization}
+\begin{block}{Visualization}
+  \begin{itemize}
+  \item Dendrogram: plot.hclust
+  \item Heat Map: heatmap
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Dendrogram}
+
+%% begin.rcode, out.height='.8\\textheight', out.width='0.8\\textheight', fig.align='center'
+% plot(exprClust, cex=0.6, main="Dendrogram")
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{plot.hclust}
+%% begin.rcode, tidy=F, eval=F
+% plot(x, labels = NULL,
+% hang = 0.1,
+% axes = TRUE,
+% frame.plot = FALSE,
+% ann = TRUE,
+% main = "Cluster Dendrogram",
+% sub = NULL,
+% xlab = NULL, ylab = "Height", ...)
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Heat Map}
+
+%% begin.rcode, out.height='.7\\textheight', out.width='.6\\textwidth', fig.align='center'
+%
+% heatmap(subdata)
+%
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{heatmap}
+\small
+%% begin.rcode, tidy=F, eval=F
+% heatmap(x, Rowv = NULL, Colv = if(symm)"Rowv" else NULL,
+% distfun = dist, hclustfun = hclust,
+% reorderfun = function(d, w) reorder(d, w),
+% add.expr, symm = FALSE, revC = identical(Colv, "Rowv"),
+% scale = c("row", "column", "none"), na.rm = TRUE,
+% margins = c(5, 5), ColSideColors, RowSideColors,
+% cexRow = 0.2 + 1/log10(nr), cexCol = 0.2 + 1/log10(nc),
+% labRow = NULL, labCol = NULL, main = NULL,
+% xlab = NULL, ylab = NULL,
+% keep.dendro = FALSE, verbose = getOption("verbose"), ...)
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{How to read Heat Map}
+
+%% begin.rcode, out.height='.8\\textheight', out.width='.7\\textwidth', fig.align='center', echo=F
+%
+% heatmap(subdata, col=green2red(4), scale="none")
+%
+%% end.rcode
+\end{frame}
+
+
+\subsection{Summary}
+
+\begin{frame}[fragile]
+  \frametitle{Suumary}
+\begin{block}{Clustering}
+  \begin{itemize}
+  \item Clustering is widely used in bioinformatics
+  \item Clustering can be implemented by using built-in functions of R
+  \item Clustering can be visualized as heat map and dendogram
+  \end{itemize}
+\end{block}
+\end{frame}
+
+
+\section{Supervised Learning}
+
+\begin{frame}
+\frametitle{Supervised Learning: Classification}
+
+\begin{block}{Classification}
+Assigning objects to one of several predefined categoriies.
+\end{block}
+
+
+\begin{block}{Definition}
+Classification is the task of learning a \textbf{target function} $f$ that maps each attribute set $x$ to one of the predefined class labels $y$.
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{How to solve a classification problem?}
+\begin{center}
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (model) {Model};
+    \node [block, above left of=model, node distance=2.2cm] (lmodel) {Learn Model};
+    \node [block, above of=lmodel, node distance=2cm] (lalg) {Learning Algorithm};
+    \node [block, left of=lmodel, node distance=3cm] (train) {Training Set};
+    \node [block, below left of=model, node distance=2.2cm] (amodel) {Apply Model};
+    \node [block, left of=amodel, node distance=3cm] (test) {Testing Set};
+
+
+    % Draw edges
+    \path [line] (train) -- (lmodel);
+    \path [line] (lalg) -- (lmodel);
+    \path [line] (lmodel) -- (model);
+    \path [line] (model) -- (amodel);
+    \path [line] (amodel) -- (test);
+\end{tikzpicture}\\
+General approach for building a classification model
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Evaluation}
+\begin{center}
+Confusion Matrix for a 2-class problem
+  \begin{tabular}{|c|c|c|}
+\hline
+  & Prediction=1 & Prediction=0 \\
+\hline
+Class=1 & $f_{11}$ & $f_{10}$ \\
+\hline
+Class=0 & $f_{01}$ & $f_{00}$\\
+\hline
+  \end{tabular}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Evaluation}
+
+  \begin{block}{Accuracy and Error Rate}
+
+    \begin{align*}
+      Accuracy & = \frac{\text{Number of correct predictions}}{\text{Total number of predictions}}\\
+&=\frac{f_{11}+f_{00}}{f_{11}+f_{10}+f_{00}+f_{01}}\\
+      Error Rate &= \frac{\text{Number of wrong predictions}}{\text{Total number of predictions}}\\
+&=\frac{f_{10}+f_{01}}{f_{11}+f_{10}+f_{00}+f_{01}}
+    \end{align*}
+  \end{block}
+\end{frame}
+
+\subsection{Supervised Learning in Bioinformatics}
+
+
+\begin{frame}
+  \frametitle{Classification in Bioinformatics}
+
+  \begin{block}{Applications}
+\begin{itemize}
+\item Classification of diseases, especially cancer.
+\item Prediction of clinical outcome.
+\item Prediction of the function of gene or proteins.
+\item Prediction of the structure of proteins.
+\item \ldots \ldots
+\end{itemize}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Objective}
+  \begin{block}{Two Objectives}
+    \begin{enumerate}
+      \item To build accuate classifiers or predictors
+      \item To derive inferences from the results obtained
+    \end{enumerate}
+  \end{block}
+
+  \begin{block}{Challanges}
+    \begin{itemize}
+      \item data incocnsistency and missing values
+      \item noise
+      \item normalization
+      \item Deimensionality reduction
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Support Vector Machine and its Applications in Bioinformatics}
+
+
+\begin{frame}
+  \frametitle{SVM}
+\centerline{\includegraphics[height=.7\textheight]{svm.png}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Kernal}
+\centerline{\includegraphics[height=.7\textheight]{kernel.jpg}}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{SVM in R}
+
+%% begin.rcode, echo=FALSE
+% stages = TCGA_eset$tumorstage
+% stages[stages < 3] <- 0
+% stages[stages >= 3] <- 1
+% stages = as.factor(stages)
+%% end.rcode
+
+
+%% begin.rcode, eval=FALSE
+%
+% library(e1071)
+%
+%% end.rcode
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{SVM}
+
+%% begin.rcode svmtraining
+%
+% library(e1071)
+% model = svm(x = exprData[1:400,], y = stages[1:400], cross=5)
+%
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{SVM model}
+\tiny
+%% begin.rcode
+% model
+%% end.rcode
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{SVM}
+%% begin.rcode svmpredict
+%
+% ret = predict(model, exprData[401:500,])
+% table(ret, stages[401:500])
+%
+%% end.rcode
+\centerline{\huge{?}}
+\end{frame}
+
+
+\subsection{Summary}
+
+\begin{frame}[fragile]
+  \frametitle{Summary}
+\begin{block}{Classification}
+
+  \begin{itemize}
+  \item Classification is an important technique for bioinformatics
+  \item SVM is powerful
+  \item Classification algorithm can be implemented in R easily
+  \end{itemize}
+\end{block}
+\end{frame}
+
+
+\section{Future}
+
+\begin{frame}
+  \frametitle{Future Reading}
+\begin{itemize}
+\item Data Mining for Bioinformatics
+\item Introduction to Machine Learning
+\item CRAN Task View: Machine Learning \& Statistical Learning: http://cran.r-project.org/web/views/MachineLearning.html
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Advanced Courses}
+\begin{block}{Advaced Courses}
+\begin{itemize}
+\item Machine learning for Big Biological Data
+\item Implementing high performance machine learning algorithms
+\item Deep learning for bioinformatics
+\item Data integration
+\item Network based machine learning
+\item \ldots
+\end{itemize}
+\end{block}
+\end{frame}
+
 \subsection{Machine Learning}
 \begin{frame}
   \frametitle{Machine Learning}
@@ -47,25 +696,11 @@
     \item Support Vector Machine
     \item Decision Tree
     \item Recommendation System
-    \item Exper System: Computer-aided diagnosis
+    \item Expert System: Computer-aided diagnosis
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Machine Learning in R}
-  \begin{itemize}
-    \item Task View: Machine Learning \& Statistical Learning\\
-    http://cran.r-project.org/web/views/MachineLearning.html
-    \begin{itemize}
-      \item RWeka
-      \item Rattle
-      \item e1071, C50, randomForest
-      \item \ldots
-    \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\subsection{Big Data}
+\section{Big Data}
 \begin{frame}
   \frametitle{High Performance Computing}
   \begin{itemize}

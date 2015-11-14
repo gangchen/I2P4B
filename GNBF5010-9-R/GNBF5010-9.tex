@@ -1,8 +1,68 @@
-\documentclass[UTF8]{beamer}
+\documentclass[UTF8]{beamer}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \usepackage{graphicx, color}
 \usepackage{algorithm2e}
 \usepackage{zhspacing}
 \usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20,
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+    text width=5em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
 
 \usepackage{underscore}
 \usetheme{JuanLesPins}
@@ -18,23 +78,14 @@
   }
 }
 
-\AtBeginSubsection[]{
-  \frame{
-    \frametitle{Next}
-    \tableofcontents[currentsubsection]
-  }
-}
+\title{R: Advanced Topics}
+\subtitle{Machine Learning and Big Data}
 
-\title{Python in Bioinformatics}
-
-\author{Gang Chen\\ chengang@bgitechsolutions.com}
+\author{Gang Chen\\ chengang@genomics.cn}
 
 \logo{\includegraphics[width=1.3cm]{bgi-logo.png}\includegraphics[width=2.5cm]{cuhklogo.png}}
 \date{\today}
-
-
-
-
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
 \begin{frame}
@@ -45,165 +96,2376 @@
 \tableofcontents[hideallsubsections]
 \end{frame}
 
-\section{Python Package}
-\begin{frame}
-  \frametitle{Python Package}
-  \begin{itemize}
-    \item python setup
-    \item easy_install
-    \item pip
-  \end{itemize}
+\section{Overview of Machine Learning}
+
+\begin{frame}[fragile]
+  \frametitle{Biomarker for Tumor Stage}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\textwidth,height=.8\textheight]{figure/unnamed-chunk-1-1} 
+
+}
+
+
+
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Biomarker for Tumor Stage}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\textwidth,height=.8\textheight]{figure/unnamed-chunk-2-1} 
+
+}
+
+
+
+\end{knitrout}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\textwidth,height=.8\textheight]{figure/unnamed-chunk-3-1} 
+
+}
+
+
+
+\end{knitrout}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Python Package Development}
-  \begin{itemize}
-    \item Tutorial:https://packaging.python.org/en/latest/distributing.html
-    \item Example:https://github.com/pypa/sampleproject
-  \end{itemize}
+  \begin{columns}
+\begin{column}{.5\textwidth}
+  \includegraphics[width=.5\textwidth]{escc.jpg}
+\end{column}
+\begin{column}{.5\textwidth}
+  \includegraphics[width=\textwidth]{esccNormal.jpg}
+\end{column}
+\end{columns}
+
+\centerline{How to identify tumor from genomics perspective?}
+\centerline{Is it possible to predict tumor stage?}
+
+\centerline{\huge{The answer is Data Mining.}}
+\end{frame}
+
+\subsection{What is Data Mining?}
+
+
+\begin{frame}[fragile]
+\includegraphics[width=.7\textwidth]{humor.jpg}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Example}
-  see hello directory
-\end{frame}
+  \frametitle{What is Data Mining?}
 
-\section{Python based Bioinformatics Projects}
-\subsection{Scipy}
-\begin{frame}
-  \frametitle{scipy project}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Installation and Example}
-\end{frame}
-\subsection{BioPython}
-\begin{frame}
-  \frametitle{BioPython}
-  Biopython is a set of freely available tools for biological computation
-  written in Python by an international team of developers.
-\end{frame}
-
-\begin{frame}
-  \frametitle{Installation and Example}
-  \begin{itemize}
-    \item Download
-    \item python setup.py
-    \item see bio.py as an example
-  \end{itemize}
-\end{frame}
-
-
-\subsection{Machine Learning}
-\begin{frame}
-  \frametitle{Python for Machine Learning}
-  \begin{itemize}
-    \item scikit-learn
-    \item pyml
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{PyML}
-  PyML is an interactive object oriented framework for machine learning written
-   in Python. PyML focuses on SVMs and other kernel methods.
-\end{frame}
-
-\begin{frame}
-  \frametitle{scikit-learn}
-  \begin{itemize}
-    \item Simple and efficient tools for data mining and data analysis
-    \item Accessible to everybody, and reusable in various contexts
-    \item Built on NumPy, SciPy, and matplotlib
-    \item Open source, commercially usable - BSD license
-  \end{itemize}
-\end{frame}
-
-\subsection{Network Visualization and Analysis}
-\begin{frame}
-  \frametitle{igraph for network visualization}
-  \begin{block}{igraph}
-    igraph is a collection of network analysis tools with the emphasis on
-    efficiency, portability and ease of use. igraph is open source and free.
-    igraph can be programmed in GNU R, Python and C/C++.
+  \begin{block}{Pang-Ning Tan, Introduction to Data Mining}
+Data Mining is the process of automatically discovering useful information in large data repositories.
   \end{block}
 
-  igraph is implemented in C++, but can be programmed in R, Python and C/C++.
-\end{frame}
-
-\begin{frame}
-  \frametitle{Install and Example}
-  \begin{itemize}
-    \item pip install python-igraph
-    \item Tutorial: http://igraph.org/python/doc/tutorial/tutorial.html
-  \end{itemize}
-\end{frame}
-
-\section{Bioinformatics in the Cloud using Python}
-
-\subsection{Clouding Computing and Bioinformatics}
-
-\begin{frame}{Clouding Computing}
-  \begin{itemize}
-    \item Amazon Web Service: aws.amazon.com
-    \item Aliyun: aliyun.com
-    \item Google Compute Engine: cloud.google.com
-    \item Microsoft Azure: azure.microsoft.com
-    \item \ldots
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{NCI Cancer Genomics Cloud Pilots}
-  \begin{block}{Current Needs in Cancer Research}
-    The challenges posed by the need to disseminate, manage, and interpret
-    large, multi-scale data pervade efforts to advance understanding of cancer
-    biology and apply that knowledge in the clinic.
+  \begin{block}{Knowledge Discovery in Databases}
+Data Mining is an integral part of knowledge discovery in databases(KDD).
   \end{block}
 \end{frame}
 
-\begin{frame}{Bioinformatics in the Cloud}
-  \begin{itemize}
-    \item DNANexus: DNANexus.com
-    \item SBGenomics: SBGenomics.com\\
-      rabix: rabix.org
-    \item GeneDock: GeneDock.com
-    \item L3-Bioinformatics: l3-bioinfo.com
-    \item tute genomics, Variant Analysis from Qiagen, \ldots
-  \end{itemize}
+\begin{frame}
+  \frametitle{Data Mining and KDD}
+\centerline{\includegraphics[width=\textwidth]{dmkdd.png}}
 \end{frame}
 
-\subsection{Python SDK of DNANexus}
 
 \begin{frame}
-  \frametitle{Overview}
-  https://wiki.dnanexus.com/Developer-Portal
+  \frametitle{Machine Learning and Bioinformatics}
+\begin{columns}[c]
+\begin{column}{.2\textwidth}
+\small{Biological Experiments}\\
+\tiny{Microarray}\\
+\tiny{Sequencing}\\
+\tiny{Mass Spectrum}\\
+\ldots
+\end{column}
+\begin{column}{.05\textwidth}
+$\rightarrow$
+\end{column}
+\begin{column}{.2\textwidth}
+\small{Preprocssing}\\
+\tiny{base calling}\\
+\tiny{alignment}\\
+\tiny{variants}\\
+\ldots
+\end{column}
+\begin{column}{.05\textwidth}
+$\rightarrow$
+\end{column}
+\begin{column}{.25\textwidth}
+Data Mining\\
+\tiny{Classification}\\
+\tiny{Clustering}\\
+\tiny{Regression}\\
+\tiny{Feature Engineering}\\
+\ldots
+\end{column}
+
+\begin{column}{.05\textwidth}
+$\rightarrow$
+\end{column}
+
+\begin{column}{.2\textwidth}
+Biological Knowledge
+\end{column}
+\end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Installation}
-  pip install dxpy
-\end{frame}
-
-\subsection{Rabix from SBGenomics}
 
 \begin{frame}
-  \frametitle{Reproducible Research}
-  \begin{block}{Reproducible Research}
-The goal of reproducible research is to tie specific instructions to data
-analysis and experimental data so that scholarship can be recreated, better understood and verified.
+  \frametitle{Traditional Data Analysis}
+
+  \begin{block}{Motivations}
+\begin{itemize}
+\item Scalability
+\item High Dimensionality
+\item Heterogeneous and Complex Data
+\item Data Ownership and Distribution
+\item Non-traditional analysis
+\end{itemize}
   \end{block}
-  \begin{block}{References}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Data Mining Tasks}
+\centerline{\includegraphics[height=.6\textheight]{dmtasks.jpg}}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Data Mining and Machine Learning}
+\begin{block}{Machine Learning}
+  Machine learning provides the technical basis of data mining.
+
+---\textit{Data Mining: Practical Machine Learning Tools and Techniques}
+\end{block}
+\end{frame}
+
+\subsection{Organization of the course}
+
+\begin{frame}
+  \frametitle{Schedule}
+
+  \begin{block}{Schedule}
+\begin{itemize}
+\item Introduction
+\item Unsupervised Learning: Clustering
+\item Supervised Learning: Classifition
+\item Discussion
+\end{itemize}
+  \end{block}
+\end{frame}
+
+
+\subsection{QucikStarts of R}
+\begin{frame}
+  \frametitle{Softwares}
+  \begin{block}{Softwares}
+\begin{itemize}
+\item R: R is an free platform for data analysis and visuaztion.
+\item R packages:
+\begin{itemize}
+\item \textbf{e1071} SVM
+\item \textbf{curatedOvarianData} Microarry data of tumor.[Database 2013]
+\item \textbf{mtcars} A small dataset for concept demonstration.
+\end{itemize}
+\item Rgui
+\item Emacs + ESS
+\item Vim + R-Plugin
+\item RStudio
+\item RStudio in the Cloud
+\end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{R}
+\begin{itemize}
+  \item Download from www.r-project.org.
+  \item Installation and start;
+  \item Install e1071 package.
+\end{itemize}
+\end{frame}
+
+\section{Unspervised Learning}
+
+\begin{frame}[fragile]
+  \frametitle{Heat Map}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(colorRamps): there is no package called 'colorRamps'}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in image.default(1L:nc, 1L:nr, x, xlim = 0.5 + c(0, nc), ylim = 0.5 + : 没有"{}green2red"{}这个函数}}\end{kframe}
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Unsupervised Learning: Clustering}
+\begin{block}{What is clustering?}
+Cluster analysis or clustering is the task of grouping a set of objects in such a way that objects in the same group (called cluster) are more similar (in some sense or another) to each other than to those in other groups (clusters).
+
+---Wikipedia
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Applications}
+\begin{block}{Applications of Clustering}
+\begin{itemize}
+	\item Clustering for Understanding
+		\begin{itemize}
+			\item Biology
+			\item Information Retrieval
+			\item Climate
+			\item Psychology and medicine
+			\item business
+			\item \ldots \ldots
+		\end{itemize}
+	\item Clustering for Utility
+		\begin{itemize}
+			\item Summarization
+			\item compression
+			\item Efficiently finding nearest neighbors
+			\item \ldots \ldots
+		\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Common Clustering Methods}
+\begin{block}{Clustering Methods}
+  \begin{itemize}
+  \item Density-based clustering
+  \item K-means
+  \item Hierarchical Clustering
+  \item Semi-supervised clustering
+  \item \ldots \ldots
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\subsection{Unsupervised Learning in Bioinformatics}
+\begin{frame}
+\frametitle{Unsupervised Learning in Bioinformatics}
+\begin{itemize}
+	\item Discovery of tumor subtypes by clustering gene expression, CNV, miRNA or integrated data.
+	\item Clonal evolution analysis of tumor
+	\item Mutation spectrum clustering
+	\item Pathway or functional annotation based clustering
+	\item Graph clustering for identification of protein functional module or protein complex
+	\item Clustering metagenomic sequences
+	\item Metabolomics
+	\item \ldots \ldots
+\end{itemize}
+\end{frame}
+
+\subsection{Hierarchical Clustering and its Applications in Bioinformatics}
+\begin{frame}[fragile]
+  \frametitle{Hierarchical Clustering}
+\begin{block}{Steps}
+  \begin{itemize}
+  \item Calculating distance between individuals
+  \item Combine closest individuals (optional, recaculate distance)
+  \item Visualization and annotation
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Clustering in Bioinformatics}
+\includegraphics[width=\textwidth]{mutation.pdf}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Hierarchical Clustering in R}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlkwd{help}\hlstd{(dist)}
+ \hlkwd{help}\hlstd{(hclust)}
+ \hlkwd{help}\hlstd{(heatmap)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Distance Calculation}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlkwd{dist}\hlstd{(x,} \hlkwc{method} \hlstd{=} \hlstr{"euclidean"}\hlstd{,}
+ \hlkwc{diag} \hlstd{=} \hlnum{FALSE}\hlstd{,}
+ \hlkwc{upper} \hlstd{=} \hlnum{FALSE}\hlstd{,}
+ \hlkwc{p} \hlstd{=} \hlnum{2}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Distance Calculation}
+\tiny
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlstd{exprDist} \hlkwb{=} \hlkwd{dist}\hlstd{(}\hlkwd{t}\hlstd{(subdata))}
+ \hlstd{exprDist}
+\end{alltt}
+\begin{verbatim}
+##              TCGA.20.0987 TCGA.23.1031 TCGA.24.0979 TCGA.23.1117
+## TCGA.23.1031     6.808850                                       
+## TCGA.24.0979     6.581221     4.830934                          
+## TCGA.23.1117     5.779257     5.328651     5.726768             
+## TCGA.23.1021     6.131524     4.801447     4.920307     5.456621
+## TCGA.04.1337     7.030940     5.752603     6.475261     4.487964
+## TCGA.20.0990     6.465878     5.308989     5.974427     5.647812
+## TCGA.23.1032     7.002809     5.420443     5.256359     6.401355
+## TCGA.23.1118     5.562177     5.145970     4.799568     4.599808
+## TCGA.23.1026     5.388687     5.586002     5.880299     4.388108
+## TCGA.20.0991     5.401875     7.061145     7.235305     5.988029
+## TCGA.24.1103     6.684103     5.321956     4.508152     6.069577
+## TCGA.24.0982     5.690747     4.891739     5.676629     4.789224
+## TCGA.23.1119     5.727415     6.252046     6.338474     5.280068
+## TCGA.23.1028     5.144723     5.505960     5.534630     5.038784
+## TCGA.04.1341     6.449114     5.339794     6.528626     5.084565
+## TCGA.20.0996     6.743035     5.049169     5.365110     5.371963
+## TCGA.24.1104     4.451846     5.635849     5.834086     4.966425
+## TCGA.23.1107     5.398379     6.024515     6.524868     5.269340
+## TCGA.23.1120     5.571779     5.116315     4.304913     5.097922
+## TCGA.23.1030     6.064855     4.696293     5.837826     5.243088
+## TCGA.04.1342     5.574656     4.926885     5.309545     3.867411
+## TCGA.23.1022     6.683327     4.765877     4.917100     5.622828
+## TCGA.24.1105     5.692072     5.260009     6.253688     4.769659
+## TCGA.23.1109     6.134479     5.047752     5.648282     3.975083
+## TCGA.23.1121     6.502517     6.605177     7.450118     6.307436
+## TCGA.04.1331     6.049562     5.203473     5.877089     4.751386
+## TCGA.04.1343     5.817597     5.915161     6.674381     3.982114
+## TCGA.23.1023     5.271313     5.566108     5.916180     4.460311
+## TCGA.24.0968     5.495040     5.921840     6.388923     4.668969
+## TCGA.23.1110     7.623955     4.975785     5.613714     6.702441
+## TCGA.23.1122     6.616225     5.107069     5.856755     5.051213
+## TCGA.04.1332     6.753190     4.778981     5.451560     4.851192
+## TCGA.04.1346     5.716411     5.656121     5.632278     5.605087
+## TCGA.23.1024     6.633707     5.156449     4.972488     5.605316
+## TCGA.24.0970     7.339888     5.346762     6.360679     4.851656
+## TCGA.23.1113     7.673818     4.713976     5.206873     5.577463
+## TCGA.23.1123     5.553391     5.918878     6.620037     5.932584
+## TCGA.04.1335     5.675791     4.695481     4.794521     5.125279
+## TCGA.04.1347     7.130285     5.865855     6.690047     5.978814
+## TCGA.23.1027     6.538772     4.753724     5.234492     5.041314
+## TCGA.24.0975     6.255500     5.466632     6.876691     3.875352
+## TCGA.23.1116     5.873985     6.303962     6.710331     4.669733
+## TCGA.23.1124     6.190501     4.673113     5.659060     5.010701
+## TCGA.04.1336     5.178421     5.531164     5.077729     5.191763
+## TCGA.04.1338     6.011907     5.709957     6.352681     4.461457
+## TCGA.24.1425     6.178788     5.903296     6.784594     3.379306
+## TCGA.24.1474     6.549854     5.990845     5.491245     5.798778
+## TCGA.24.1549     6.628812     6.465649     6.009296     6.233450
+## TCGA.24.1564     6.320346     5.788167     6.491186     4.783359
+## TCGA.24.1469     6.095863     6.423908     6.751430     5.974857
+## TCGA.24.1550     6.696853     7.487867     8.220402     6.347895
+## TCGA.24.1565     6.185277     5.728656     4.652214     5.778926
+## TCGA.24.1470     4.679570     6.235972     6.986702     5.114576
+## TCGA.24.1551     4.754785     5.949307     5.943173     5.342695
+## TCGA.24.1603     6.404346     4.856126     5.061475     5.628397
+## TCGA.24.1471     5.603190     5.427529     4.911509     5.000329
+## TCGA.24.1552     6.212064     4.889885     4.685846     4.396000
+## TCGA.24.1604     5.458133     4.548749     5.171073     5.082415
+## TCGA.24.1553     4.849758     6.427100     6.392659     5.547310
+## TCGA.24.1614     6.391491     5.040836     5.071173     4.971094
+## TCGA.04.1514     8.096373     5.972506     5.953538     6.842684
+## TCGA.24.1555     6.012977     3.684480     4.661809     5.403167
+## TCGA.24.1616     6.998157     5.386452     4.943539     6.239193
+## TCGA.04.1530     6.097577     6.158330     6.600515     4.779440
+## TCGA.24.1562     6.019212     4.957673     5.458344     4.113262
+## TCGA.04.1542     7.228136     5.150976     4.207915     6.494853
+## TCGA.24.1563     6.234292     5.797207     6.592177     4.899987
+## TCGA.13.0758     5.534550     5.209567     5.832418     4.475329
+## TCGA.09.0364     8.015371     6.240342     6.144752     6.599824
+## TCGA.13.0723     5.023939     6.406844     6.924839     5.563291
+## TCGA.13.0757     6.481439     5.861646     7.266155     5.233199
+## TCGA.13.0768     5.582949     7.172864     7.244106     4.787477
+## TCGA.13.0800     7.459479     5.833088     5.431370     6.587748
+## TCGA.01.0630     5.955777     6.497309     6.545599     5.471024
+## TCGA.09.0365     7.538552     5.551708     5.622384     6.306234
+## TCGA.13.0724     6.501264     6.001425     6.158745     4.667630
+## TCGA.13.0791     5.456122     4.794000     5.670022     4.689172
+## TCGA.13.0801     4.745732     6.798263     6.415122     5.168389
+## TCGA.01.0631     6.200042     6.411007     6.727642     5.520241
+##              TCGA.23.1021 TCGA.04.1337 TCGA.20.0990 TCGA.23.1032
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337     5.616889                                       
+## TCGA.20.0990     5.697069     5.928965                          
+## TCGA.23.1032     4.604925     6.607238     5.620614             
+## TCGA.23.1118     4.703116     5.112424     5.817350     5.405951
+## TCGA.23.1026     5.137979     5.568820     6.339101     5.977265
+## TCGA.20.0991     6.855059     6.824968     6.298054     7.521352
+## TCGA.24.1103     4.634734     6.406240     5.693272     5.185889
+## TCGA.24.0982     5.034482     5.292889     4.640254     5.865018
+## TCGA.23.1119     5.835754     6.254531     5.684601     6.533492
+## TCGA.23.1028     5.341245     5.920220     5.761940     5.954056
+## TCGA.04.1341     5.540508     5.568828     5.262447     6.043128
+## TCGA.20.0996     4.850640     5.298384     5.691250     5.369342
+## TCGA.24.1104     5.121536     6.128901     5.770645     6.069770
+## TCGA.23.1107     5.539043     5.782728     5.638822     5.523731
+## TCGA.23.1120     4.781671     5.652156     5.085252     5.312224
+## TCGA.23.1030     5.359902     5.354605     5.503561     5.673869
+## TCGA.04.1342     4.363307     5.100781     5.805073     5.246735
+## TCGA.23.1022     4.619102     5.501717     4.976011     5.258335
+## TCGA.24.1105     5.451393     5.745675     5.176657     6.195590
+## TCGA.23.1109     5.879502     4.471275     5.729881     5.954075
+## TCGA.23.1121     6.260864     6.071933     4.896043     6.784925
+## TCGA.04.1331     4.792681     4.954490     5.719292     5.269508
+## TCGA.04.1343     5.803228     5.512076     5.272990     6.545469
+## TCGA.23.1023     4.958268     4.686427     5.645358     6.052272
+## TCGA.24.0968     5.849101     5.701147     5.131491     5.900408
+## TCGA.23.1110     5.334415     6.373768     5.166944     4.729109
+## TCGA.23.1122     5.385823     5.465840     5.579929     5.368356
+## TCGA.04.1332     5.438429     5.362181     6.009951     5.783310
+## TCGA.04.1346     5.385569     6.638740     5.932062     5.855937
+## TCGA.23.1024     5.192163     6.094137     4.844111     4.512505
+## TCGA.24.0970     5.147763     4.830551     5.670714     5.562877
+## TCGA.23.1113     4.880897     5.253692     5.937510     5.099472
+## TCGA.23.1123     6.042647     6.524205     4.322393     5.819041
+## TCGA.04.1335     4.880224     5.995929     5.948230     4.758405
+## TCGA.04.1347     6.264023     5.610938     4.933207     6.565687
+## TCGA.23.1027     4.673775     4.957795     6.167633     5.543239
+## TCGA.24.0975     5.752998     4.621836     6.017413     6.983706
+## TCGA.23.1116     6.036858     4.924677     6.142218     6.829468
+## TCGA.23.1124     5.232160     5.360816     5.978401     5.705171
+## TCGA.04.1336     5.164904     6.428848     5.969966     5.835940
+## TCGA.04.1338     5.449153     4.757972     6.062998     6.487826
+## TCGA.24.1425     5.800502     5.161223     6.406548     7.065748
+## TCGA.24.1474     5.741830     6.338357     6.113693     5.652072
+## TCGA.24.1549     6.036606     6.884260     5.258795     5.885973
+## TCGA.24.1564     5.117934     5.127713     6.213756     5.874947
+## TCGA.24.1469     6.219285     6.499968     5.270629     6.038399
+## TCGA.24.1550     7.307561     6.600157     6.528322     7.749776
+## TCGA.24.1565     4.955796     6.881985     6.262574     5.290157
+## TCGA.24.1470     5.852069     6.393214     6.043745     6.411097
+## TCGA.24.1551     5.832126     6.475232     5.967455     6.330878
+## TCGA.24.1603     4.967452     6.101677     5.988045     4.909039
+## TCGA.24.1471     4.923100     5.739176     5.731968     5.508338
+## TCGA.24.1552     5.366511     5.743724     5.722070     5.539534
+## TCGA.24.1604     4.830149     5.731263     4.740661     5.519209
+## TCGA.24.1553     6.182307     6.592928     5.810024     6.764649
+## TCGA.24.1614     5.066317     5.245838     5.174733     5.359717
+## TCGA.04.1514     5.440633     6.538285     5.604141     4.889428
+## TCGA.24.1555     3.778013     5.667667     5.265206     4.820163
+## TCGA.24.1616     4.493447     6.348048     5.942799     5.063046
+## TCGA.04.1530     6.237727     5.035864     6.275943     6.717059
+## TCGA.24.1562     4.160682     4.519553     5.676896     5.974151
+## TCGA.04.1542     4.772175     6.668903     6.262830     5.568534
+## TCGA.24.1563     5.558994     5.311445     6.707849     7.035853
+## TCGA.13.0758     5.111543     5.365743     5.908996     5.443470
+## TCGA.09.0364     6.376594     6.931691     6.097055     5.749090
+## TCGA.13.0723     6.220946     5.892556     5.399362     6.801103
+## TCGA.13.0757     5.858967     5.695022     4.834320     6.319861
+## TCGA.13.0768     6.871725     5.870941     6.218564     7.505127
+## TCGA.13.0800     5.519436     6.558094     6.064631     5.139538
+## TCGA.01.0630     5.780286     6.134093     6.261871     6.703875
+## TCGA.09.0365     5.552461     6.078924     5.972478     5.463588
+## TCGA.13.0724     5.766079     5.769230     4.467942     5.771968
+## TCGA.13.0791     4.352019     5.366867     5.627907     5.376364
+## TCGA.13.0801     6.248444     6.392987     6.269124     6.967947
+## TCGA.01.0631     5.526560     6.044345     6.499058     6.570706
+##              TCGA.23.1118 TCGA.23.1026 TCGA.20.0991 TCGA.24.1103
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026     4.099955                                       
+## TCGA.20.0991     6.357552     6.182525                          
+## TCGA.24.1103     4.867842     6.081865     7.366536             
+## TCGA.24.0982     5.054841     5.291365     5.624085     5.491575
+## TCGA.23.1119     5.392730     5.727449     5.284671     5.997940
+## TCGA.23.1028     4.226466     4.083566     5.660500     5.093914
+## TCGA.04.1341     5.424894     5.442878     6.057829     6.081750
+## TCGA.20.0996     4.787647     5.255760     6.931590     5.379264
+## TCGA.24.1104     4.797709     4.865718     5.759227     5.791979
+## TCGA.23.1107     4.868970     5.330601     5.761841     5.621648
+## TCGA.23.1120     4.566930     5.360005     6.006599     4.986365
+## TCGA.23.1030     4.717555     4.576515     5.993996     6.016698
+## TCGA.04.1342     3.895123     3.607269     5.789310     5.442049
+## TCGA.23.1022     5.295323     6.087234     7.460942     4.836179
+## TCGA.24.1105     5.526020     5.337174     5.571532     6.453513
+## TCGA.23.1109     4.402783     4.805448     6.233172     6.152234
+## TCGA.23.1121     6.752914     7.197165     6.415140     6.529281
+## TCGA.04.1331     4.449015     5.551847     6.841755     5.191489
+## TCGA.04.1343     5.642666     5.392040     5.531853     6.568893
+## TCGA.23.1023     4.495078     4.862619     5.826210     5.178063
+## TCGA.24.0968     5.156417     4.757662     5.876330     6.135722
+## TCGA.23.1110     6.272658     7.001823     7.962954     5.399530
+## TCGA.23.1122     4.729414     5.638835     6.305080     5.609730
+## TCGA.04.1332     5.173190     5.456305     7.032531     5.313858
+## TCGA.04.1346     5.155251     5.197032     5.544519     5.871757
+## TCGA.23.1024     5.034120     6.042904     7.176074     4.888596
+## TCGA.24.0970     5.365403     5.679936     6.771841     5.957307
+## TCGA.23.1113     5.120242     5.898030     7.470915     5.205955
+## TCGA.23.1123     5.856833     6.071033     5.638140     6.513054
+## TCGA.04.1335     4.462011     4.714209     6.743415     4.690022
+## TCGA.04.1347     5.804940     6.773242     7.010964     6.148306
+## TCGA.23.1027     4.384324     4.292914     7.035706     4.989990
+## TCGA.24.0975     5.721547     4.902173     6.378584     6.631212
+## TCGA.23.1116     5.205977     5.254576     6.266838     6.218089
+## TCGA.23.1124     4.387400     4.622502     6.798958     5.615689
+## TCGA.04.1336     4.200251     5.273435     6.444401     5.122306
+## TCGA.04.1338     5.401485     5.166299     5.870621     6.156436
+## TCGA.24.1425     5.568983     4.598129     6.200332     6.567609
+## TCGA.24.1474     5.423466     6.005983     7.381870     5.628038
+## TCGA.24.1549     5.553508     6.135717     5.762042     6.492407
+## TCGA.24.1564     4.894374     4.318488     6.128379     6.405960
+## TCGA.24.1469     5.444454     5.817635     4.784597     6.329806
+## TCGA.24.1550     7.115729     6.651057     5.990308     7.688006
+## TCGA.24.1565     5.069833     5.244998     7.659534     4.861763
+## TCGA.24.1470     5.349190     4.658338     5.545743     6.503037
+## TCGA.24.1551     5.315868     5.254115     6.030119     5.566734
+## TCGA.24.1603     4.404528     4.726689     6.548371     4.984491
+## TCGA.24.1471     4.634360     5.294056     6.860443     5.210393
+## TCGA.24.1552     4.365377     4.712206     6.969215     5.506553
+## TCGA.24.1604     4.986950     5.079543     5.931781     4.888286
+## TCGA.24.1553     5.616099     5.683348     5.103691     6.709891
+## TCGA.24.1614     4.588662     5.673658     7.260456     4.866387
+## TCGA.04.1514     6.431097     7.190618     7.819488     5.531061
+## TCGA.24.1555     4.307568     4.911566     6.622336     4.475427
+## TCGA.24.1616     5.334734     6.304960     7.428358     4.133697
+## TCGA.04.1530     5.114958     5.150066     5.050951     6.687111
+## TCGA.24.1562     4.254165     4.322711     6.315597     5.134417
+## TCGA.04.1542     5.530127     6.421791     7.433643     4.784263
+## TCGA.24.1563     5.258610     4.702260     6.380487     5.782986
+## TCGA.13.0758     4.264896     4.511935     5.898362     5.967209
+## TCGA.09.0364     6.871219     7.261480     8.240781     5.802459
+## TCGA.13.0723     5.688088     5.423332     4.683940     6.819279
+## TCGA.13.0757     6.179222     5.957227     6.058924     6.659100
+## TCGA.13.0768     5.853655     5.788033     5.702456     7.332331
+## TCGA.13.0800     5.970528     7.034388     7.836532     5.077232
+## TCGA.01.0630     5.925383     6.406965     6.630504     5.819584
+## TCGA.09.0365     6.054337     6.559138     7.680731     5.349543
+## TCGA.13.0724     5.075283     5.739459     6.451185     5.836894
+## TCGA.13.0791     4.807879     4.857784     6.065237     4.823507
+## TCGA.13.0801     5.462375     5.758361     5.354308     6.341735
+## TCGA.01.0631     5.615349     5.465237     6.212484     5.960271
+##              TCGA.24.0982 TCGA.23.1119 TCGA.23.1028 TCGA.04.1341
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119     4.880415                                       
+## TCGA.23.1028     4.756337     5.233170                          
+## TCGA.04.1341     4.586238     4.742160     5.770920             
+## TCGA.20.0996     5.480056     6.229365     5.179304     6.017095
+## TCGA.24.1104     4.752276     4.803670     4.356193     5.685101
+## TCGA.23.1107     4.695952     5.361356     4.918970     5.060306
+## TCGA.23.1120     4.368845     5.336621     5.089584     5.862489
+## TCGA.23.1030     4.562986     5.493389     4.715205     5.294610
+## TCGA.04.1342     4.686851     4.928605     4.365634     4.843468
+## TCGA.23.1022     5.132865     6.314195     5.810417     5.792751
+## TCGA.24.1105     4.378485     4.939839     5.509048     4.520409
+## TCGA.23.1109     4.442698     5.857979     4.756112     5.380729
+## TCGA.23.1121     5.459078     5.778916     6.442942     5.771213
+## TCGA.04.1331     4.842983     5.664204     5.458561     5.395423
+## TCGA.04.1343     4.507312     5.595733     5.369657     4.537247
+## TCGA.23.1023     4.447075     4.840630     4.419656     5.006491
+## TCGA.24.0968     5.133924     5.306116     4.620099     5.154164
+## TCGA.23.1110     5.585360     7.162393     6.695948     6.108463
+## TCGA.23.1122     5.174205     5.619488     5.493764     4.959573
+## TCGA.04.1332     4.773917     5.134230     5.243954     5.412679
+## TCGA.04.1346     5.425959     4.877392     4.753114     5.273844
+## TCGA.23.1024     5.145087     6.017542     5.052503     6.219902
+## TCGA.24.0970     5.043171     5.897955     6.019287     4.770618
+## TCGA.23.1113     5.085864     6.726369     6.173834     5.687557
+## TCGA.23.1123     4.957184     5.471986     5.498463     5.417762
+## TCGA.04.1335     4.891435     5.863770     4.247218     5.703603
+## TCGA.04.1347     5.328379     6.353773     6.303984     5.176930
+## TCGA.23.1027     5.142584     6.359651     5.025835     5.625938
+## TCGA.24.0975     5.035374     5.927765     5.380278     4.999137
+## TCGA.23.1116     5.499065     5.809211     5.278619     5.546533
+## TCGA.23.1124     5.186649     6.119369     4.909284     5.353501
+## TCGA.04.1336     5.958110     6.106248     4.437874     6.372299
+## TCGA.04.1338     5.066654     5.366372     5.586395     5.190089
+## TCGA.24.1425     4.990846     5.852140     4.921034     5.344395
+## TCGA.24.1474     5.770382     6.770255     5.515581     6.447899
+## TCGA.24.1549     5.459437     5.472004     5.787086     5.805047
+## TCGA.24.1564     5.482029     5.807650     5.046889     5.368416
+## TCGA.24.1469     5.411459     5.262148     5.478125     5.059348
+## TCGA.24.1550     6.183316     6.236727     6.475031     6.190249
+## TCGA.24.1565     5.987063     6.687484     4.871723     6.977347
+## TCGA.24.1470     5.379275     5.806720     4.297980     5.945251
+## TCGA.24.1551     5.064879     5.792070     4.031740     6.192038
+## TCGA.24.1603     5.412928     5.885535     4.482572     6.202881
+## TCGA.24.1471     5.247760     6.600813     5.153844     6.505738
+## TCGA.24.1552     4.764034     5.946141     5.293584     5.636033
+## TCGA.24.1604     3.956578     5.039502     4.678677     5.229755
+## TCGA.24.1553     4.838602     4.987850     5.340797     6.130100
+## TCGA.24.1614     5.084622     6.272524     5.324351     6.143501
+## TCGA.04.1514     6.118309     6.938290     6.814539     6.577917
+## TCGA.24.1555     4.683036     5.802671     4.710476     5.420428
+## TCGA.24.1616     5.795947     6.283135     5.794897     6.553899
+## TCGA.04.1530     5.063147     4.606181     5.262725     4.835608
+## TCGA.24.1562     4.611616     5.523828     4.860761     5.142091
+## TCGA.04.1542     5.642181     6.631565     6.142200     6.840154
+## TCGA.24.1563     5.571966     5.611794     4.973276     5.685258
+## TCGA.13.0758     4.812080     5.523198     4.896706     5.122647
+## TCGA.09.0364     6.536851     7.171742     6.684682     6.611881
+## TCGA.13.0723     5.159454     5.577888     4.956288     5.242844
+## TCGA.13.0757     5.085648     5.515808     5.984858     4.537302
+## TCGA.13.0768     5.837582     5.724504     5.871987     5.536231
+## TCGA.13.0800     5.889312     6.218238     6.472755     6.360235
+## TCGA.01.0630     5.269790     5.803839     5.421766     6.281393
+## TCGA.09.0365     6.112704     7.075140     6.500885     6.435566
+## TCGA.13.0724     5.109823     5.551940     5.291081     4.734301
+## TCGA.13.0791     4.778841     5.113957     4.388649     5.156957
+## TCGA.13.0801     5.302885     5.658743     5.159138     6.236159
+## TCGA.01.0631     5.348089     5.402775     4.714179     5.957888
+##              TCGA.20.0996 TCGA.24.1104 TCGA.23.1107 TCGA.23.1120
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104     5.644653                                       
+## TCGA.23.1107     5.591515     4.915474                          
+## TCGA.23.1120     5.543250     4.862029     5.500382             
+## TCGA.23.1030     5.179450     5.356864     5.294950     4.888417
+## TCGA.04.1342     4.973160     4.608072     4.781315     4.695709
+## TCGA.23.1022     5.028821     6.076327     5.630580     5.043600
+## TCGA.24.1105     6.068066     5.602161     5.314719     5.160973
+## TCGA.23.1109     5.196032     5.376590     4.926653     5.145452
+## TCGA.23.1121     6.654894     6.470498     5.721778     6.537935
+## TCGA.04.1331     5.336100     5.287221     4.757379     5.028082
+## TCGA.04.1343     6.321614     5.499534     5.047824     5.806707
+## TCGA.23.1023     5.264128     4.742736     4.966419     4.873408
+## TCGA.24.0968     5.831279     4.711141     5.034570     5.037670
+## TCGA.23.1110     5.575135     6.801027     6.384411     5.831708
+## TCGA.23.1122     5.596595     5.862211     5.429897     5.116660
+## TCGA.04.1332     5.029770     5.487051     5.915177     5.097014
+## TCGA.04.1346     5.869066     5.194714     5.666460     5.032703
+## TCGA.23.1024     5.044429     5.815928     5.615122     4.930344
+## TCGA.24.0970     5.525540     6.477764     5.256839     5.425749
+## TCGA.23.1113     4.706204     6.321796     5.896301     5.483225
+## TCGA.23.1123     6.239077     5.066502     5.378388     5.634640
+## TCGA.04.1335     4.576579     4.876080     4.862243     4.773214
+## TCGA.04.1347     5.829320     6.643419     5.969353     5.863648
+## TCGA.23.1027     4.623992     5.700085     5.737576     4.632142
+## TCGA.24.0975     5.952142     5.790855     5.928114     5.831903
+## TCGA.23.1116     5.847112     5.980000     5.488934     5.617974
+## TCGA.23.1124     4.851831     5.285452     5.679838     5.267066
+## TCGA.04.1336     5.269606     4.727887     5.391394     4.779602
+## TCGA.04.1338     5.616759     6.057872     5.714253     5.272748
+## TCGA.24.1425     6.017928     5.496863     5.748086     5.953929
+## TCGA.24.1474     5.427253     6.082301     5.618001     5.378495
+## TCGA.24.1549     6.409853     5.872790     5.772553     4.956789
+## TCGA.24.1564     5.225174     5.745566     5.421552     5.699577
+## TCGA.24.1469     6.265572     5.815478     4.731716     5.800188
+## TCGA.24.1550     7.235113     6.938354     6.562851     7.041521
+## TCGA.24.1565     4.921082     5.468595     5.798261     5.348664
+## TCGA.24.1470     5.869311     4.734888     4.697656     5.810353
+## TCGA.24.1551     5.614837     4.480832     4.888051     4.784130
+## TCGA.24.1603     4.583905     5.111039     5.540192     5.117606
+## TCGA.24.1471     4.908951     5.361185     5.389946     4.792105
+## TCGA.24.1552     4.965831     5.086645     5.443077     4.613118
+## TCGA.24.1604     5.468912     4.231411     5.125041     4.394536
+## TCGA.24.1553     6.636030     4.731276     5.512881     5.336134
+## TCGA.24.1614     4.259242     5.440507     5.101647     5.049800
+## TCGA.04.1514     5.549331     7.020353     6.822751     5.815592
+## TCGA.24.1555     4.557397     4.829722     5.283483     4.391156
+## TCGA.24.1616     5.032461     6.157929     6.251472     5.556329
+## TCGA.04.1530     6.265587     5.423641     5.281518     5.323333
+## TCGA.24.1562     4.903710     5.087721     5.351429     4.716665
+## TCGA.04.1542     5.478313     6.524297     6.723683     4.831393
+## TCGA.24.1563     5.655530     5.784952     6.072811     5.703616
+## TCGA.13.0758     5.179724     4.315170     4.816439     4.620956
+## TCGA.09.0364     6.002923     7.255686     6.760414     6.533168
+## TCGA.13.0723     6.119611     5.243573     5.050980     5.902109
+## TCGA.13.0757     6.164332     6.050946     5.672516     6.082959
+## TCGA.13.0768     6.786075     5.767530     5.836235     5.976195
+## TCGA.13.0800     5.570076     6.838028     6.257849     5.925611
+## TCGA.01.0630     5.707096     5.450133     5.325740     6.110322
+## TCGA.09.0365     5.213832     6.846283     6.224434     6.026904
+## TCGA.13.0724     5.757508     5.477280     5.219641     5.255862
+## TCGA.13.0791     5.105416     4.398068     4.911096     4.539367
+## TCGA.13.0801     6.565447     4.366731     4.990179     5.564142
+## TCGA.01.0631     5.684320     5.333980     5.474794     6.220491
+##              TCGA.23.1030 TCGA.04.1342 TCGA.23.1022 TCGA.24.1105
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342     4.412151                                       
+## TCGA.23.1022     5.265585     5.357707                          
+## TCGA.24.1105     4.982552     4.848294     5.716752             
+## TCGA.23.1109     4.759195     4.274103     5.616155     5.449002
+## TCGA.23.1121     6.607420     6.313075     5.792913     5.634750
+## TCGA.04.1331     5.212246     4.535918     5.245576     5.783328
+## TCGA.04.1343     5.450616     4.848699     6.030645     5.034349
+## TCGA.23.1023     5.205731     4.312305     5.299742     4.976883
+## TCGA.24.0968     5.068579     4.466363     5.991263     5.293986
+## TCGA.23.1110     6.101293     6.235801     4.746999     6.297532
+## TCGA.23.1122     4.837027     4.781389     5.227993     5.543364
+## TCGA.04.1332     5.247147     4.982459     5.359375     5.806670
+## TCGA.04.1346     5.165808     5.057525     5.825443     5.104176
+## TCGA.23.1024     5.214742     5.244746     4.818452     5.721065
+## TCGA.24.0970     4.837756     4.901667     5.103456     4.994296
+## TCGA.23.1113     5.277799     5.183769     4.907407     6.184968
+## TCGA.23.1123     5.532551     5.542901     6.213192     5.596170
+## TCGA.04.1335     4.927471     4.161147     5.070947     5.645187
+## TCGA.04.1347     6.094940     6.041998     5.725132     5.928141
+## TCGA.23.1027     4.427322     4.144615     5.611978     5.740154
+## TCGA.24.0975     4.905193     4.902693     6.018319     4.709642
+## TCGA.23.1116     5.488825     5.037296     6.180258     5.613642
+## TCGA.23.1124     3.893092     4.375351     5.042430     5.696751
+## TCGA.04.1336     5.429226     4.675893     5.392809     5.869837
+## TCGA.04.1338     4.988276     4.391285     5.658577     4.635560
+## TCGA.24.1425     5.405793     4.516934     6.369893     5.110588
+## TCGA.24.1474     6.193859     5.628404     5.800189     6.339600
+## TCGA.24.1549     6.052045     5.628519     6.678434     5.547570
+## TCGA.24.1564     4.885772     4.204607     5.713397     5.557415
+## TCGA.24.1469     5.333032     5.412575     6.654841     5.638458
+## TCGA.24.1550     6.652717     6.606191     7.504052     6.196921
+## TCGA.24.1565     6.036785     5.212444     5.168773     6.631182
+## TCGA.24.1470     5.258340     4.705425     6.373094     5.691506
+## TCGA.24.1551     5.379324     5.212332     5.935168     5.747467
+## TCGA.24.1603     4.420558     4.710094     5.566691     6.018459
+## TCGA.24.1471     5.600432     4.942946     5.108715     5.962064
+## TCGA.24.1552     5.060311     4.080459     5.284114     5.235375
+## TCGA.24.1604     5.051557     4.798693     4.862972     4.854692
+## TCGA.24.1553     5.759774     5.682897     6.427959     5.132267
+## TCGA.24.1614     5.557023     4.964549     4.812158     5.935172
+## TCGA.04.1514     6.898468     6.345757     5.587873     6.831284
+## TCGA.24.1555     4.586894     4.154913     4.446574     5.167379
+## TCGA.24.1616     6.261190     5.539726     4.892792     6.579216
+## TCGA.04.1530     5.013568     4.641592     6.607544     5.250580
+## TCGA.24.1562     4.752188     3.968551     5.174298     5.407581
+## TCGA.04.1542     5.816423     5.660423     5.036720     6.302952
+## TCGA.24.1563     5.050447     4.655848     6.584491     5.750086
+## TCGA.13.0758     5.028842     4.067158     5.774096     5.365534
+## TCGA.09.0364     6.692388     6.566976     5.594389     7.189085
+## TCGA.13.0723     5.668409     5.574670     6.574357     5.231976
+## TCGA.13.0757     5.698593     5.518719     6.179621     5.013413
+## TCGA.13.0768     6.143222     5.671430     7.393138     5.748842
+## TCGA.13.0800     6.581739     5.998335     5.293927     6.458624
+## TCGA.01.0630     6.376824     6.036680     6.106623     6.522130
+## TCGA.09.0365     6.293206     5.971329     4.900735     6.607874
+## TCGA.13.0724     5.436219     4.917165     5.364001     5.838849
+## TCGA.13.0791     4.942791     4.110429     5.086355     5.358547
+## TCGA.13.0801     6.319731     5.591062     6.756074     6.154097
+## TCGA.01.0631     5.897459     5.687452     6.409493     6.260215
+##              TCGA.23.1109 TCGA.23.1121 TCGA.04.1331 TCGA.04.1343
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121     6.308869                                       
+## TCGA.04.1331     4.578506     5.863963                          
+## TCGA.04.1343     4.889353     5.993695     5.590527             
+## TCGA.23.1023     4.790704     5.164598     4.841738     5.170679
+## TCGA.24.0968     5.144538     6.118105     5.373235     4.850005
+## TCGA.23.1110     5.895487     6.002660     5.393804     6.737175
+## TCGA.23.1122     5.152484     6.231121     4.335687     5.569719
+## TCGA.04.1332     4.665285     6.254413     4.905013     5.845538
+## TCGA.04.1346     6.133834     6.934099     6.122286     5.771301
+## TCGA.23.1024     5.248240     6.206248     5.154329     6.301543
+## TCGA.24.0970     4.999633     6.028090     4.785838     5.157936
+## TCGA.23.1113     5.170225     6.999337     4.877784     6.109931
+## TCGA.23.1123     5.400288     5.465940     5.986789     5.149397
+## TCGA.04.1335     4.632645     6.493033     4.632973     5.810836
+## TCGA.04.1347     5.511254     5.408815     5.158809     5.901061
+## TCGA.23.1027     4.929916     7.136906     5.005494     5.866685
+## TCGA.24.0975     5.310649     6.382430     5.650913     4.533622
+## TCGA.23.1116     5.231405     5.678691     5.736984     5.261034
+## TCGA.23.1124     5.051195     7.004943     4.995197     5.702838
+## TCGA.04.1336     5.337304     7.048689     5.251923     6.128992
+## TCGA.04.1338     5.073083     5.980049     5.151385     5.366905
+## TCGA.24.1425     4.757117     6.545074     5.492544     4.394939
+## TCGA.24.1474     5.390789     6.679024     4.910905     6.743187
+## TCGA.24.1549     5.780839     5.996340     6.237164     6.211839
+## TCGA.24.1564     5.180780     6.550954     5.518199     5.133946
+## TCGA.24.1469     5.743383     5.525584     5.746804     5.468538
+## TCGA.24.1550     6.974930     5.357239     7.110359     5.966253
+## TCGA.24.1565     5.874939     7.418805     5.735501     6.784248
+## TCGA.24.1470     5.271580     6.502880     5.701646     5.464303
+## TCGA.24.1551     5.305739     6.398128     5.519466     5.958298
+## TCGA.24.1603     5.253306     7.222498     5.319079     6.472616
+## TCGA.24.1471     4.739838     6.842304     5.435494     5.670663
+## TCGA.24.1552     4.234493     6.914263     5.077222     5.895221
+## TCGA.24.1604     5.127355     5.884580     5.530502     5.315787
+## TCGA.24.1553     5.722094     6.276680     6.118657     5.395938
+## TCGA.24.1614     4.513958     5.999537     4.313956     5.891940
+## TCGA.04.1514     6.633091     6.109559     5.748437     7.265339
+## TCGA.24.1555     5.143882     6.515613     4.980117     6.017835
+## TCGA.24.1616     6.546630     6.698009     5.721289     6.964697
+## TCGA.04.1530     4.704739     6.053522     5.374742     5.250050
+## TCGA.24.1562     4.904085     6.425366     4.541370     5.045672
+## TCGA.04.1542     6.431287     7.258914     5.891486     7.000103
+## TCGA.24.1563     5.381234     6.883280     5.515923     6.168130
+## TCGA.13.0758     4.652525     6.690421     4.550472     5.105171
+## TCGA.09.0364     6.445072     6.169469     6.026070     7.040538
+## TCGA.13.0723     5.427931     5.703791     6.106682     4.848202
+## TCGA.13.0757     5.944613     5.387045     5.552623     4.817654
+## TCGA.13.0768     5.753528     6.316521     5.958939     4.504764
+## TCGA.13.0800     6.399180     6.079409     4.935999     7.281684
+## TCGA.01.0630     5.838827     5.998413     5.786715     5.746516
+## TCGA.09.0365     5.986473     6.266738     5.346671     6.924392
+## TCGA.13.0724     5.123483     5.978943     5.132933     4.537165
+## TCGA.13.0791     5.373589     6.003700     4.725592     5.388345
+## TCGA.13.0801     5.735521     6.483232     6.190387     5.473004
+## TCGA.01.0631     5.959068     6.322082     5.908127     5.684580
+##              TCGA.23.1023 TCGA.24.0968 TCGA.23.1110 TCGA.23.1122
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121                                                    
+## TCGA.04.1331                                                    
+## TCGA.04.1343                                                    
+## TCGA.23.1023                                                    
+## TCGA.24.0968     5.036636                                       
+## TCGA.23.1110     6.255466     6.625870                          
+## TCGA.23.1122     5.046082     5.285424     5.647712             
+## TCGA.04.1332     4.400947     5.898578     5.729632     5.069253
+## TCGA.04.1346     5.091006     5.397528     6.757053     5.510618
+## TCGA.23.1024     5.300834     6.027801     5.007805     5.209131
+## TCGA.24.0970     5.347947     5.552227     5.897360     4.481012
+## TCGA.23.1113     5.915978     6.042786     5.072798     4.930322
+## TCGA.23.1123     5.371159     4.819121     5.834342     6.153355
+## TCGA.04.1335     4.961320     4.944240     5.559155     5.378125
+## TCGA.04.1347     5.880967     5.794792     5.539791     5.579790
+## TCGA.23.1027     5.368564     5.448702     5.943514     5.523632
+## TCGA.24.0975     4.586196     4.783327     7.069247     5.753052
+## TCGA.23.1116     4.210661     4.956663     7.331626     5.927866
+## TCGA.23.1124     5.105839     5.087499     6.077436     4.774911
+## TCGA.04.1336     5.163149     5.069148     6.419006     5.405551
+## TCGA.04.1338     4.616893     5.222429     6.632458     5.498213
+## TCGA.24.1425     4.655819     5.237326     7.383580     5.601849
+## TCGA.24.1474     5.886692     5.731631     5.461160     5.194250
+## TCGA.24.1549     5.770399     5.445205     6.192890     6.134975
+## TCGA.24.1564     4.909771     5.206902     6.803086     5.624272
+## TCGA.24.1469     5.636332     5.092910     6.251496     5.272290
+## TCGA.24.1550     5.406160     5.821611     7.737029     6.696990
+## TCGA.24.1565     5.685416     5.893170     6.021952     6.187063
+## TCGA.24.1470     5.120377     4.184532     7.321682     5.826054
+## TCGA.24.1551     4.653335     4.789100     6.829080     5.804944
+## TCGA.24.1603     5.471526     5.598117     5.695647     5.176654
+## TCGA.24.1471     5.540351     5.582596     5.720080     5.630535
+## TCGA.24.1552     5.539096     5.159520     5.883608     5.367571
+## TCGA.24.1604     4.404406     5.042541     5.621368     5.642463
+## TCGA.24.1553     5.026129     5.471328     7.362432     6.612420
+## TCGA.24.1614     5.138362     5.522570     5.015778     5.167263
+## TCGA.04.1514     6.305503     6.763851     4.729131     5.615392
+## TCGA.24.1555     5.108243     5.289756     5.056689     5.068752
+## TCGA.24.1616     5.547421     6.657984     5.120815     5.624452
+## TCGA.04.1530     4.925355     4.936988     6.986205     5.293121
+## TCGA.24.1562     4.406698     5.184680     6.256083     4.952511
+## TCGA.04.1542     6.228557     6.871045     5.271809     6.186130
+## TCGA.24.1563     4.824752     5.307231     7.035180     5.827969
+## TCGA.13.0758     4.825004     4.494578     6.409102     4.411542
+## TCGA.09.0364     6.246769     6.398963     5.033349     6.058424
+## TCGA.13.0723     4.924207     4.956828     7.142932     6.191188
+## TCGA.13.0757     5.187522     4.768338     6.230328     5.489653
+## TCGA.13.0768     4.990892     5.113533     7.784466     6.336821
+## TCGA.13.0800     6.063029     6.912403     4.988049     5.407006
+## TCGA.01.0630     5.135583     5.755092     6.953170     6.219821
+## TCGA.09.0365     5.879744     6.616124     4.746908     5.356719
+## TCGA.13.0724     5.413712     4.539658     5.621385     4.823715
+## TCGA.13.0791     4.085632     4.510467     5.674514     4.577663
+## TCGA.13.0801     5.146165     5.549509     7.497267     6.731723
+## TCGA.01.0631     4.642724     5.490445     7.238317     6.094204
+##              TCGA.04.1332 TCGA.04.1346 TCGA.23.1024 TCGA.24.0970
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121                                                    
+## TCGA.04.1331                                                    
+## TCGA.04.1343                                                    
+## TCGA.23.1023                                                    
+## TCGA.24.0968                                                    
+## TCGA.23.1110                                                    
+## TCGA.23.1122                                                    
+## TCGA.04.1332                                                    
+## TCGA.04.1346     5.857632                                       
+## TCGA.23.1024     5.035961     6.025260                          
+## TCGA.24.0970     5.450934     5.712184     5.526364             
+## TCGA.23.1113     5.259043     6.608853     5.334843     4.557802
+## TCGA.23.1123     6.001418     6.031474     5.583991     6.405323
+## TCGA.04.1335     4.553824     5.104355     4.923706     5.819624
+## TCGA.04.1347     5.913841     6.784204     5.917836     5.433337
+## TCGA.23.1027     5.231195     5.775303     5.367942     5.026720
+## TCGA.24.0975     5.245360     5.790315     6.499477     5.335158
+## TCGA.23.1116     5.462774     5.690010     6.477353     5.051790
+## TCGA.23.1124     5.288450     5.349018     5.453454     5.205657
+## TCGA.04.1336     6.152786     5.106735     5.019915     6.001618
+## TCGA.04.1338     5.605636     5.557887     6.384842     4.518521
+## TCGA.24.1425     5.167011     6.035404     6.494121     5.288149
+## TCGA.24.1474     5.914090     6.126870     4.893028     5.904888
+## TCGA.24.1549     6.055597     5.629636     6.014899     6.138418
+## TCGA.24.1564     5.287377     5.123425     5.983006     4.606849
+## TCGA.24.1469     6.487425     5.294261     6.140646     5.668243
+## TCGA.24.1550     6.921771     6.746378     7.631395     6.612455
+## TCGA.24.1565     5.978531     5.807571     4.767806     6.523175
+## TCGA.24.1470     6.456396     5.518920     6.182495     6.010233
+## TCGA.24.1551     5.768550     4.975824     5.443357     6.094716
+## TCGA.24.1603     4.877569     5.170516     4.730935     5.742856
+## TCGA.24.1471     5.457896     6.208191     4.757899     5.805945
+## TCGA.24.1552     5.237171     5.951147     5.010298     5.268388
+## TCGA.24.1604     4.925481     5.113904     4.567297     5.640859
+## TCGA.24.1553     6.189939     5.299400     5.982482     6.782318
+## TCGA.24.1614     5.041688     6.203619     4.493617     5.473413
+## TCGA.04.1514     5.793844     6.977217     5.245921     5.734697
+## TCGA.24.1555     4.875021     5.139908     4.514335     5.451966
+## TCGA.24.1616     5.452326     6.221112     4.597096     6.171931
+## TCGA.04.1530     5.586820     5.332853     6.420440     4.995831
+## TCGA.24.1562     4.771906     5.186842     5.745919     4.704114
+## TCGA.04.1542     5.473457     6.184476     5.125369     6.072339
+## TCGA.24.1563     5.317089     5.893037     6.576772     5.728876
+## TCGA.13.0758     5.043112     5.420598     5.794719     5.446118
+## TCGA.09.0364     5.658833     7.134471     5.617167     5.996067
+## TCGA.13.0723     6.113129     5.696114     6.760499     6.311099
+## TCGA.13.0757     5.681841     5.980945     6.462511     5.491601
+## TCGA.13.0768     6.170536     6.370025     7.291682     6.393985
+## TCGA.13.0800     5.374333     6.549555     4.591104     5.596363
+## TCGA.01.0630     5.776187     6.384585     6.354845     6.505932
+## TCGA.09.0365     5.806452     6.439503     5.031673     5.219293
+## TCGA.13.0724     5.587597     5.693396     5.596150     5.163414
+## TCGA.13.0791     4.996307     4.751037     5.545353     5.272592
+## TCGA.13.0801     6.595410     5.826401     6.522811     6.640605
+## TCGA.01.0631     5.341598     5.438238     6.599640     6.381506
+##              TCGA.23.1113 TCGA.23.1123 TCGA.04.1335 TCGA.04.1347
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121                                                    
+## TCGA.04.1331                                                    
+## TCGA.04.1343                                                    
+## TCGA.23.1023                                                    
+## TCGA.24.0968                                                    
+## TCGA.23.1110                                                    
+## TCGA.23.1122                                                    
+## TCGA.04.1332                                                    
+## TCGA.04.1346                                                    
+## TCGA.23.1024                                                    
+## TCGA.24.0970                                                    
+## TCGA.23.1113                                                    
+## TCGA.23.1123     6.613302                                       
+## TCGA.04.1335     5.324692     5.752679                          
+## TCGA.04.1347     5.769125     5.993187     6.272468             
+## TCGA.23.1027     4.810545     6.489275     4.680851     6.050249
+## TCGA.24.0975     6.171206     6.166926     5.656383     6.467944
+## TCGA.23.1116     6.384887     6.394863     5.545746     6.271861
+## TCGA.23.1124     4.938245     6.217099     4.721036     6.222980
+## TCGA.04.1336     6.146661     5.940198     4.541748     6.464111
+## TCGA.04.1338     5.749436     6.250355     5.505051     6.011811
+## TCGA.24.1425     6.059647     6.222934     5.776112     6.425071
+## TCGA.24.1474     5.546464     6.678727     5.144957     5.677340
+## TCGA.24.1549     6.814379     5.042450     5.868833     6.146030
+## TCGA.24.1564     5.876313     6.040178     5.269054     6.568383
+## TCGA.24.1469     6.530264     4.593888     5.903588     5.939156
+## TCGA.24.1550     7.768846     6.182664     7.168058     6.765828
+## TCGA.24.1565     6.051816     6.577963     4.216247     6.967595
+## TCGA.24.1470     6.633950     5.410043     5.531450     6.797977
+## TCGA.24.1551     6.301239     5.801792     4.710691     6.576119
+## TCGA.24.1603     5.012145     5.853887     4.516356     6.628774
+## TCGA.24.1471     5.149846     6.037943     4.885068     6.283740
+## TCGA.24.1552     4.740084     6.111821     4.547317     6.030690
+## TCGA.24.1604     5.735917     4.616015     5.019015     6.175890
+## TCGA.24.1553     7.271975     4.912470     5.861337     7.005298
+## TCGA.24.1614     4.572435     6.006923     4.694459     5.392837
+## TCGA.04.1514     5.299133     6.725290     6.103383     5.602416
+## TCGA.24.1555     4.763050     5.417506     4.190624     5.996352
+## TCGA.24.1616     4.799826     6.486357     5.383097     6.538077
+## TCGA.04.1530     6.214799     5.766826     5.920110     5.900706
+## TCGA.24.1562     4.514098     5.859608     5.004714     5.953372
+## TCGA.04.1542     5.292843     6.850221     5.461202     6.405539
+## TCGA.24.1563     6.143615     6.757814     5.463591     6.809667
+## TCGA.13.0758     5.464320     5.800636     4.844086     5.788571
+## TCGA.09.0364     5.917061     6.547325     5.679587     5.696547
+## TCGA.13.0723     6.920501     4.845151     5.789536     6.027285
+## TCGA.13.0757     6.380806     5.196887     6.255306     5.401175
+## TCGA.13.0768     7.218018     5.524901     6.559687     6.251052
+## TCGA.13.0800     5.814815     6.936694     5.560014     5.912528
+## TCGA.01.0630     6.383801     6.211513     6.141473     6.778637
+## TCGA.09.0365     5.053614     6.953505     5.754398     5.661750
+## TCGA.13.0724     5.645099     5.132251     5.421763     4.989997
+## TCGA.13.0791     5.273940     5.616929     4.524705     5.923086
+## TCGA.13.0801     6.879872     5.563459     5.992438     6.936272
+## TCGA.01.0631     6.529490     5.966034     5.722164     6.968736
+##              TCGA.23.1027 TCGA.24.0975 TCGA.23.1116 TCGA.23.1124
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121                                                    
+## TCGA.04.1331                                                    
+## TCGA.04.1343                                                    
+## TCGA.23.1023                                                    
+## TCGA.24.0968                                                    
+## TCGA.23.1110                                                    
+## TCGA.23.1122                                                    
+## TCGA.04.1332                                                    
+## TCGA.04.1346                                                    
+## TCGA.23.1024                                                    
+## TCGA.24.0970                                                    
+## TCGA.23.1113                                                    
+## TCGA.23.1123                                                    
+## TCGA.04.1335                                                    
+## TCGA.04.1347                                                    
+## TCGA.23.1027                                                    
+## TCGA.24.0975     5.073894                                       
+## TCGA.23.1116     5.215797     4.489078                          
+## TCGA.23.1124     4.091778     5.384506     5.539993             
+## TCGA.04.1336     5.356918     6.284751     6.036560     5.133091
+## TCGA.04.1338     5.315394     4.613528     4.703708     5.292654
+## TCGA.24.1425     5.505983     3.697775     4.973538     5.515182
+## TCGA.24.1474     5.374978     6.878192     6.342419     6.007724
+## TCGA.24.1549     6.389239     6.952794     6.142020     6.635131
+## TCGA.24.1564     5.018570     5.120583     4.762775     5.006190
+## TCGA.24.1469     6.062602     6.263678     5.966142     6.029120
+## TCGA.24.1550     7.173741     5.764093     5.235265     7.183067
+## TCGA.24.1565     5.454077     6.814415     6.685744     5.597834
+## TCGA.24.1470     5.787293     5.585283     5.591754     5.381429
+## TCGA.24.1551     5.395396     5.806852     5.226101     5.391461
+## TCGA.24.1603     4.488186     6.183114     6.257910     4.739071
+## TCGA.24.1471     4.865166     6.328943     6.089011     5.109043
+## TCGA.24.1552     4.285383     5.956378     5.810824     4.488911
+## TCGA.24.1604     5.035524     5.379330     5.844887     5.051739
+## TCGA.24.1553     6.592716     5.934230     6.108727     6.321941
+## TCGA.24.1614     4.761184     5.947141     5.879341     5.057776
+## TCGA.04.1514     6.233164     7.470838     7.134209     6.850892
+## TCGA.24.1555     4.170937     5.778840     6.165893     4.447442
+## TCGA.24.1616     5.613646     6.868531     6.641858     5.584550
+## TCGA.04.1530     5.372278     5.443718     4.988032     5.531579
+## TCGA.24.1562     4.102931     4.391392     4.751730     4.514126
+## TCGA.04.1542     5.053472     6.981950     7.112877     5.995415
+## TCGA.24.1563     4.666262     4.821822     5.051897     5.180267
+## TCGA.13.0758     4.877493     5.406470     5.638452     4.741616
+## TCGA.09.0364     6.609241     7.103834     6.821459     6.802649
+## TCGA.13.0723     6.244100     5.355442     4.905546     5.995304
+## TCGA.13.0757     6.021296     4.552339     5.502393     5.909608
+## TCGA.13.0768     6.442655     4.856788     4.982304     6.557263
+## TCGA.13.0800     6.173298     7.425239     6.946085     6.418370
+## TCGA.01.0630     6.497589     5.978131     6.007458     6.324629
+## TCGA.09.0365     5.753880     7.031779     6.548834     5.829804
+## TCGA.13.0724     5.903793     5.694961     5.718680     5.389873
+## TCGA.13.0791     4.910936     5.036783     5.402804     4.507986
+## TCGA.13.0801     6.383485     6.169019     5.695934     6.472901
+## TCGA.01.0631     6.270587     5.292887     5.716392     6.248800
+##              TCGA.04.1336 TCGA.04.1338 TCGA.24.1425 TCGA.24.1474
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121                                                    
+## TCGA.04.1331                                                    
+## TCGA.04.1343                                                    
+## TCGA.23.1023                                                    
+## TCGA.24.0968                                                    
+## TCGA.23.1110                                                    
+## TCGA.23.1122                                                    
+## TCGA.04.1332                                                    
+## TCGA.04.1346                                                    
+## TCGA.23.1024                                                    
+## TCGA.24.0970                                                    
+## TCGA.23.1113                                                    
+## TCGA.23.1123                                                    
+## TCGA.04.1335                                                    
+## TCGA.04.1347                                                    
+## TCGA.23.1027                                                    
+## TCGA.24.0975                                                    
+## TCGA.23.1116                                                    
+## TCGA.23.1124                                                    
+## TCGA.04.1336                                                    
+## TCGA.04.1338     5.959544                                       
+## TCGA.24.1425     6.061540     4.963033                          
+## TCGA.24.1474     4.975801     6.448266     6.697681             
+## TCGA.24.1549     6.231559     6.297913     6.827505     6.412534
+## TCGA.24.1564     5.788705     4.490289     4.880912     6.276443
+## TCGA.24.1469     6.072503     5.988859     6.489408     6.443656
+## TCGA.24.1550     7.466874     6.235252     6.297708     7.336621
+## TCGA.24.1565     4.367399     6.633217     6.432501     4.824198
+## TCGA.24.1470     4.650794     5.603203     5.102191     5.943462
+## TCGA.24.1551     4.396332     5.819734     5.445544     4.988630
+## TCGA.24.1603     4.821542     6.179919     6.050335     5.427454
+## TCGA.24.1471     4.553653     6.017023     5.972889     5.178689
+## TCGA.24.1552     4.916417     5.390680     5.656545     5.221790
+## TCGA.24.1604     5.396223     5.725636     5.466848     6.003988
+## TCGA.24.1553     5.722533     6.320529     5.852764     6.814932
+## TCGA.24.1614     4.888059     5.935506     5.925140     4.413609
+## TCGA.04.1514     6.724104     6.848822     7.254679     5.539849
+## TCGA.24.1555     4.596196     5.539455     5.678749     5.424724
+## TCGA.24.1616     5.791601     6.213992     6.874159     5.966556
+## TCGA.04.1530     6.037096     4.829189     5.418867     6.088753
+## TCGA.24.1562     5.394498     4.648970     4.252185     5.957563
+## TCGA.04.1542     5.848883     6.517164     7.046663     5.897245
+## TCGA.24.1563     5.899023     4.529257     4.991866     6.532528
+## TCGA.13.0758     5.137243     5.358066     4.989186     5.481264
+## TCGA.09.0364     6.721928     6.629836     7.193161     5.642423
+## TCGA.13.0723     6.165594     5.842043     5.427054     7.018957
+## TCGA.13.0757     6.864077     5.545920     5.167819     7.005708
+## TCGA.13.0768     6.540642     5.736360     5.011179     7.118633
+## TCGA.13.0800     6.325602     6.460073     7.405928     5.066920
+## TCGA.01.0630     6.187634     5.965659     5.558326     6.568690
+## TCGA.09.0365     5.910936     6.307151     7.108149     4.993485
+## TCGA.13.0724     5.494921     5.945511     5.653876     5.939401
+## TCGA.13.0791     4.809740     5.000039     5.113515     5.617778
+## TCGA.13.0801     5.422156     5.886116     5.792389     6.471804
+## TCGA.01.0631     6.477157     5.922179     4.925188     6.817675
+##              TCGA.24.1549 TCGA.24.1564 TCGA.24.1469 TCGA.24.1550
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121                                                    
+## TCGA.04.1331                                                    
+## TCGA.04.1343                                                    
+## TCGA.23.1023                                                    
+## TCGA.24.0968                                                    
+## TCGA.23.1110                                                    
+## TCGA.23.1122                                                    
+## TCGA.04.1332                                                    
+## TCGA.04.1346                                                    
+## TCGA.23.1024                                                    
+## TCGA.24.0970                                                    
+## TCGA.23.1113                                                    
+## TCGA.23.1123                                                    
+## TCGA.04.1335                                                    
+## TCGA.04.1347                                                    
+## TCGA.23.1027                                                    
+## TCGA.24.0975                                                    
+## TCGA.23.1116                                                    
+## TCGA.23.1124                                                    
+## TCGA.04.1336                                                    
+## TCGA.04.1338                                                    
+## TCGA.24.1425                                                    
+## TCGA.24.1474                                                    
+## TCGA.24.1549                                                    
+## TCGA.24.1564     6.434789                                       
+## TCGA.24.1469     4.673935     6.029442                          
+## TCGA.24.1550     6.637368     6.423475     5.645300             
+## TCGA.24.1565     6.742308     6.135954     7.070045     8.043163
+## TCGA.24.1470     6.377577     5.335827     5.874436     6.369082
+## TCGA.24.1551     6.218492     5.790894     5.857464     6.557752
+## TCGA.24.1603     6.043087     5.291575     5.720807     7.338205
+## TCGA.24.1471     6.271304     5.713718     6.563533     7.858394
+## TCGA.24.1552     5.655692     5.833674     6.222008     7.687985
+## TCGA.24.1604     5.682202     5.604754     5.584398     6.776618
+## TCGA.24.1553     5.874530     6.318593     5.682934     6.361681
+## TCGA.24.1614     6.140050     6.069907     6.234073     7.072797
+## TCGA.04.1514     6.380308     6.637833     6.519754     7.160610
+## TCGA.24.1555     5.716816     5.205670     5.801718     7.407666
+## TCGA.24.1616     6.433376     6.325649     6.698995     7.903157
+## TCGA.04.1530     5.268786     5.356570     4.790854     5.878064
+## TCGA.24.1562     6.157090     4.794832     5.770335     6.750768
+## TCGA.04.1542     6.225550     6.732552     7.059537     8.131947
+## TCGA.24.1563     6.775140     5.265868     6.148681     6.729053
+## TCGA.13.0758     5.726655     5.070589     5.524916     6.859188
+## TCGA.09.0364     6.802520     6.684487     6.823628     7.130754
+## TCGA.13.0723     5.412752     5.679118     4.859025     5.530922
+## TCGA.13.0757     5.953693     5.763532     5.408653     5.557457
+## TCGA.13.0768     5.973497     6.122799     5.598573     5.324537
+## TCGA.13.0800     6.421154     6.458115     6.773551     7.919065
+## TCGA.01.0630     6.870492     6.434224     6.405785     6.744717
+## TCGA.09.0365     6.996053     6.400279     6.650665     7.314810
+## TCGA.13.0724     5.618695     5.667463     4.972698     6.554520
+## TCGA.13.0791     5.978596     5.129705     5.406267     6.097401
+## TCGA.13.0801     6.082899     6.047741     5.826307     6.704391
+## TCGA.01.0631     6.461292     5.583084     5.961446     6.408411
+##              TCGA.24.1565 TCGA.24.1470 TCGA.24.1551 TCGA.24.1603
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121                                                    
+## TCGA.04.1331                                                    
+## TCGA.04.1343                                                    
+## TCGA.23.1023                                                    
+## TCGA.24.0968                                                    
+## TCGA.23.1110                                                    
+## TCGA.23.1122                                                    
+## TCGA.04.1332                                                    
+## TCGA.04.1346                                                    
+## TCGA.23.1024                                                    
+## TCGA.24.0970                                                    
+## TCGA.23.1113                                                    
+## TCGA.23.1123                                                    
+## TCGA.04.1335                                                    
+## TCGA.04.1347                                                    
+## TCGA.23.1027                                                    
+## TCGA.24.0975                                                    
+## TCGA.23.1116                                                    
+## TCGA.23.1124                                                    
+## TCGA.04.1336                                                    
+## TCGA.04.1338                                                    
+## TCGA.24.1425                                                    
+## TCGA.24.1474                                                    
+## TCGA.24.1549                                                    
+## TCGA.24.1564                                                    
+## TCGA.24.1469                                                    
+## TCGA.24.1550                                                    
+## TCGA.24.1565                                                    
+## TCGA.24.1470     5.805385                                       
+## TCGA.24.1551     5.054657     4.232199                          
+## TCGA.24.1603     5.069912     5.400738     5.270056             
+## TCGA.24.1471     5.011271     5.174296     5.189158     5.092317
+## TCGA.24.1552     5.252206     5.586213     5.531749     4.823681
+## TCGA.24.1604     5.279077     5.362313     4.803003     4.972463
+## TCGA.24.1553     6.568715     5.279539     5.438741     5.730448
+## TCGA.24.1614     4.845783     5.620830     5.203667     4.801500
+## TCGA.04.1514     6.271462     7.514085     6.784950     6.196312
+## TCGA.24.1555     4.636113     5.465622     5.094380     3.824085
+## TCGA.24.1616     5.217575     6.673308     6.167943     5.109526
+## TCGA.04.1530     7.095215     5.511828     5.579206     5.810501
+## TCGA.24.1562     5.839063     5.359559     5.152617     4.893880
+## TCGA.04.1542     5.347246     7.246821     6.373330     5.053810
+## TCGA.24.1563     6.506639     5.463351     5.691450     5.180731
+## TCGA.13.0758     5.741821     4.868177     5.022020     4.669751
+## TCGA.09.0364     6.080722     7.478833     6.730874     6.599205
+## TCGA.13.0723     6.945404     4.970853     5.448237     6.095434
+## TCGA.13.0757     7.203027     5.865354     6.404400     6.373324
+## TCGA.13.0768     7.526306     5.935647     6.009225     6.870706
+## TCGA.13.0800     5.654976     7.381798     6.726222     6.056949
+## TCGA.01.0630     6.009588     5.454909     5.677844     6.144923
+## TCGA.09.0365     5.736818     6.840331     6.279881     5.698965
+## TCGA.13.0724     6.091586     5.845961     5.801364     6.018580
+## TCGA.13.0791     5.491110     4.748429     4.422237     4.627429
+## TCGA.13.0801     6.367134     5.023001     5.004675     6.207839
+## TCGA.01.0631     5.997801     5.303702     5.539204     5.677827
+##              TCGA.24.1471 TCGA.24.1552 TCGA.24.1604 TCGA.24.1553
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121                                                    
+## TCGA.04.1331                                                    
+## TCGA.04.1343                                                    
+## TCGA.23.1023                                                    
+## TCGA.24.0968                                                    
+## TCGA.23.1110                                                    
+## TCGA.23.1122                                                    
+## TCGA.04.1332                                                    
+## TCGA.04.1346                                                    
+## TCGA.23.1024                                                    
+## TCGA.24.0970                                                    
+## TCGA.23.1113                                                    
+## TCGA.23.1123                                                    
+## TCGA.04.1335                                                    
+## TCGA.04.1347                                                    
+## TCGA.23.1027                                                    
+## TCGA.24.0975                                                    
+## TCGA.23.1116                                                    
+## TCGA.23.1124                                                    
+## TCGA.04.1336                                                    
+## TCGA.04.1338                                                    
+## TCGA.24.1425                                                    
+## TCGA.24.1474                                                    
+## TCGA.24.1549                                                    
+## TCGA.24.1564                                                    
+## TCGA.24.1469                                                    
+## TCGA.24.1550                                                    
+## TCGA.24.1565                                                    
+## TCGA.24.1470                                                    
+## TCGA.24.1551                                                    
+## TCGA.24.1603                                                    
+## TCGA.24.1471                                                    
+## TCGA.24.1552     4.354047                                       
+## TCGA.24.1604     5.005512     4.978065                          
+## TCGA.24.1553     5.963940     6.110359     4.606523             
+## TCGA.24.1614     4.060291     4.473870     5.138047     6.034501
+## TCGA.04.1514     6.364842     6.484186     6.095012     7.676651
+## TCGA.24.1555     4.412366     4.605033     3.986790     5.674467
+## TCGA.24.1616     4.913664     5.736196     5.193595     7.137118
+## TCGA.04.1530     6.275840     5.689278     5.620646     5.632699
+## TCGA.24.1562     5.091039     4.803215     5.029273     5.927799
+## TCGA.04.1542     5.424882     5.375509     5.313857     6.722797
+## TCGA.24.1563     5.732342     5.548710     5.685735     6.554777
+## TCGA.13.0758     5.016426     4.758533     5.079890     5.555951
+## TCGA.09.0364     6.587977     6.420703     6.430970     7.788887
+## TCGA.13.0723     6.144686     6.285387     5.387547     5.110800
+## TCGA.13.0757     6.684626     6.307529     5.447202     5.909150
+## TCGA.13.0768     6.715404     6.590437     6.176825     5.526183
+## TCGA.13.0800     6.051180     5.850858     5.910335     7.310226
+## TCGA.01.0630     5.625171     6.106801     5.311316     5.929049
+## TCGA.09.0365     5.645702     5.828669     6.018716     7.239862
+## TCGA.13.0724     5.545180     5.487593     5.571877     6.477117
+## TCGA.13.0791     5.126372     5.390391     4.677493     5.920437
+## TCGA.13.0801     5.477457     6.000527     5.361195     5.315601
+## TCGA.01.0631     6.334291     6.694114     5.253027     5.612825
+##              TCGA.24.1614 TCGA.04.1514 TCGA.24.1555 TCGA.24.1616
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121                                                    
+## TCGA.04.1331                                                    
+## TCGA.04.1343                                                    
+## TCGA.23.1023                                                    
+## TCGA.24.0968                                                    
+## TCGA.23.1110                                                    
+## TCGA.23.1122                                                    
+## TCGA.04.1332                                                    
+## TCGA.04.1346                                                    
+## TCGA.23.1024                                                    
+## TCGA.24.0970                                                    
+## TCGA.23.1113                                                    
+## TCGA.23.1123                                                    
+## TCGA.04.1335                                                    
+## TCGA.04.1347                                                    
+## TCGA.23.1027                                                    
+## TCGA.24.0975                                                    
+## TCGA.23.1116                                                    
+## TCGA.23.1124                                                    
+## TCGA.04.1336                                                    
+## TCGA.04.1338                                                    
+## TCGA.24.1425                                                    
+## TCGA.24.1474                                                    
+## TCGA.24.1549                                                    
+## TCGA.24.1564                                                    
+## TCGA.24.1469                                                    
+## TCGA.24.1550                                                    
+## TCGA.24.1565                                                    
+## TCGA.24.1470                                                    
+## TCGA.24.1551                                                    
+## TCGA.24.1603                                                    
+## TCGA.24.1471                                                    
+## TCGA.24.1552                                                    
+## TCGA.24.1604                                                    
+## TCGA.24.1553                                                    
+## TCGA.24.1614                                                    
+## TCGA.04.1514     5.460626                                       
+## TCGA.24.1555     4.663983     5.594931                          
+## TCGA.24.1616     5.081037     5.521218     4.579655             
+## TCGA.04.1530     6.116257     7.136609     5.792576     6.938678
+## TCGA.24.1562     4.982801     6.374230     4.325856     5.205788
+## TCGA.04.1542     5.291329     5.427511     4.553836     4.846173
+## TCGA.24.1563     6.029908     7.427485     5.193781     6.344851
+## TCGA.13.0758     4.919772     6.290955     4.460270     6.327798
+## TCGA.09.0364     5.803631     4.813637     6.387468     5.899895
+## TCGA.13.0723     6.286364     7.410345     5.967048     6.888644
+## TCGA.13.0757     5.833093     6.628570     5.975782     6.546003
+## TCGA.13.0768     6.230433     7.808247     6.987695     7.722197
+## TCGA.13.0800     5.187546     4.465725     5.703859     5.111170
+## TCGA.01.0630     5.329185     7.098037     5.893030     6.292294
+## TCGA.09.0365     4.446306     4.571954     5.567200     5.055596
+## TCGA.13.0724     5.266935     6.222664     5.725170     6.198219
+## TCGA.13.0791     5.136728     5.925428     4.250383     4.980907
+## TCGA.13.0801     6.158006     7.727693     6.068222     6.548389
+## TCGA.01.0631     5.993793     7.125926     5.676081     6.252238
+##              TCGA.04.1530 TCGA.24.1562 TCGA.04.1542 TCGA.24.1563
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121                                                    
+## TCGA.04.1331                                                    
+## TCGA.04.1343                                                    
+## TCGA.23.1023                                                    
+## TCGA.24.0968                                                    
+## TCGA.23.1110                                                    
+## TCGA.23.1122                                                    
+## TCGA.04.1332                                                    
+## TCGA.04.1346                                                    
+## TCGA.23.1024                                                    
+## TCGA.24.0970                                                    
+## TCGA.23.1113                                                    
+## TCGA.23.1123                                                    
+## TCGA.04.1335                                                    
+## TCGA.04.1347                                                    
+## TCGA.23.1027                                                    
+## TCGA.24.0975                                                    
+## TCGA.23.1116                                                    
+## TCGA.23.1124                                                    
+## TCGA.04.1336                                                    
+## TCGA.04.1338                                                    
+## TCGA.24.1425                                                    
+## TCGA.24.1474                                                    
+## TCGA.24.1549                                                    
+## TCGA.24.1564                                                    
+## TCGA.24.1469                                                    
+## TCGA.24.1550                                                    
+## TCGA.24.1565                                                    
+## TCGA.24.1470                                                    
+## TCGA.24.1551                                                    
+## TCGA.24.1603                                                    
+## TCGA.24.1471                                                    
+## TCGA.24.1552                                                    
+## TCGA.24.1604                                                    
+## TCGA.24.1553                                                    
+## TCGA.24.1614                                                    
+## TCGA.04.1514                                                    
+## TCGA.24.1555                                                    
+## TCGA.24.1616                                                    
+## TCGA.04.1530                                                    
+## TCGA.24.1562     5.096461                                       
+## TCGA.04.1542     6.730700     5.673629                          
+## TCGA.24.1563     5.091910     4.485014     6.574064             
+## TCGA.13.0758     5.216424     4.506998     6.091426     5.279852
+## TCGA.09.0364     7.250948     6.759680     6.183953     7.555889
+## TCGA.13.0723     5.387007     5.580493     7.465339     6.157968
+## TCGA.13.0757     5.924005     5.383811     6.901546     6.119272
+## TCGA.13.0768     5.195479     5.616566     7.603290     6.237927
+## TCGA.13.0800     6.973497     6.499207     5.310228     7.157558
+## TCGA.01.0630     6.514730     5.638612     6.927742     6.017995
+## TCGA.09.0365     6.768007     6.021322     5.471339     7.061679
+## TCGA.13.0724     5.397006     5.006878     6.658162     6.121065
+## TCGA.13.0791     5.251495     4.317542     5.918306     4.627399
+## TCGA.13.0801     5.580074     5.476701     7.286788     6.178980
+## TCGA.01.0631     6.064559     4.909820     6.937908     5.480117
+##              TCGA.13.0758 TCGA.09.0364 TCGA.13.0723 TCGA.13.0757
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121                                                    
+## TCGA.04.1331                                                    
+## TCGA.04.1343                                                    
+## TCGA.23.1023                                                    
+## TCGA.24.0968                                                    
+## TCGA.23.1110                                                    
+## TCGA.23.1122                                                    
+## TCGA.04.1332                                                    
+## TCGA.04.1346                                                    
+## TCGA.23.1024                                                    
+## TCGA.24.0970                                                    
+## TCGA.23.1113                                                    
+## TCGA.23.1123                                                    
+## TCGA.04.1335                                                    
+## TCGA.04.1347                                                    
+## TCGA.23.1027                                                    
+## TCGA.24.0975                                                    
+## TCGA.23.1116                                                    
+## TCGA.23.1124                                                    
+## TCGA.04.1336                                                    
+## TCGA.04.1338                                                    
+## TCGA.24.1425                                                    
+## TCGA.24.1474                                                    
+## TCGA.24.1549                                                    
+## TCGA.24.1564                                                    
+## TCGA.24.1469                                                    
+## TCGA.24.1550                                                    
+## TCGA.24.1565                                                    
+## TCGA.24.1470                                                    
+## TCGA.24.1551                                                    
+## TCGA.24.1603                                                    
+## TCGA.24.1471                                                    
+## TCGA.24.1552                                                    
+## TCGA.24.1604                                                    
+## TCGA.24.1553                                                    
+## TCGA.24.1614                                                    
+## TCGA.04.1514                                                    
+## TCGA.24.1555                                                    
+## TCGA.24.1616                                                    
+## TCGA.04.1530                                                    
+## TCGA.24.1562                                                    
+## TCGA.04.1542                                                    
+## TCGA.24.1563                                                    
+## TCGA.13.0758                                                    
+## TCGA.09.0364     7.120363                                       
+## TCGA.13.0723     5.302982     7.371713                          
+## TCGA.13.0757     5.376410     6.558413     4.675808             
+## TCGA.13.0768     5.664232     7.392312     4.599422     4.939976
+## TCGA.13.0800     6.380522     4.814401     7.617683     6.673237
+## TCGA.01.0630     5.732436     6.839765     6.014838     6.035791
+## TCGA.09.0365     6.252895     4.792248     7.204815     6.564828
+## TCGA.13.0724     5.372810     5.862634     5.660107     5.056019
+## TCGA.13.0791     4.528519     6.252034     5.535886     5.371029
+## TCGA.13.0801     5.540049     7.608478     5.397055     6.613520
+## TCGA.01.0631     5.384781     7.061257     5.452164     5.560370
+##              TCGA.13.0768 TCGA.13.0800 TCGA.01.0630 TCGA.09.0365
+## TCGA.23.1031                                                    
+## TCGA.24.0979                                                    
+## TCGA.23.1117                                                    
+## TCGA.23.1021                                                    
+## TCGA.04.1337                                                    
+## TCGA.20.0990                                                    
+## TCGA.23.1032                                                    
+## TCGA.23.1118                                                    
+## TCGA.23.1026                                                    
+## TCGA.20.0991                                                    
+## TCGA.24.1103                                                    
+## TCGA.24.0982                                                    
+## TCGA.23.1119                                                    
+## TCGA.23.1028                                                    
+## TCGA.04.1341                                                    
+## TCGA.20.0996                                                    
+## TCGA.24.1104                                                    
+## TCGA.23.1107                                                    
+## TCGA.23.1120                                                    
+## TCGA.23.1030                                                    
+## TCGA.04.1342                                                    
+## TCGA.23.1022                                                    
+## TCGA.24.1105                                                    
+## TCGA.23.1109                                                    
+## TCGA.23.1121                                                    
+## TCGA.04.1331                                                    
+## TCGA.04.1343                                                    
+## TCGA.23.1023                                                    
+## TCGA.24.0968                                                    
+## TCGA.23.1110                                                    
+## TCGA.23.1122                                                    
+## TCGA.04.1332                                                    
+## TCGA.04.1346                                                    
+## TCGA.23.1024                                                    
+## TCGA.24.0970                                                    
+## TCGA.23.1113                                                    
+## TCGA.23.1123                                                    
+## TCGA.04.1335                                                    
+## TCGA.04.1347                                                    
+## TCGA.23.1027                                                    
+## TCGA.24.0975                                                    
+## TCGA.23.1116                                                    
+## TCGA.23.1124                                                    
+## TCGA.04.1336                                                    
+## TCGA.04.1338                                                    
+## TCGA.24.1425                                                    
+## TCGA.24.1474                                                    
+## TCGA.24.1549                                                    
+## TCGA.24.1564                                                    
+## TCGA.24.1469                                                    
+## TCGA.24.1550                                                    
+## TCGA.24.1565                                                    
+## TCGA.24.1470                                                    
+## TCGA.24.1551                                                    
+## TCGA.24.1603                                                    
+## TCGA.24.1471                                                    
+## TCGA.24.1552                                                    
+## TCGA.24.1604                                                    
+## TCGA.24.1553                                                    
+## TCGA.24.1614                                                    
+## TCGA.04.1514                                                    
+## TCGA.24.1555                                                    
+## TCGA.24.1616                                                    
+## TCGA.04.1530                                                    
+## TCGA.24.1562                                                    
+## TCGA.04.1542                                                    
+## TCGA.24.1563                                                    
+## TCGA.13.0758                                                    
+## TCGA.09.0364                                                    
+## TCGA.13.0723                                                    
+## TCGA.13.0757                                                    
+## TCGA.13.0768                                                    
+## TCGA.13.0800     7.957650                                       
+## TCGA.01.0630     6.248607     6.779210                          
+## TCGA.09.0365     7.708326     4.171148     6.801152             
+## TCGA.13.0724     5.465983     6.386791     6.134035     6.132207
+## TCGA.13.0791     5.932273     6.156878     5.546216     5.828915
+## TCGA.13.0801     5.552652     7.472404     5.444842     7.256550
+## TCGA.01.0631     5.938802     7.019171     3.761976     7.172032
+##              TCGA.13.0724 TCGA.13.0791 TCGA.13.0801
+## TCGA.23.1031                                       
+## TCGA.24.0979                                       
+## TCGA.23.1117                                       
+## TCGA.23.1021                                       
+## TCGA.04.1337                                       
+## TCGA.20.0990                                       
+## TCGA.23.1032                                       
+## TCGA.23.1118                                       
+## TCGA.23.1026                                       
+## TCGA.20.0991                                       
+## TCGA.24.1103                                       
+## TCGA.24.0982                                       
+## TCGA.23.1119                                       
+## TCGA.23.1028                                       
+## TCGA.04.1341                                       
+## TCGA.20.0996                                       
+## TCGA.24.1104                                       
+## TCGA.23.1107                                       
+## TCGA.23.1120                                       
+## TCGA.23.1030                                       
+## TCGA.04.1342                                       
+## TCGA.23.1022                                       
+## TCGA.24.1105                                       
+## TCGA.23.1109                                       
+## TCGA.23.1121                                       
+## TCGA.04.1331                                       
+## TCGA.04.1343                                       
+## TCGA.23.1023                                       
+## TCGA.24.0968                                       
+## TCGA.23.1110                                       
+## TCGA.23.1122                                       
+## TCGA.04.1332                                       
+## TCGA.04.1346                                       
+## TCGA.23.1024                                       
+## TCGA.24.0970                                       
+## TCGA.23.1113                                       
+## TCGA.23.1123                                       
+## TCGA.04.1335                                       
+## TCGA.04.1347                                       
+## TCGA.23.1027                                       
+## TCGA.24.0975                                       
+## TCGA.23.1116                                       
+## TCGA.23.1124                                       
+## TCGA.04.1336                                       
+## TCGA.04.1338                                       
+## TCGA.24.1425                                       
+## TCGA.24.1474                                       
+## TCGA.24.1549                                       
+## TCGA.24.1564                                       
+## TCGA.24.1469                                       
+## TCGA.24.1550                                       
+## TCGA.24.1565                                       
+## TCGA.24.1470                                       
+## TCGA.24.1551                                       
+## TCGA.24.1603                                       
+## TCGA.24.1471                                       
+## TCGA.24.1552                                       
+## TCGA.24.1604                                       
+## TCGA.24.1553                                       
+## TCGA.24.1614                                       
+## TCGA.04.1514                                       
+## TCGA.24.1555                                       
+## TCGA.24.1616                                       
+## TCGA.04.1530                                       
+## TCGA.24.1562                                       
+## TCGA.04.1542                                       
+## TCGA.24.1563                                       
+## TCGA.13.0758                                       
+## TCGA.09.0364                                       
+## TCGA.13.0723                                       
+## TCGA.13.0757                                       
+## TCGA.13.0768                                       
+## TCGA.13.0800                                       
+## TCGA.01.0630                                       
+## TCGA.09.0365                                       
+## TCGA.13.0724                                       
+## TCGA.13.0791     4.920363                          
+## TCGA.13.0801     5.824939     5.237984             
+## TCGA.01.0631     6.170407     5.235015     5.552642
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Clustering}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlkwd{hclust}\hlstd{(d,} \hlkwc{method} \hlstd{=} \hlstr{"complete"}\hlstd{,} \hlkwc{members} \hlstd{=} \hlkwa{NULL}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Clustering}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlstd{exprDist} \hlkwb{=} \hlkwd{dist}\hlstd{(}\hlkwd{t}\hlstd{(subdata))}
+ \hlstd{exprClust} \hlkwb{=} \hlkwd{hclust}\hlstd{(exprDist)}
+ \hlstd{exprClust}
+\end{alltt}
+\begin{verbatim}
+## 
+## Call:
+## hclust(d = exprDist)
+## 
+## Cluster method   : complete 
+## Distance         : euclidean 
+## Number of objects: 80
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Visualization}
+\begin{block}{Visualization}
+  \begin{itemize}
+  \item Dendrogram: plot.hclust
+  \item Heat Map: heatmap
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Dendrogram}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlkwd{plot}\hlstd{(exprClust,} \hlkwc{cex}\hlstd{=}\hlnum{0.6}\hlstd{,} \hlkwc{main}\hlstd{=}\hlstr{"Dendrogram"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=0.8\textheight,height=.8\textheight]{figure/unnamed-chunk-8-1} 
+
+}
+
+
+
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{plot.hclust}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlkwd{plot}\hlstd{(x,} \hlkwc{labels} \hlstd{=} \hlkwa{NULL}\hlstd{,}
+ \hlkwc{hang} \hlstd{=} \hlnum{0.1}\hlstd{,}
+ \hlkwc{axes} \hlstd{=} \hlnum{TRUE}\hlstd{,}
+ \hlkwc{frame.plot} \hlstd{=} \hlnum{FALSE}\hlstd{,}
+ \hlkwc{ann} \hlstd{=} \hlnum{TRUE}\hlstd{,}
+ \hlkwc{main} \hlstd{=} \hlstr{"Cluster Dendrogram"}\hlstd{,}
+ \hlkwc{sub} \hlstd{=} \hlkwa{NULL}\hlstd{,}
+ \hlkwc{xlab} \hlstd{=} \hlkwa{NULL}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"Height"}\hlstd{, ...)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Heat Map}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlkwd{heatmap}\hlstd{(subdata)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=.6\textwidth,height=.7\textheight]{figure/unnamed-chunk-10-1} 
+
+}
+
+
+
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{heatmap}
+\small
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlkwd{heatmap}\hlstd{(x,} \hlkwc{Rowv} \hlstd{=} \hlkwa{NULL}\hlstd{,} \hlkwc{Colv} \hlstd{=} \hlkwa{if}\hlstd{(symm)}\hlstr{"Rowv"} \hlkwa{else NULL}\hlstd{,}
+ \hlkwc{distfun} \hlstd{= dist,} \hlkwc{hclustfun} \hlstd{= hclust,}
+ \hlkwc{reorderfun} \hlstd{=} \hlkwa{function}\hlstd{(}\hlkwc{d}\hlstd{,} \hlkwc{w}\hlstd{)} \hlkwd{reorder}\hlstd{(d, w),}
+ \hlstd{add.expr,} \hlkwc{symm} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{revC} \hlstd{=} \hlkwd{identical}\hlstd{(Colv,} \hlstr{"Rowv"}\hlstd{),}
+ \hlkwc{scale} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"row"}\hlstd{,} \hlstr{"column"}\hlstd{,} \hlstr{"none"}\hlstd{),} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{,}
+ \hlkwc{margins} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{5}\hlstd{,} \hlnum{5}\hlstd{), ColSideColors, RowSideColors,}
+ \hlkwc{cexRow} \hlstd{=} \hlnum{0.2} \hlopt{+} \hlnum{1}\hlopt{/}\hlkwd{log10}\hlstd{(nr),} \hlkwc{cexCol} \hlstd{=} \hlnum{0.2} \hlopt{+} \hlnum{1}\hlopt{/}\hlkwd{log10}\hlstd{(nc),}
+ \hlkwc{labRow} \hlstd{=} \hlkwa{NULL}\hlstd{,} \hlkwc{labCol} \hlstd{=} \hlkwa{NULL}\hlstd{,} \hlkwc{main} \hlstd{=} \hlkwa{NULL}\hlstd{,}
+ \hlkwc{xlab} \hlstd{=} \hlkwa{NULL}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlkwa{NULL}\hlstd{,}
+ \hlkwc{keep.dendro} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{verbose} \hlstd{=} \hlkwd{getOption}\hlstd{(}\hlstr{"verbose"}\hlstd{), ...)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{How to read Heat Map}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in image.default(1L:nc, 1L:nr, x, xlim = 0.5 + c(0, nc), ylim = 0.5 + : 没有"{}green2red"{}这个函数}}\end{kframe}
+\end{knitrout}
+\end{frame}
+
+
+\subsection{Summary}
+
+\begin{frame}[fragile]
+  \frametitle{Suumary}
+\begin{block}{Clustering}
+  \begin{itemize}
+  \item Clustering is widely used in bioinformatics
+  \item Clustering can be implemented by using built-in functions of R
+  \item Clustering can be visualized as heat map and dendogram
+  \end{itemize}
+\end{block}
+\end{frame}
+
+
+\section{Supervised Learning}
+
+\begin{frame}
+\frametitle{Supervised Learning: Classification}
+
+\begin{block}{Classification}
+Assigning objects to one of several predefined categoriies.
+\end{block}
+
+
+\begin{block}{Definition}
+Classification is the task of learning a \textbf{target function} $f$ that maps each attribute set $x$ to one of the predefined class labels $y$.
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{How to solve a classification problem?}
+\begin{center}
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (model) {Model};
+    \node [block, above left of=model, node distance=2.2cm] (lmodel) {Learn Model};
+    \node [block, above of=lmodel, node distance=2cm] (lalg) {Learning Algorithm};
+    \node [block, left of=lmodel, node distance=3cm] (train) {Training Set};
+    \node [block, below left of=model, node distance=2.2cm] (amodel) {Apply Model};
+    \node [block, left of=amodel, node distance=3cm] (test) {Testing Set};
+
+
+    % Draw edges
+    \path [line] (train) -- (lmodel);
+    \path [line] (lalg) -- (lmodel);
+    \path [line] (lmodel) -- (model);
+    \path [line] (model) -- (amodel);
+    \path [line] (amodel) -- (test);
+\end{tikzpicture}\\
+General approach for building a classification model
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Evaluation}
+\begin{center}
+Confusion Matrix for a 2-class problem
+  \begin{tabular}{|c|c|c|}
+\hline
+  & Prediction=1 & Prediction=0 \\
+\hline
+Class=1 & $f_{11}$ & $f_{10}$ \\
+\hline
+Class=0 & $f_{01}$ & $f_{00}$\\
+\hline
+  \end{tabular}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Evaluation}
+
+  \begin{block}{Accuracy and Error Rate}
+
+    \begin{align*}
+      Accuracy & = \frac{\text{Number of correct predictions}}{\text{Total number of predictions}}\\
+&=\frac{f_{11}+f_{00}}{f_{11}+f_{10}+f_{00}+f_{01}}\\
+      Error Rate &= \frac{\text{Number of wrong predictions}}{\text{Total number of predictions}}\\
+&=\frac{f_{10}+f_{01}}{f_{11}+f_{10}+f_{00}+f_{01}}
+    \end{align*}
+  \end{block}
+\end{frame}
+
+\subsection{Supervised Learning in Bioinformatics}
+
+
+\begin{frame}
+  \frametitle{Classification in Bioinformatics}
+
+  \begin{block}{Applications}
+\begin{itemize}
+\item Classification of diseases, especially cancer.
+\item Prediction of clinical outcome.
+\item Prediction of the function of gene or proteins.
+\item Prediction of the structure of proteins.
+\item \ldots \ldots
+\end{itemize}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Objective}
+  \begin{block}{Two Objectives}
+    \begin{enumerate}
+      \item To build accuate classifiers or predictors
+      \item To derive inferences from the results obtained
+    \end{enumerate}
+  \end{block}
+
+  \begin{block}{Challanges}
     \begin{itemize}
-      \item https://www.coursera.org/course/repdata
-      \item http://cran.r-project.org/web/views/ReproducibleResearch.html
+      \item data incocnsistency and missing values
+      \item noise
+      \item normalization
+      \item Deimensionality reduction
     \end{itemize}
   \end{block}
 \end{frame}
 
+\subsection{Support Vector Machine and its Applications in Bioinformatics}
+
+
 \begin{frame}
-  \frametitle{Rabix Project}
-  see rabix_ismb.pdf
+  \frametitle{SVM}
+\centerline{\includegraphics[height=.7\textheight]{svm.png}}
 \end{frame}
+
+\begin{frame}
+  \frametitle{Kernal}
+\centerline{\includegraphics[height=.7\textheight]{kernel.jpg}}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{SVM in R}
+
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlkwd{library}\hlstd{(e1071)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{SVM}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlkwd{library}\hlstd{(e1071)}
+ \hlstd{model} \hlkwb{=} \hlkwd{svm}\hlstd{(}\hlkwc{x} \hlstd{= exprData[}\hlnum{1}\hlopt{:}\hlnum{400}\hlstd{,],} \hlkwc{y} \hlstd{= stages[}\hlnum{1}\hlopt{:}\hlnum{400}\hlstd{],} \hlkwc{cross}\hlstd{=}\hlnum{5}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{SVM model}
+\tiny
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlstd{model}
+\end{alltt}
+\begin{verbatim}
+## 
+## Call:
+## svm.default(x = exprData[1:400, ], y = stages[1:400], cross = 5)
+## 
+## 
+## Parameters:
+##    SVM-Type:  C-classification 
+##  SVM-Kernel:  radial 
+##        cost:  1 
+##       gamma:  0.001730104 
+## 
+## Number of Support Vectors:  200
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{SVM}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ \hlstd{ret} \hlkwb{=} \hlkwd{predict}\hlstd{(model, exprData[}\hlnum{401}\hlopt{:}\hlnum{500}\hlstd{,])}
+ \hlkwd{table}\hlstd{(ret, stages[}\hlnum{401}\hlopt{:}\hlnum{500}\hlstd{])}
+\end{alltt}
+\begin{verbatim}
+##    
+## ret  0  1
+##   0  0  0
+##   1 11 89
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+\centerline{\huge{?}}
+\end{frame}
+
+
+\subsection{Summary}
+
+\begin{frame}[fragile]
+  \frametitle{Summary}
+\begin{block}{Classification}
+
+  \begin{itemize}
+  \item Classification is an important technique for bioinformatics
+  \item SVM is powerful
+  \item Classification algorithm can be implemented in R easily
+  \end{itemize}
+\end{block}
+\end{frame}
+
+
+\section{Future}
+
+\begin{frame}
+  \frametitle{Future Reading}
+\begin{itemize}
+\item Data Mining for Bioinformatics
+\item Introduction to Machine Learning
+\item CRAN Task View: Machine Learning \& Statistical Learning: http://cran.r-project.org/web/views/MachineLearning.html
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Advanced Courses}
+\begin{block}{Advaced Courses}
+\begin{itemize}
+\item Machine learning for Big Biological Data
+\item Implementing high performance machine learning algorithms
+\item Deep learning for bioinformatics
+\item Data integration
+\item Network based machine learning
+\item \ldots
+\end{itemize}
+\end{block}
+\end{frame}
+
+\subsection{Machine Learning}
+\begin{frame}
+  \frametitle{Machine Learning}
+  \begin{itemize}
+    \item Deep learning
+    \item Support Vector Machine
+    \item Decision Tree
+    \item Recommendation System
+    \item Expert System: Computer-aided diagnosis
+  \end{itemize}
+\end{frame}
+
+\section{Big Data}
+\begin{frame}
+  \frametitle{High Performance Computing}
+  \begin{itemize}
+    \item Task View: High-Performance and Parallel Computing with R\\
+    http://cran.r-project.org/web/views/HighPerformanceComputing.html
+    \begin{itemize}
+      \item Revolution R Enterprise
+      \item Rcpp
+      \item Multi-core
+      \item GPU
+      \item MPI
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Big Data Framework}
+  \begin{itemize}
+    \item Hadoop:
+    \item Spark: SparkR, AMPLab UC BERKELEY\\
+    http://amplab-extras.github.io/SparkR-pkg/
+    \item Storm:
+    \begin{itemize}
+      \item https://github.com/allenday/R-Storm
+      \item https://github.com/quintona/storm-r
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
 
 \end{document}
