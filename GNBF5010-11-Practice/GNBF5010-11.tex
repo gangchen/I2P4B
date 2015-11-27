@@ -1,0 +1,108 @@
+\documentclass[UTF8]{beamer}
+\usepackage{graphicx, color}
+\usepackage{algorithm2e}
+\usepackage{zhspacing}
+\usepackage{amsmath}
+\usepackage{url}
+
+\usepackage{underscore}
+\usetheme{JuanLesPins}
+\usepackage{fontspec}
+\setsansfont{Microsoft YaHei}
+
+\usepackage{enumerate}
+
+\AtBeginSection[]{
+  \frame{
+    \frametitle{Next}
+    \tableofcontents[currentsection, subsectionstyle=show/shaded/hide]
+  }
+}
+
+\AtBeginSubsection[]{
+  \frame{
+    \frametitle{Next}
+    \tableofcontents[currentsubsection]
+  }
+}
+
+\title{Best Practices of Programming}
+
+\author{Gang Chen\\ chengang@genomics.cn}
+
+\logo{\includegraphics[width=1.3cm]{bgi-logo.png}\includegraphics[width=2.5cm]{cuhklogo.png}}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}[t]\frametitle{Outline}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Requirements Analysis}
+
+\begin{frame}
+    \frametitle{Fibonacci Sequence Generator}
+\begin{block}{Requirement}
+Write a program to print Fibonacci sequence.The length of output sequence is specified by the first command line parameter.
+\end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Checklist}
+    \begin{block}{Functional Requirements}
+        \begin{itemize}
+            \item Are all the inputs to the system specified, including their source, accuracy, range of values, and frequency?
+            \item Are all the outputs from the system specified, including their destination, accuracy, range of values, frequency, and format?
+            \item Are all output formats specified for Web pages, reports, and so on?
+            \item Are all the external hardware and software interfaces specified?
+            \item \ldots
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Checklist}
+    \begin{block}{Non-functional Requirements}
+        \begin{itemize}
+            \item Is the expected response time, from the user’s point of view, specified for all necessary operations?
+            \item Is the level of security specified?
+            \item Are minimum machine memory and free disk space specified?
+            \item \ldots
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Checklist}
+    \begin{block}{Requirement Quality}
+        \begin{itemize}
+            \item Are the requirements written in the user’s language? Do the users think so?
+            \item Does each requirement avoid conflicts with other requirements?
+            \item Do the requirements avoid specifying the design?
+            \item Are the requirements clear enough to be turned over to an independent group for construction and still be understood? Do the developers think so?
+            \item \ldots
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Reference}
+    \begin{itemize}
+        \item Code Complete 2
+        \item Software Requirements(Developer Best Practices)
+    \end{itemize}
+\end{frame}
+
+\section{Design}
+\section{Implement}
+\section{Test}
+\section{Maintain}
+
+
+
+\end{document}
