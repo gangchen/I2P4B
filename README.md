@@ -1,137 +1,68 @@
-GNBF5010 2015 Fall
-
-# Assignments List
-## C
-* Write a program to print Fibonacci sequence.The length of output sequence is specified by the first command line parameter. (fibonacci.c)
-* Implement Smith-Waterman algorithm in C. Given that the cost of GAP, MATCH and MISMATCH is -1, 2 and 0.5, separately. Calculate the alignment of “ACGTGGCCTTGTGA” and “GGTGGGTCTTGTCG”.
-
-## Perl
-* Write a program to print Fibonacci sequence.The
-length of output sequence is specified by the first command line parameter. (fibonacci.pl)
-* Try to optimize the pos\_annotate.pl as much as you can. (pos\_annotateV3.pl)
-
-## R
-* Fibonacci Sequence generator in R
-* Package it as a R package.
+# GNBF5010: Introduction to Programming
+* Lecturer: Gang Chen (chengangcs@gmail.com)
+* Laptop is requried for this courses
+* Mac OS and Linux are recommended
 
 
-# Softwares
+## 1. Computer Architecture and Programming
+Date: 10 Sept 2016
+### Pre-requests
+### References
+### Assignments
+### References
+## 2. Python Getting Started
+Date: 17 Sept 2016
+### Contents:
+* Overview of Python
+* Setting Up Python Development Environment
+* Hello Python
+* Interactice and Script mode
+### References:
+* [A IPython Notebook for Introduction to Python](http://nbviewer.jupyter.org/github/jdwittenauer/ipython-notebooks/blob/master/notebooks/language/Intro.ipynb) also canbe used as a reference for 3rd week.
 
-## for C
-* Mac OS: Clang
-* Windows: MinGW or Clang
-* \*unix: GCC
-* IDE: Code Blocks; Visual Studio; XCode;
-* Editor: Notepad++ for Windows; ATOM for MacOS; VIM and Emacs;
+## 3. Elements of Programming
+24 Sept 2016
 
-C Compiler and Tools for Windows User:
+### References:
+* [Computational Complexity Theory](http://plato.stanford.edu/entries/computational-complexity/) from Stanford University
 
-1. Visit http://nuwen.net/mingw.html ;
-2. Download mingw-13.0.exe ;
-3. Double Click the downloaded package to decompress it;
-4. Start CMD and switch to the directory;
-5. Execute set_distro_path.bat script.
+## 4. Object Oriented Programming
+8 Oct 2016
+## 5. Data Structure and Algorithm
+15 Oct 2016
+## 6. Web Programming and Database
+22 Oct 2016
+## 7. Scientific Computing
+Date: 29 Oct 2016
+### Contents
+* NumPy, SciPy, Pandas: 
+Scientific computing
+* Scikit-Learn, NLTK:
+Machine Learning and natural language processing
+* Matplotlib:
+Data visualization in Python
 
-Tested on Windows 8 and Windows 10.
+### References:
+* [Machine Learning Exercises In Python](http://www.johnwittenauer.net/machine-learning-exercises-in-python-part-1/)
 
-
-# Software for R in Bioinformaitcs
-
-* Bioconductor: http://bioconductor.org
-
-  Installation instructions: http://www.bioconductor.org/install/
-
-    source("http://bioconductor.org/biocLite.R")
-    biocLite()
-
-* (Optional) knitr package: http://yihui.name/knitr/
-
-  Installation:
-
-    install.packages("knitr")
-
-* (Optional)  LaTeX System: MacTex for MacOS, and TexLive for Windows and Linux.
-
-* (Optional)  R packages: ggbio from Bioconductor, shiny
-
-# Software for R
-
-R software:
-
-R-core is required:
-
-* Visit www.r-project.org to download the latest version.
-
-For Windows user, Rtools is recommended.
-
-IDE and Editors:
-
-For beginner, RStudio, which is the most popular IDE for R, is highly recommended.
-
-All text editors, such as VIM, Notepad++ or ATOM, can be used to edit R codes. There are
-some plugins are available to help you edit and debug R codes:
-
-* For VIM users, VIM-R-Plugin is recommended.
-* For Emacs users, ESS(Emacs Speak Statistics) is recommended.
-* For notepad++ users, NppToR is recommended.
+Exercises in Python for Andrew Ng's Machine Learning courses.
 
 
-# Software for PythonII
+## 8. Python in Bioinformatics
+5 Nov 2016
+## 9. R Getting Started
+12 Nov 2016
+## 10. R in Bioinformatics
+19 Nov 2016
+### Contents:
+* BioConductor
+* Workflow of RNA-Seq data analysis
+* Visualization of Biological Data
 
-No additional software is required for this lecture.
+## 11. Programming best practices I
+26 Nov 2016
+## 12. Programming best Practices II
+3 Dec 2016
+## 13. Final Examination
+10 Dec 2016
 
-Following projects are recommended to visit:
-
-* Rabix
-* DNANexus
-* Seven Bridges Genomics
-* GeneDock
-* L3-Bioinfo
-* BioPython
-* scikit-learn and pyml
-* scipy
-
-# Software for Python
-
-* Text Editor:
-
-  * Notepad++ for Windows.
-  * VIM for Linux and Mac OS.
-  * Or any other text editor you like.
-
-* Python intepreter:
-
-  * Download: www.python.org
-  * Version: Please install Python 2.
-  * For most Linux distributions and Mac OS, Python 2.7 is preinstalled.
-
-* Other softwares:
-
-  Not required, but highly recommended.
-
-  * ipython
-  * matplotlib
-  * Integrated Develop Environment for Python
-
-# Ouline
-
-* GNBF5010-1: Introduction to Programming
-* GNBF5010-2: The C Programming Language I
-* GNBF5010-3: The C Programming Language II
-* GNBF5010-4: Perl I
-* GNBF5010-5: Perl II
-* GNBF5010-6: Perl III
-* GNBF5010-7: R I
-* GNBF5010-8: R II
-* GNBF5010-9: R III
-* GNBF5010-10: Other languages: Java, Python and ...
-* GNBF5010-11: Best Practices of Programming I
-* GNBF5010-12: Best Practices of Programming II
-* GNBF5010-13: Final examnation
-
-
-# Assignment Deadlines
-
-* C: Oct 10th;
-* Perl: Oct 31th;
-* R: Nov 21th;
