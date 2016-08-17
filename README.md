@@ -7,6 +7,10 @@
 ## 1. Computer Architecture and Programming
 Date: 10 Sept 2016
 ### Pre-requests
+### Contents:
+	* Computer Architecture
+	* Computer Network
+	
 ### References
 ### Assignments
 ### References
@@ -32,6 +36,17 @@ Date: 17 Sept 2016
 15 Oct 2016
 ## 6. Web Programming and Database
 22 Oct 2016
+### Contents
+* Web Development Overview
+	* Overview
+	* LAMP: Operation System, Web Server, Database, Programming language
+	* LAMP: HTML, CSS, Javascript, Python, SQL
+	* A static website
+* CGI
+* Connect CGI to Database
+* Web Framework: Django
+* A online sequence aligner
+
 ## 7. Scientific Computing
 Date: 29 Oct 2016
 ### Contents
