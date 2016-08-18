@@ -8,12 +8,14 @@
 Date: 10 Sept 2016
 ### Pre-requests
 ### Contents:
-	* Computer Architecture
-	* Computer Network
-	
+* Computer Architecture
+* Computer Network
+
 ### References
 ### Assignments
 ### References
+* [CS301: COMPUTER ARCHITECTURE](https://learn.saylor.org/course/view.php?id=71)
+
 ## 2. Python Getting Started
 Date: 17 Sept 2016
 ### Contents:
@@ -23,9 +25,18 @@ Date: 17 Sept 2016
 * Interactice and Script mode
 ### References:
 * [A IPython Notebook for Introduction to Python](http://nbviewer.jupyter.org/github/jdwittenauer/ipython-notebooks/blob/master/notebooks/language/Intro.ipynb) also canbe used as a reference for 3rd week.
+* [Python Courses on codecademy](https://www.codecademy.com/learn/python) an interactive courses of Python for people who don't have any programming experiences.
+* [A byte of Python](http://python.swaroopch.com/)
 
 ## 3. Elements of Programming
 24 Sept 2016
+### Contents
+* Data Type
+* Variable
+* List and map
+* Flow Control: conditional statment and loop
+* Function and module
+### References
 
 ### References:
 * [Computational Complexity Theory](http://plato.stanford.edu/entries/computational-complexity/) from Stanford University
@@ -50,7 +61,7 @@ Date: 17 Sept 2016
 ## 7. Scientific Computing
 Date: 29 Oct 2016
 ### Contents
-* NumPy, SciPy, Pandas: 
+* NumPy, SciPy, Pandas:
 Scientific computing
 * Scikit-Learn, NLTK:
 Machine Learning and natural language processing
@@ -80,4 +91,3 @@ Exercises in Python for Andrew Ng's Machine Learning courses.
 3 Dec 2016
 ## 13. Final Examination
 10 Dec 2016
-
