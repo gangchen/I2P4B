@@ -7,7 +7,7 @@
 		<title>reveal.js - Markdown Demo</title>
 
 		<link rel="stylesheet" href="../lib/reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="../lib/reveal.js/css/theme/white.css" id="theme">
+		<link rel="stylesheet" href="../lib/reveal.js/css/theme/black.css" id="theme">
 
         <link rel="stylesheet" href="../lib/reveal.js/lib/css/zenburn.css">
 	</head>
@@ -21,52 +21,6 @@
                 <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
                 <section data-markdown="slides1.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
 
-                <!-- Slides are separated by three dashes (quick 'n dirty regular expression) -->
-                <section data-markdown data-separator="---">
-                    <script type="text/template">
-                        ## Demo 1
-                        Slide 1
-                        ---
-                        ## Demo 1
-                        Slide 2
-                        ---
-                        ## Demo 1
-                        Slide 3
-                    </script>
-                </section>
-
-                <!-- Slides are separated by newline + three dashes + newline, vertical slides identical but two dashes -->
-                <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
-                    <script type="text/template">
-                        ## Demo 2
-                        Slide 1.1
-
-                        --
-
-                        ## Demo 2
-                        Slide 1.2
-
-                        ---
-
-                        ## Demo 2
-                        Slide 2
-                    </script>
-                </section>
-
-                <!-- No "extra" slides, since there are no separators defined (so they'll become horizontal rulers) -->
-                <section data-markdown>
-                    <script type="text/template">
-                        A
-
-                        ---
-
-                        B
-
-                        ---
-
-                        C
-                    </script>
-                </section>
 
                 <!-- Slide attributes -->
                 <section data-markdown>

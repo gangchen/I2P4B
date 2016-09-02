@@ -1,15 +1,32 @@
-# Markdown Demo
+# GNBF5010: Introduction to Programming
+
+Introduction to Programming for Bioinformatics using Python and R
+
+Lecturer: Gang Chen <chengangcs@gmail.com>
+
+## Outline
+
+## Assignments
+
+## Assessment
+
+## Information
 
 
+# Computer Architecture and Programming
 
-## External 1.1
+Gang Chen <chengangcs@gmail.com>
+
+# What is Computer
+
+## History of Computer
 
 Content 1.1
 
 Note: This will only appear in the speaker notes window.
 
 
-## External 1.2
+## Turing Machine
 
 Content 1.2
 
