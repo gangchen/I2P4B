@@ -9,17 +9,38 @@ class: center, middle
 
 ---
 class: left, middle
+
+## Lecturer
+
+Gang CHEN, Ph.d of Computer Science
+
+* Co-founder and CTO of WeGene, from 2015
+* Committee member of Bioinformatics Group of CCF, from 2016
+* Big Data Consultant of Hospital Authority, from 2016
+* Adjunct Assistant Professor of CUHK, from 2013
+* Senior Researcher of BGI and Vice President of BGI-Tech, 2012 - 2015
+* Visiting Scientist of Univ. of Texas Medical Branch, 2009-2010
+* Ph.d of Computer Science, Central South University, 2006 - 2012
+
+
+
+
 ## Syllabus
 
 * Lecture 1: Computer Systems
+
 --
 * Lecture 2: The elements of Programming
+
 --
 * Lecture 3-8: Python
+
 --
 * Lecture 9-10: R
+
 --
 * Lecture 11-12: Best Practice
+
 --
 * Lecture 13: Final Examination
 
