@@ -2,22 +2,25 @@ class: center, middle
 
 .title[Introduction to Programming]
 
-.subtitle[Introduction to Programming for Bioinformatics using Python and R]
+.subtitle[for Bioinformatics using Python and R]
 
-.author[Lecturer: Gang Chen <chengangcs@gmail.com>]
+.author[Lecturer: Gang Chen]
+.author[chengangcs@gmail.com]
 
 ---
-class: left
+class: left, middle
 ## Syllabus
-.pull-left[
+
 * Lecture 1: Computer Systems
 * Lecture 2: The elements of Programming
 * Lecture 3-10: Python
 * Lecture 11-12: R
 * Lecture 13: Final Examination
-]
+
 ---
 ## Assignments
+
+
 
 ---
 ## Assessment
