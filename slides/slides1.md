@@ -4,24 +4,25 @@ Introduction to Programming for Bioinformatics using Python and R
 
 Lecturer: Gang Chen <chengangcs@gmail.com>
 
+---
 
 ## Outline
 
-
+---
 ## Assignments
 
-
+---
 ## Assessment
 
-
+---
 ## Information
 
+---
 
-
-# Computer Architecture and Programming
+# Computer Systems and Programming
 
 Gang Chen <chengangcs@gmail.com>
-
+---
 
 
 # What is Computer
