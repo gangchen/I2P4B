@@ -1,79 +1,23 @@
-<!doctype html>
-<html lang="en">
-
-	<head>
-		<meta charset="utf-8">
-
-		<title>reveal.js - Markdown Demo</title>
-
-		<link rel="stylesheet" href="../lib/reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="../lib/reveal.js/css/theme/black.css" id="theme">
-
-        <link rel="stylesheet" href="../lib/reveal.js/lib/css/zenburn.css">
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<div class="slides">
-
-                <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
-                <section data-markdown="slides1.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
-
-                <!-- Slide attributes -->
-                <section data-markdown>
-                    <script type="text/template">
-                        <!-- .slide: data-background="#000000" -->
-                        ## Slide attributes
-                    </script>
-                </section>
-
-                <!-- Element attributes -->
-                <section data-markdown>
-                    <script type="text/template">
-                        ## Element attributes
-                        - Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
-                        - Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
-                    </script>
-                </section>
-
-                <!-- Code -->
-                <section data-markdown>
-                    <script type="text/template">
-                        ```php
-                        public function foo()
-                        {
-                            $foo = array(
-                                'bar' => 'bar'
-                            )
-                        }
-                        ```
-                    </script>
-                </section>
-
-            </div>
-		</div>
-
-		<script src="../lib/reveal.js/lib/js/head.min.js"></script>
-		<script src="../lib/reveal.js/js/reveal.js"></script>
-
-		<script>
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: '../lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '../lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: '../lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: '../lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '../lib/reveal.js/plugin/notes/notes.js' }
-				]
-			});
-		</script>
-
-	</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      /* Slideshow styles */
+    </style>
+  </head>
+  <body>
+     <textarea id="source">
+      # Computer Systems
+	  ## Overview of Computer System
+	  ## Representing and Manipulating Information
+	  ## Machine-Leve Representation of Programs
+	  ## Memory, Virtual Memory
+	  ## Network
+    </textarea>
+     <script src="../lib/remark/src/remark.js">
+    </script>
+    <script>
+       var slideshow = remark.create();
+    </script>
+  </body>
 </html>

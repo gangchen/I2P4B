@@ -1,3 +1,6 @@
 [submodule "lib/reveal.js"]
 	path = lib/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
+[submodule "lib/remark"]
+	path = lib/remark
+	url = https://github.com/gnab/remark.git
