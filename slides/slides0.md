@@ -10,7 +10,13 @@ Lecturer: Gang Chen <chengangcs@gmail.com>
 
 ---
 
-## Outline
+## Syllabus
+
+* Lecture 1: Computer Systems
+* Lecture 2: The elements of Programming
+* Lecture 3-10: Python
+* Lecture 11-12: R
+* Lecture 13: Final Examination
 
 ---
 ## Assignments
@@ -20,42 +26,6 @@ Lecturer: Gang Chen <chengangcs@gmail.com>
 
 ---
 ## Information
-
+* Course Codes: https://github.com/gangchen/CUHK-I2P/
+* Course Website: https://gangchen.github.io/CUHK-I2P/index.html
 ---
-
-# Computer Systems and Programming
-
-Gang Chen <chengangcs@gmail.com>
----
-
-
-# What is Computer
-
-
-## History of Computer
-
-Content 1.1
-
-Note: This will only appear in the speaker notes window.
-
-
-## Turing Machine
-
-Content 1.2
-
-
-
-## External 2
-
-Content 2.1
-
-
-
-## External 3.1
-
-Content 3.1
-
-
-## External 3.2
-
-Content 3.2
