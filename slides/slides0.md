@@ -12,18 +12,35 @@ class: left, middle
 ## Syllabus
 
 * Lecture 1: Computer Systems
+--
 * Lecture 2: The elements of Programming
-* Lecture 3-10: Python
-* Lecture 11-12: R
+--
+* Lecture 3-8: Python
+--
+* Lecture 9-10: R
+--
+* Lecture 11-12: Best Practice
+--
 * Lecture 13: Final Examination
 
 ---
-## Assignments
-
-
+## Tips
+--
+* Bring your laptop with battery to classroom
+--
+* Most softwares and packages in this courses are available on Windows, Linux and Mac OS.
+--
+* However, Linux and Mac OS are recommended for Bioinformatics.
+--
+* All source codes, including source codes of slides, can be found on GitHub.
 
 ---
 ## Assessment
+
+* Attendance: 5%
+* Assignments and small projects: 45%
+* Final examination: 50%
+
 
 ---
 ## Information
