@@ -6,7 +6,7 @@ class: center, middle, inverse
 
 Introduction to Programming for Bioinformatics using Python and R
 
-Lecturer: Gang Chen <chengangcs@gmail.com>
+Lecturer: Gang Chen [email](chengangcs@gmail.com)
 
 ---
 
@@ -26,6 +26,6 @@ Lecturer: Gang Chen <chengangcs@gmail.com>
 
 ---
 ## Information
-* Course Codes: https://github.com/gangchen/CUHK-I2P/
-* Course Website: https://gangchen.github.io/CUHK-I2P/index.html
+* [Course Codes on GitHub](https://github.com/gangchen/CUHK-I2P/)
+* [Course Website](https://gangchen.github.io/CUHK-I2P/index.html)
 ---
