@@ -11,13 +11,13 @@ Lecturer: Gang Chen [email](chengangcs@gmail.com)
 ---
 
 ## Syllabus
-
+.pull-left[
 * Lecture 1: Computer Systems
 * Lecture 2: The elements of Programming
 * Lecture 3-10: Python
 * Lecture 11-12: R
 * Lecture 13: Final Examination
-
+]
 ---
 ## Assignments
 
