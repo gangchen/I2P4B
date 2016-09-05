@@ -23,6 +23,7 @@ Gang CHEN, Ph.d of Computer Science
 * Ph.d of Computer Science, Central South University, 2006 - 2012
 ---
 
+class: left, middle
 ## Syllabus
 
 * Lecture 1: Computer Systems
@@ -43,7 +44,7 @@ Gang CHEN, Ph.d of Computer Science
 * Lecture 13: Final Examination
 
 ---
-
+class: left, middle
 ## Tips
 
 --
@@ -59,6 +60,8 @@ Gang CHEN, Ph.d of Computer Science
 * All source codes, including source codes of slides, can be found on GitHub.
 
 ---
+
+class: left, middle
 ## Assessment
 
 * Attendance: 5%
@@ -67,7 +70,7 @@ Gang CHEN, Ph.d of Computer Science
 
 
 ---
+class: left, middle
 ## Information
 * [Course Codes on GitHub](https://github.com/gangchen/CUHK-I2P/)
 * [Course Website](https://gangchen.github.io/CUHK-I2P/index.html)
----
