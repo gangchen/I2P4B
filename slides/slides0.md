@@ -1,6 +1,7 @@
 class: center, middle
 
 .title[Introduction to Programming]
+
 .subtitle[Introduction to Programming for Bioinformatics using Python and R]
 
 .author[Lecturer: Gang Chen <chengangcs@gmail.com>]

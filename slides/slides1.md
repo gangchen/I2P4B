@@ -4,7 +4,9 @@ class: center, middle, inverse
 ---
 .title[GNBF5010: Introduction to Programming]
 
+
 .subtitle[Introduction to Programming for Bioinformatics using Python and R]
+
 
 Lecturer: Gang Chen <chengangcs@gmail.com>
 
