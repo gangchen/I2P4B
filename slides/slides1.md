@@ -2,9 +2,9 @@ name: inverse
 layout: true
 class: center, middle, inverse
 ---
-# GNBF5010: Introduction to Programming
+.title[GNBF5010: Introduction to Programming]
 
-Introduction to Programming for Bioinformatics using Python and R
+.subtitle[Introduction to Programming for Bioinformatics using Python and R]
 
 Lecturer: Gang Chen <chengangcs@gmail.com>
 
