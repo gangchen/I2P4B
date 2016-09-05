@@ -1,3 +1,7 @@
+name: inverse
+layout: true
+class: center, middle, inverse
+---
 # GNBF5010: Introduction to Programming
 
 Introduction to Programming for Bioinformatics using Python and R
