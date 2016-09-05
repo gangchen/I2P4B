@@ -21,9 +21,7 @@ Gang CHEN, Ph.d of Computer Science
 * Senior Researcher of BGI and Vice President of BGI-Tech, 2012 - 2015
 * Visiting Scientist of Univ. of Texas Medical Branch, 2009-2010
 * Ph.d of Computer Science, Central South University, 2006 - 2012
-
-
-
+---
 
 ## Syllabus
 
@@ -45,13 +43,18 @@ Gang CHEN, Ph.d of Computer Science
 * Lecture 13: Final Examination
 
 ---
+
 ## Tips
+
 --
 * Bring your laptop with battery to classroom
+
 --
 * Most softwares and packages in this courses are available on Windows, Linux and Mac OS.
+
 --
 * However, Linux and Mac OS are recommended for Bioinformatics.
+
 --
 * All source codes, including source codes of slides, can be found on GitHub.
 
