@@ -1,6 +1,6 @@
 name: inverse
 layout: true
-class: center, middle, inverse
+class: middle, inverse
 
 ---
 .title[Computer Systems and Programming]
@@ -14,6 +14,7 @@ class: center, middle, inverse
 
 # Information in Computer
 
+---
 ## Hello World
 ```c
 #include<stdio>
@@ -25,11 +26,11 @@ int main(){
 ```
 
 ---
-```shell
+```bash
 > od -t a src/hello.c
 ```
 
-```
+```bash
 0000000    #   i   n   c   l   u   d   e   <   s   t   d   i   o   .   h
 0000020    >  nl  nl   i   n   t  sp   m   a   i   n   (   )   {  nl  sp
 0000040   sp  sp  sp   p   r   i   n   t   f   (   "   H   e   l   l   o
@@ -38,10 +39,11 @@ int main(){
 ```
 
 ---
-```shell
+```bash
 > od -t d1 src/hello.c
 ```
-```
+
+```bash
 0000000    35 105 110  99 108 117 100 101  60 115 116 100 105 111  46 104
 0000020    62  10  10 105 110 116  32 109  97 105 110  40  41 123  10  32
 0000040    32  32  32 112 114 105 110 116 102  40  34  72 101 108 108 111
