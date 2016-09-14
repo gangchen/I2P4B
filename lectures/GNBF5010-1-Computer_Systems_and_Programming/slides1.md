@@ -17,6 +17,7 @@ class: middle, inverse
 ---
 ## Hello World
 .left-column[
+Text File
 ```c
 #include<stdio>
 
@@ -29,6 +30,7 @@ int main(){
 --
 
 .right-column[
+ASCII Characters
 ```bash
 > od -t a src/hello.c
 ```
@@ -45,6 +47,7 @@ int main(){
 ---
 
 .left-column[
+ASCII Characters
 ```bash
 > od -t a src/hello.c
 ```
@@ -61,6 +64,7 @@ int main(){
 --
 
 .right-column[
+ASCII Codes
 ```bash
 > od -t d1 src/hello.c
 ```
@@ -77,6 +81,7 @@ int main(){
 ---
 
 .left-column[
+ASCII Codes
 ```bash
 > od -t d1 src/hello.c
 ```
@@ -95,6 +100,7 @@ int main(){
 ]
 
 ---
+Binary
 
 ```bash
 > xxd -b src/hello.c
@@ -110,6 +116,7 @@ int main(){
 0000036: 01011100 01101110 00100010 00101001 00111011 00001010  \n");.
 000003c: 01111101 00001010
 ```
+---
 
 ## Non-ASCII Characters?
 
