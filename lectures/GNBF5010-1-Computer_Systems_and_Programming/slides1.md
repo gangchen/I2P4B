@@ -13,7 +13,9 @@ class: middle, inverse
 
 # Outline
 * Information in Computer
-* How to make the source codes executable?
+* Source codes -> Program
+* Storage, Operating System and network
+* Advanced Topics
 
 ---
 
@@ -201,14 +203,27 @@ UTF-8 is an 8-bit variable-width encoding which maximizes compatibility with ASC
 
 ## Number
 
-## Integer
-
-
-### Floating Number
+### Floating Point
 
 ![IEEE 754](imgs/float.jpg)
 
+a = b * 2 ^ c
+
+* Sign is 0 if a is positive, otherwise sign is 1;
+* Exponent = 2 ^(n -1) - 1 + c
+
 ---
+
+### Floating Point: Example
+
+12.75
+1. 12.75 = 1100.11
+2. 1100.11 = 1.10011 * 2^3
+3.  
+    * exponent = 2 ^ (8-1) - 1 + 3 = 130 = 10000010
+    * sign: 0
+    * Mantissa = 10011000000000000000000
+4. 12.75 = 0 10000010 10011000000000000000000 = 414C0000   
 
 ## IEEE 754 Floating Point
 
