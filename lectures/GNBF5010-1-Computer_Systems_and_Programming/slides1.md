@@ -277,7 +277,7 @@ The linker merge the functions provide by other compiled object files.
 
 ---
 
-<img src="imgs/system.png" width="780">
+<img src="imgs/system.png" width="700">
 ---
 
 ````bash
@@ -286,29 +286,68 @@ hello world
 ````
 ---
 
-<img src="imgs/readcommand.png" width="780">
+<img src="imgs/readcommand.png" width="700">
 
 ---
 
-<img src="imgs/loadprogram.png" width="780">
+<img src="imgs/loadprogram.png" width="700">
 ---
 
-<img src="imgs/output.png" width="780">
+<img src="imgs/output.png" width="700">
 
 ---
 # Storage
 ---
 
-<img src="imgs/storage.png" width="780">
+<img src="imgs/storage.png" width="700">
 ---
-<img src="imgs/cpucompare.png" width="700">
+<img src="imgs/cpucompare.png" width="600">
 
 ---
 # Operating Systems
+---
+<img src="imgs/os.png" width="600">
+---
 
+## POSIX
+The Portable Operating System Interface (POSIX) is a family of standards specified by the IEEE Computer Society for maintaining compatibility between operating systems.
+
+.left-column[
+POSIX-certified:
+* AIX
+* Solaris
+* Mac OS X (since 10.5)
+]
+
+.right-column[
+Mostly POSIX-compliant:
+* Android
+* FreeBSD
+* Darwin (core of OS X and iOS)
+* Linux
+* MINIX
+* OpenBSD
+* VxWorks
+]
 
 ---
 # Network
+---
+<img src="imgs/network.png" width="500">
+
+---
+## Internet
+
+<img src="imgs/internet.png" width="500">
+---
+## HTTP
+
+The Hypertext Transfer Protocol (HTTP) is an application protocol for distributed, collaborative, hypermedia information systems. HTTP functions as a request–response protocol in the client–server computing model.
 
 ---
 # Advanced Topics
+---
+* Concurrency
+* Parallelism
+* Distributed
+* Quantum computing
