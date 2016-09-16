@@ -10,7 +10,13 @@ class: middle, inverse
 .author[chengangcs@gmail.com]
 
 ---
+# Outline
 
+* Overview
+* Installation: Python, Editors and Git
+* Hello Python
+* Manage your source codes using git and github
+---
 
 # Introduction to Python
 ---
@@ -21,7 +27,25 @@ Python is an easy to learn, powerful programming language. It has efficient high
 ]
 ---
 
-## Installation
+### Features
+* Simple
+* Easy to Learn
+* Free and Open Source
+* High-level Language
+* Portable
+* Interpreted
+* Object Oriented
+* Extensible
+* Embeddable
+* Extensive Libraries
+
+---
+### Implementations
+
+* CPython: CPython is the reference implementation of Python, written in C.
+* PyPy: PyPy is a Python interpreter implemented in a restricted statically-typed subset of the Python language called RPython. The interpreter features a just-in-time compiler and supports multiple back-ends (C, CLI, JVM).
+* JPython: Jython is a Python implementation that compiles Python code to Java bytecode which is then executed by the JVM (Java Virtual Machine). Additionally, it is able to import and use any Java class like a Python module.
+* IronPython: IronPython is an implementation of Python for the .NET framework.
 
 ---
 
@@ -32,6 +56,9 @@ Python is an easy to learn, powerful programming language. It has efficient high
 * [What's new in Python 3](https://docs.python.org/3.0/whatsnew/3.0.html)
 ---
 
+## Installation
+
+---
 ### Installation of Python 3
 
 * Windows
