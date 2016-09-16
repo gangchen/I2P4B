@@ -103,7 +103,7 @@ ASCII Codes
 ]
 
 .right-column[
-<img src="imgs/asciifull.gif" width="450">
+<img src="imgs/asciifull.gif" width="400">
 ]
 
 ---
@@ -269,20 +269,39 @@ The linker merge the functions provide by other compiled object files.
 ````
 
 ---
+
+<img src="imgs/compilation-system.png" width="780">
+
+---
 # Run the program
+
+---
+
+<img src="imgs/system.png" width="780">
+---
 
 ````bash
 > ./hello
 hello world
 ````
+---
+
+<img src="imgs/readcommand.png" width="780">
 
 ---
 
-<img src="imgs/compilation-system.png" width="900">
+<img src="imgs/loadprogram.png" width="780">
+---
+
+<img src="imgs/output.png" width="780">
 
 ---
 # Storage
+---
 
+<img src="imgs/storage.png" width="780">
+---
+<img src="imgs/cpucompare.png" width="700">
 
 ---
 # Operating Systems
