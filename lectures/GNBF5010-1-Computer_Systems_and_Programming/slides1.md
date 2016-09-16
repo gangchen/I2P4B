@@ -213,8 +213,8 @@ UTF-8 is an 8-bit variable-width encoding which maximizes compatibility with ASC
 ## IEEE 754 Floating Point
 
 * Input: 3.1415926
-* Single Precision: 0 10000000 10010010000111111011010
-* Double Precision: 0 10000000000 1001001000011111101101001101000100101101100001001010
+* Single Precision: 0 10000000 10010010000111111011010, 40490FDA
+* Double Precision: 0 10000000000 1001001000011111101101001101000100101101100001001010, 400921FB4D12D84A
 --
 * Single Precision code of 3.1415926 = 3.1415925
 
@@ -224,24 +224,60 @@ UTF-8 is an 8-bit variable-width encoding which maximizes compatibility with ASC
 
 ---
 
+````bash
+> gcc -o hello hello
+> ./hello
+hello world
+````
+
+---
+
 ## Preprocessing
+The preprocessor modifies the original C program
+according to directives that begin with the # character.
+
+````bash
+> gcc -E hello.c > hello.i
+````
 
 ---
 
 ## Compilation
+The compiler translates the text file hello.i into
+the text file hello.s, which contains an assembly-language program.
+
+````bash
+> gcc -S hello.c > hello.s
+````
 
 ---
 
 ## Assembly
+The assembler translates hello.s into machine language instructions.
 
+````bash
+gcc -c hello.c > hello.o
+````
 ---
 
 ## Linking
+The linker merge the functions provide by other compiled object files.
 
+````bash
+> gcc -o hello hello
+````
 
 ---
 # Run the program
 
+````bash
+> ./hello
+hello world
+````
+
+---
+
+![Compilation System](imgs/compilation-system.png)
 
 ---
 # Storage

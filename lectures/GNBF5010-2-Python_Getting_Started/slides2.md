@@ -27,14 +27,24 @@ class: middle, inverse
 * Python 3.0 was released in 2008.
 * The final 2.x version 2.7 release came out in mid-2010, with a statement of extended support for this end-of-life release.
 * The 2.x branch will see no new major releases after that. 3.x is under active development and has already seen over five years of stable releases, including version 3.3 in 2012, 3.4 in 2014, and 3.5 in 2015.
-* ![What's new in Python 3](https://docs.python.org/3.0/whatsnew/3.0.html)
+* [What's new in Python 3](https://docs.python.org/3.0/whatsnew/3.0.html)
 ---
 
 ### Installation of Python 3
 
 * Windows
+    * [Python Releases for Windows](https://www.python.org/downloads/windows/)
 * Ubuntu
+    * apt-get:
+````
+    sudo apt-get install python3
+````
 * MacOS
+    * [Python Releases for Mac OS](https://www.python.org/downloads/mac-osx/)
+    * Homebrew:
+````
+brew install python3
+````
 
 ---
 
@@ -44,13 +54,21 @@ class: middle, inverse
 * Pydev with Eclipse
 * VIM, Emacs
 * Notepad++ for Windows
-* ATOM from Github
+* ATOM from Github (recommended in this course)
 * Visual Studio Codes
 
+---
 ### Installation of Git
+
+Git is the most popular source codes management system.
 
 * Git: https://git-scm.com
 * GUI: SourceTree from BitBuckets
+* Hosted Git service:
+    * Github.com
+    * BitBucket.com
+    * Coding.net
+
 
 ---
 ## References
