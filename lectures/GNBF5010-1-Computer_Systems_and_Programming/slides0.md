@@ -50,6 +50,7 @@ class: left, middle
 * Most softwares and packages in this courses are available on Windows, Linux and Mac OS.
 * However, Linux and Mac OS are recommended for Bioinformatics.
 * All source codes, including source codes of slides, can be found on GitHub.
+* The slides are written in Markdown with remark.js.
 
 ---
 
