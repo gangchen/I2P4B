@@ -5,6 +5,7 @@ class: center, middle
 .subtitle[for Bioinformatics using Python and R]
 
 .author[Lecturer: Gang Chen]
+
 .author[chengangcs@gmail.com]
 
 ---
@@ -24,39 +25,30 @@ Gang CHEN, Ph.d of Computer Science
 ---
 
 class: left, middle
+## About
+GNBF5010, Introduction to Programming
+
+This course provides an introduction to the programming languages and tools that widely used in Bioinformatics. It includes relevant background materials in computer systems, computer network and software engineering. The main programming languages covered in this course are Python and R. C, Perl, GIT, MySQL and other frequently used programming languages and tools are introduced in this course.
+
+---
+
+class: left, middle
 ## Syllabus
 
 * Lecture 1: Computer Systems
-
---
 * Lecture 2: The elements of Programming
-
---
 * Lecture 3-8: Python
-
---
 * Lecture 9-10: R
-
---
 * Lecture 11-12: Best Practice
-
---
 * Lecture 13: Final Examination
-
 ---
+
 class: left, middle
 ## Tips
 
---
 * Bring your laptop with battery to classroom
-
---
 * Most softwares and packages in this courses are available on Windows, Linux and Mac OS.
-
---
 * However, Linux and Mac OS are recommended for Bioinformatics.
-
---
 * All source codes, including source codes of slides, can be found on GitHub.
 
 ---
@@ -73,4 +65,4 @@ class: left, middle
 class: left, middle
 ## Information
 * [Course Codes on GitHub](https://github.com/gangchen/CUHK-I2P/)
-* [Course Website](https://gangchen.github.io/CUHK-I2P/index.html)
+* [Course Website](http://i2p.42dna.com)
