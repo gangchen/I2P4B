@@ -103,7 +103,7 @@ ASCII Codes
 ]
 
 .right-column[
-![ASCII Table](imgs/asciifull.gif)
+<img src="imgs/asciifull.gif" width="450">
 ]
 
 ---
@@ -216,6 +216,7 @@ UTF-8 is an 8-bit variable-width encoding which maximizes compatibility with ASC
 * Single Precision: 0 10000000 10010010000111111011010, 40490FDA
 * Double Precision: 0 10000000000 1001001000011111101101001101000100101101100001001010, 400921FB4D12D84A
 --
+
 * Single Precision code of 3.1415926 = 3.1415925
 
 ---
@@ -264,7 +265,7 @@ gcc -c hello.c > hello.o
 The linker merge the functions provide by other compiled object files.
 
 ````bash
-> gcc -o hello hello
+> gcc -o hello hello.c
 ````
 
 ---
@@ -277,7 +278,7 @@ hello world
 
 ---
 
-![Compilation System](imgs/compilation-system.png)
+<img src="imgs/compilation-system.png" width="900">
 
 ---
 # Storage
