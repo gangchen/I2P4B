@@ -38,6 +38,19 @@ Python is an easy to learn, powerful programming language. It has efficient high
 * Extensible
 * Embeddable
 * Extensive Libraries
+---
+
+### Applications
+* Google
+* YouTube
+* Quora
+* Instagram
+* Reddit
+* Civilization V
+* BioPython
+* PyMol
+* Scikit-learn, NumPy,
+* Caffe, Theano, TensorFlow, mxnet and so on
 
 ---
 ### Implementations
@@ -92,7 +105,7 @@ brew install python3
 Git is the most popular source codes management system.
 
 * Git: https://git-scm.com
-* GUI: SourceTree from BitBuckets
+* GUI: SourceTree from BitBuckets (Recommended in this course)
 * Hosted Git service:
     * Github.com
     * BitBucket.com
@@ -130,3 +143,35 @@ Hello Python!
 ````
 ---
 # Using Git
+
+---
+
+## Create a local repository (GUI)
+
+1. File -> New
+2. Copy the hello.py to the directory
+3. Add hello.py to track
+4. Commit
+5. Modify the codes, and commit again.
+
+---
+## Create a local repository (Command Line)
+````bash
+git init
+git add hello.py
+git commit -m "first commit"
+````
+---
+
+## Push to remote repository (GUI)
+1. Sign up on github or BitBucket or coding.net.
+2. Create a new repository on the hosted git service.
+3. repository -> add remote repository.
+2. Push local repository to remote.
+
+---
+## Push to remote repository (Command Line)
+````bash
+git remote add origin https://github.com/gangchen/hello.git
+git push -u origin master
+````
