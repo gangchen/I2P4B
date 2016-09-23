@@ -12,10 +12,10 @@ class: middle, inverse
 ---
 # Outline
 
-* Overview
-* Installation: Python, Editors and Git
-* Hello Python
-* Manage your source codes using git and github
+* Data types and Operations
+* Flow control
+* Functions and Modules
+* Managing Python files
 ---
 
 Program = Data Structure + Algorithm
@@ -37,31 +37,215 @@ Lecture 3 covers 1-3, and 4 is covered in Lecture 4.
 
 # Data Type and Operations
 ---
-## Simple Data Type
-## Variable
-## Built-in Data Structures
+## Simple Data Types
+.left-column[
+* Type
+* Value
+]
 
+.right-column[
+* Class
+* Object
+]
+---
+
+### Booleans
+
+.left-column[
+Possible Values:
+* True
+* False
+]
+
+.right-column[
+Logical Operations:
+* not
+* and
+* or
+]
+
+---
+
+Empty Values
+
+Following values are treated as False in logical operations:
+
+* None
+* 0
+* 0.0
+* ""
+* ''
+
+---
+
+### Integers
+
+.left-column[
+Python 2
+* int, limited by the size of a C long (typically 32 or 64 bits)
+* long, limited only by available memory
+]
+
+.right-column[
+Python 3
+* long
+]
+
+
+---
+
+Implementation of long in CPython
+
+````c
+struct _longobject {
+    PyObject_VAR_HEAD
+    digit ob_digit[1];
+};
+````
+.footnote[Ref: https://www.wikiwand.com/en/Arbitrary-precision_arithmetic]
+
+---
+
+Operations
+
+* +, -, \*, /
+* +=, -=, \*=, /=
+* \*\*, //
+* ==, !=
+
+---
+### Floats
+
+* 2.5
+* 1.222e24
+* .0002
+* 10002.
+
+---
+### Operations
+
+````python
+1.3 - 0.6 == 0.7
+False
+````
+---
+
+###Strings
+
+Strings are series of Unicode characters.
+
+* 'Hello World'
+* "Hello World"
+---
+
+Operations
+
+* in
+* +
+* x
+* Subscription
+* Slicing
+
+---
+## Variable
+<img src="imgs/variable.png" width="400">
+---
+## Built-in Data Structures
+* sets
+* mappings
+* sequences
+* streams
 ---
 
 # Flow Control
 ---
 ## Conditional Statements
+
+````python
+if expression:
+    statements1
+else:
+    statements2
+````
+---
+
+## Conditional Statements
+
+````python
+if expression1:
+    statements1
+elif expression2:
+    statements2
+    # . . . any number of additional elif clauses
+else:
+    statements
+````
+---
+
 ## Loop
+
+````python
+while expression:
+    statements1
+else:xs
+    statements2
+````
+---
 ## Iterations
+````python
+for item in collection:
+    do something with item
+````
+---
 ## Exception Handling
+````python
+try:
+    try-statements
+except ErrorClass:
+    except-statements
+````
 ---
 
 # Functions and modules
 ---
 
 ## Functions
+
+
+---
 ### Defining Functions
+````python
+def name(parameter-list):
+    body
+````
+---
 ### Comments and Documentation
+
+ref: https://www.python.org/dev/peps/pep-0257/
 ---
 
 ## Modules
+---
 ### import
+````python
+import name
+````
+---
 ### namespace
+````python
+from modulename import name1, name2, ...
+from modulename import actualname as yourname
+from modulename import *
+
+````
 ---
 
 ## Managing Python Files
+
+* create subdirectories for different modules of your program
+* add __init__.py to these directories
+* Content of __init__.py
+````python
+# in your __init__.py
+from file import File
+````
