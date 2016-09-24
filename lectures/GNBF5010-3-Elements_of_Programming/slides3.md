@@ -130,6 +130,8 @@ False
 ````
 ---
 
+
+---
 ###Strings
 
 Strings are series of Unicode characters.
@@ -153,10 +155,75 @@ Operations
 ## Built-in Data Structures
 * sets
 * mappings
-* sequences
+* list
 * streams
 ---
 
+### set
+A set is an unordered collection of items that contains no duplicates.
+````python
+set("ACGT")
+set("ACGGGCTATGTGT")
+{"AC","CC","AA"}
+{"AC", "CC", "AA","AA"}
+{"AC", "CC", "AA","AA","CA"}
+````
+---
+
+Opertaions
+.left-column[
+* <=
+* <
+* >=
+* >
+]
+
+.right-column[
+* |, union
+* &, intersection
+* -, difference
+* ^, symmetric difference
+]
+---
+Opertaions
+
+* add, remove, discard
+* |=, &=, -=, ^=
+---
+### List
+Lists are ordered collections that may contain duplicate elements.
+
+````python
+[1,2,3,4,5,6]
+[1,2,3,4,5,6, 6]
+['A', 'C', 'G', 'T']
+['A', 'C', 'G', 'T', 1,2,3,4,5]
+[('A', 1), ('C', 2), ('G',3), ('T',4)]
+````
+---
+Operations
+* append
+* extend
+* insert
+* remove
+* pop
+* clear
+* index
+* count
+* sort
+* reverse
+* copy
+* popleft
+
+---
+### map
+A mapping is a mutable unordered collection of key/value pairs
+````python
+{'A':1, 'C':2, 'G':3, 'T': 4}
+dict([('A', 1), ('C', 2), ('G',3), ('T',4)])
+````
+
+---
 # Flow Control
 ---
 ## Conditional Statements
@@ -210,7 +277,7 @@ except ErrorClass:
 ---
 
 ## Functions
-
+A function is a block of organized, reusable code that is used to perform a single, related action.
 
 ---
 ### Defining Functions
