@@ -33,6 +33,8 @@ Encapsulation
 
 <img src="imgs/dog.gif" width="500">
 ---
+
+
 ### Encapsulation
 Dividing the code into a public interface, and a private implementation of that interface.
 ---
