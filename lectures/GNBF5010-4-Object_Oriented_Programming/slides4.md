@@ -28,10 +28,10 @@ OOP = Object Oriented Programming
 Encapsulation
 * Classes Define what is common for a whole class of objects
 ---
-<img src="imgs/classes_instances.png" width="500">
+<img src="imgs/classes_instances.png" width="800">
 ---
 
-<img src="imgs/dog.gif" width="500">
+<img src="imgs/dog.gif" width="800">
 ---
 
 
@@ -48,13 +48,39 @@ The ability to create subclasses that contain specializations of their parents.
 ---
 
 # OOP in Python
-
 ---
+## Defining Class
+---
+## Defining Method
+---
+## Creating Object
+---
+## Calling Method
+---
+## Designing a class for FASTA sequence
+---
+
 
 # Design Pattern in Python
+---
+
+## Design Pattern
+In software engineering, a software design pattern is a general reusable solution
+to a commonly occurring problem within a given context in software design.
+
+Best reference is “Design Patterns. Elements of Reusable Object-Oriented
+Software.” (1995), written by the “Gang of Four” (GoF).
+---
+
+## Iterator Pattern
 
 ---
 
+## Decorator Pattern
+---
+## Strategy Pattern
+
+---
 # Examples
 
 ---
