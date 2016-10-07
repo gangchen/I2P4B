@@ -50,3 +50,17 @@ a {text-decoration: none; color: #666666;text-align:center; width: 24%}
 a:visited {color:#666666}
 a:hover {color:#33AA99}
 a:active, a#active {color:#FF9700;}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #000000;
+}
+
+th{
+    border:1px solid #000000;
+}
+
+td{
+    border:1px solid #000000;
+}
