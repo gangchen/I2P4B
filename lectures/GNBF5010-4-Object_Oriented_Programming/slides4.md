@@ -50,8 +50,28 @@ The ability to create subclasses that contain specializations of their parents.
 # OOP in Python
 ---
 ## Defining Class
+````python
+class ClassName:
+  Class Body
+````
+
+````python
+class dog:
+  def __init__(self):
+    self.color = "yellow"
+    self.size = "big"
+    self.age = 4
+````
+
 ---
 ## Defining Method
+
+````python
+class ClassName:
+  def MethodName(self, paramters):
+    method body
+````
+
 ---
 ## Creating Object
 ---
