@@ -58,7 +58,9 @@ redcar = Car()
 redcar.drive()
 #redcar.__updateSoftware()  not accesible from object.
 ````
-----
+
+---
+
 Private variables
 
 ````python
@@ -163,13 +165,14 @@ class ClassName:
 
 Encapsulation
 
-|-----|----|
+
 |Type |	Description|
+|-----|------------|
 |public methods	|Accessible from anywhere|
 |private methods|	Accessible only in their own class. starts with two underscores|
 |public variables	|Accessible from anywhere|
 |private variables|	Accesible only in their own class or by a method if defined. starts with two underscores|
-|-----|----|
+
 ---
 ## Creating Object
 ---
