@@ -41,47 +41,17 @@ In an object oriented python program, you can restrict access to methods and var
 This can prevent the data from being modified by accident and is known as *encapsulation*.
 ---
 
-Private methods
-````python
-class Car:
+Encapsulation of Methods and Variables
 
-    def __init__(self):
-        self.__updateSoftware()
-
-    def drive(self):
-        print 'driving'
-
-    def __updateSoftware(self):
-        print 'updating software'
-
-redcar = Car()
-redcar.drive()
-#redcar.__updateSoftware()  not accesible from object.
-````
-
+|Type |	Description|
+|-----|------------|
+|public methods	| Accessible from anywhere|
+|private methods|	Accessible only in their own class. starts with two underscores|
+|public variables |Accessible from anywhere|
+|private variables|	Accessible only in their own class or by a method if defined. starts with two underscores|
 ---
 
-Private variables
 
-````python
-class Car:
-
-    __maxspeed = 0
-    __name = ""
-
-    def __init__(self):
-        self.__maxspeed = 200
-        self.__name = "Supercar"
-
-    def drive(self):
-        print 'driving. maxspeed ' + str(self.__maxspeed)
-
-redcar = Car()
-redcar.drive()
-redcar.__maxspeed = 10  # will not change variable because its private
-redcar.drive()
-````
-----
 
 ### Polymorphism
 The ability to overload standard operators so that they have appropriate behavior based on their context
@@ -89,11 +59,11 @@ Inheritance.
 ````python
 class Bear(object):
     def sound(self):
-        print "Groarrr"
+        print("Groarrr")
 
 class Dog(object):
     def sound(self):
-        print "Woof woof!"
+        print("Woof woof!")
 
 def makeSound(animalType):
     animalType.sound()
@@ -118,14 +88,14 @@ class User:
         self.name = name
 
     def printName(self):
-        print "Name  = " + self.name
+        print("Name  = " + self.name)
 
 class Programmer(User):
     def __init__(self, name):
         self.name = name
 
     def doPython(self):
-        print "Programming Python"
+        print("Programming Python")
 
 brian = User("brian")
 brian.printName()
@@ -163,15 +133,56 @@ class ClassName:
 
 ---
 
+Encapsulation in Python
+
+`Any identifier of the form \_\_spam (at least two leading underscores, at most one trailing underscore) is textually replaced with \_classname\_\_spam, where classname is the current class name with leading underscore(s) stripped. This mangling is done without regard to the syntactic position of the identifier, so it can be used to define class-private instance and class variables, methods, variables stored in globals, and even variables stored in instances. private to this class on instances of other classes.
+
+Name mangling is intended to give classes an easy way to define “private” instance variables and methods, without having to worry about instance variables defined by derived classes, or mucking with instance variables by code outside the class. Note that the mangling rules are designed mostly to avoid accidents; it still is possible for a determined soul to access or modify a variable that is considered private.`
+
+---
+Private methods
+````python
+class Car:
+
+    def __init__(self):
+        self.__updateSoftware()
+
+    def drive(self):
+        print('driving')
+
+    def __updateSoftware(self):
+        print('updating software')
+
+redcar = Car()
+redcar.drive()
+#redcar.__updateSoftware()  not accesible from object.
+````
+
+---
+
 Encapsulation
 
+Private variables
 
-|Type |	Description|
-|-----|------------|
-|public methods	|Accessible from anywhere|
-|private methods|	Accessible only in their own class. starts with two underscores|
-|public variables	|Accessible from anywhere|
-|private variables|	Accesible only in their own class or by a method if defined. starts with two underscores|
+````python
+class Car:
+
+    __maxspeed = 0
+    __name = ""
+
+    def __init__(self):
+        self.__maxspeed = 200
+        self.__name = "Supercar"
+
+    def drive(self):
+        print('driving. maxspeed ' + str(self.__maxspeed))
+
+redcar = Car()
+redcar.drive()
+redcar.__maxspeed = 10  # will not change variable because its private
+redcar.drive()
+````
+---
 
 ---
 ## Creating Object
