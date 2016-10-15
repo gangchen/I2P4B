@@ -18,35 +18,51 @@ class: middle, inverse
 * Advanced Data Structures and Algorithms
 ---
 
-# Why Data Structure and Algorithm
+# Sorting
 
----
-# Important Data Structures
----
-## Linear Data Structures
-Stack and Queue
-
----
-
-## Trees
-
+## Sorting Algorithms
+* Bubble Sorting
+* Insertion Sorting
+* Merge Sorting
+* Quick Sorting
 ---
 
-## Graphs
+## Comparison of Sorting Algorithms
+
+* Small dataset
+* Large dataset
+
+## Performance of Sorting Algorithms
+
+* Running time
+* Number of comparisons
+* Big O Concept
+
+---
+# Shortest Path
+---
+## Problem
 
 ---
 
-## Hashes
+## Data Structure: Graph
 
 ---
-# Algorithm Design and Analysis
+
+## Shortest Path
+
 ---
-## Divid and Conquer
+## Comparison
+
 ---
-## Dynamic Programming
+## Discussion
+* Weight Graph
+* Negative weight
+* Cycle
 ---
-# Data Structures and Algorithms in Bioinformatics
+
+# Algorithms in Bioinformatics
 ---
-## Data Sturcutres in Bioinformatics
+## Smith-Waterman Sequence Alignment
 ---
-## Algorithms in Bioinformatics
+## Random Walk and Page Rank 
