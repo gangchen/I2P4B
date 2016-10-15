@@ -15,7 +15,8 @@ class: middle, inverse
 * Why Data Structure and Algorithm
 * Important Data Structures
 * Algorithm Design and Analysis
-* Advanced Data Structures and Algorithms
+* Algorithms and data structures in Bioinformatics
+* References
 ---
 
 # Sorting
@@ -42,14 +43,23 @@ class: middle, inverse
 # Shortest Path
 ---
 ## Problem
-
+The **shortest path problem** is the problem of finding a path between two nodes in a graph such that the length is minimized.
 ---
 
 ## Data Structure: Graph
 
+How to store a Graph in computer?
+
+<img src="img/graph.png" width="800">
+
+* OOP: graph class (<a href="src/graph/graph.py">graph.py</a>).
+
 ---
 
 ## Shortest Path
+
+* Dijkstra's Algorithm
+* A star algorithm
 
 ---
 ## Comparison
@@ -65,4 +75,4 @@ class: middle, inverse
 ---
 ## Smith-Waterman Sequence Alignment
 ---
-## Random Walk and Page Rank 
+## Random Walk and Page Rank
