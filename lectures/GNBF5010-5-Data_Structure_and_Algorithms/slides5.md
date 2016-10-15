@@ -32,7 +32,7 @@ class: middle, inverse
 
 * Small dataset
 * Large dataset
-
+---
 ## Performance of Sorting Algorithms
 
 * Running time
