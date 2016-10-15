@@ -55,7 +55,7 @@ def merge_sort(items):
 def quick_sort(items):
         """ Implementation of quick sort """
         if len(items) > 1:
-                pivot_index = len(items) / 2
+                pivot_index = len(items) // 2
                 smaller_items = []
                 larger_items = []
 
