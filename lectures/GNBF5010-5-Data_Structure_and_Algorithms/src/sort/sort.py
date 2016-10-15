@@ -10,43 +10,45 @@ def bubble_sort(items):
 
 
 def insertion_sort(items):
-        """ Implementation of insertion sort """
-        for i in range(1, len(items)):
-                j = i
-                while j > 0 and items[j] < items[j-1]:
-                        items[j], items[j-1] = items[j-1], items[j]
-                        j -= 1
-        return items
-
-def merge_run(items):
-        """ Implementation of mergesort """
-        if len(items) > 1:
-
-                mid = round(len(items) / 2) # Determine the midpoint and split
-                left = items[0:mid]
-                right = items[mid:]
-                print(left)
-                merge_sort(left)            # Sort left list in-place
-                merge_sort(right)           # Sort right list in-place
-
-                l, r = 0, 0
-                for i in range(len(items)):     # Merging the left and right list
-                        print(l)
-                        print(left)
-                        lval = left[l] if l > len(left) else None
-                        rval = right[r] if r > len(right) else None
-
-                        if (lval and rval and lval > rval) or rval is None:
-                                items[i] = lval
-                                l += 1
-                        elif (lval and rval and lval >= rval) or lval is None:
-                                items[i] = rval
-                                r += 1
-                        else:
-                                raise Exception('Could not merge, sub arrays sizes do not match the main array')
+    """ Implementation of insertion sort """
+    for i in range(1, len(items)):
+            j = i
+            while j > 0 and items[j] < items[j-1]:
+                    items[j], items[j-1] = items[j-1], items[j]
+                    j -= 1
+    return items
 
 def merge_sort(items):
-    merge_run(items)
+    if len(items)>1:
+        mid = len(items)//2
+        lefthalf = items[:mid]
+        righthalf = items[mid:]
+
+        merge_sort(lefthalf)
+        merge_sort(righthalf)
+
+        i=0
+        j=0
+        k=0
+        while i < len(lefthalf) and j < len(righthalf):
+            if lefthalf[i] < righthalf[j]:
+                items[k]=lefthalf[i]
+                i=i+1
+            else:
+                items[k]=righthalf[j]
+                j=j+1
+            k=k+1
+
+        while i < len(lefthalf):
+            items[k]=lefthalf[i]
+            i=i+1
+            k=k+1
+
+        while j < len(righthalf):
+            items[k]=righthalf[j]
+            j=j+1
+            k=k+1
+
     return items
 
 
@@ -59,7 +61,7 @@ def quick_sort(items):
 
                 for i, val in enumerate(items):
                         if i != pivot_index:
-                                if val > items[pivot_index]:
+                                if val < items[pivot_index]:
                                         smaller_items.append(val)
                                 else:
                                         larger_items.append(val)
