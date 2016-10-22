@@ -87,13 +87,19 @@ Dynamic
 
 ## Pickle and Shelve
 
+Modules:
+* pickle
+* shelve
+
 ---
 
-## SQL Databases: MySQL
+## SQL Databases
 
----
-
-## NoSQL Databases: MongoDB and RedisDB
+* What is database?
+* What is SQL?
+* RDMS
+* NoSQL Databases
+* Distributed Storage
 
 ---
 
@@ -103,13 +109,13 @@ Dynamic
 
 ## Connecting to DB in Python
 
+MySQL:
+* pymysql for Python3
+* Upgrade from files to database
+
 ---
 
 ## Web Development Frameworks
 
----
-### Django
-
----
-
-### Flask
+* Django
+* Flask
