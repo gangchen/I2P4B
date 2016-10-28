@@ -13,6 +13,11 @@ class seq:
         for k in self.counts:
             print(k + ':' + str(self.counts[k]))
 
+    def printPercent(self):
+        totalNum = len(self.seq)
+        for k in self.counts:
+            print(k + ":" + str(self.counts[k]/totalNum))
+
 class rnaseq(seq):
     def __init__(self, seq, counts = {'A':0, 'C':0,'G':0,'U':0,'N':0}):
         self.seq = seq
@@ -36,6 +41,7 @@ TCACAGATGACAGTTACTTCCCTAGGTAGTCTGCATGTTGGGCCTCCCAG""")
 
 ds.count()
 ds.print1()
+ds.printPercent()
 
 print("rnaseq:")
 rs = rnaseq(""" >chr21
@@ -48,3 +54,4 @@ TCTGCCCTTGCTGTTAGCTCCTGGAGGGCTGCGGACGGCACCTGCTGTGT
 TCACAGATGACAGTTACTTCCCTAGGTAGTCTGCATGTTGGGCCTCCCAG""")
 rs.count()
 rs.print1()
+rs.printPercent()

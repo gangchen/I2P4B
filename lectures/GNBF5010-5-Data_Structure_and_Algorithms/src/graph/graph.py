@@ -59,6 +59,6 @@ if __name__ == "__main__":
     g.add_edge(3,4)
     g.add_edge(4,5)
     g.add_edge(4,6)
-    v, p = dijsktra(g, 4)
+    v, p = dijsktra(g, 1)
     print(v)
     print(p)

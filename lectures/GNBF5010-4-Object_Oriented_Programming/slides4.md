@@ -351,12 +351,16 @@ Software.” (1995), written by the “Gang of Four” (GoF).
 ---
 
 ## Iterator Pattern
+The **iterator pattern** is a design pattern in which an iterator is used to traverse a container and access the container's elements.
 
+````python
+for i in [1,2,3,4]:
+    print(i)
+````
 ---
 
 ## Decorator Pattern
----
-## Strategy Pattern
+The **decorator pattern** is a design pattern that allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class.
 
 ---
 # Examples

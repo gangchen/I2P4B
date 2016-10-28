@@ -170,7 +170,7 @@ set("ACGGGCTATGTGT")
 ````
 ---
 
-Opertaions
+Operations
 .left-column[
 * <=
 * <
@@ -185,7 +185,7 @@ Opertaions
 * ^, symmetric difference
 ]
 ---
-Opertaions
+Operations
 
 * add, remove, discard
 * |=, &=, -=, ^=
