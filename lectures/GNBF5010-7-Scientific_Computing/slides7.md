@@ -12,10 +12,23 @@ class: middle, inverse
 ---
 # Outline
 
-* Linear
+* Computation
 * Machine Learning
 * Data Visualization
 ---
+
+## Environments
+
+* ipython
+* Jupyter
+
+---
+## Computation
+
+* numpy
+* SciPy
+* Pandas
+* SymPy
 
 
 ---
@@ -27,3 +40,11 @@ class: middle, inverse
 * ggplot
 * Altair
 ---
+
+## Machine Learning
+
+* scikit-learn
+* Tensorflow
+* Theano
+* Caffe
+* mxnet
