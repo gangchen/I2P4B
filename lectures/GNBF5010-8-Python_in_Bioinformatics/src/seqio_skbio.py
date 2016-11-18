@@ -6,7 +6,7 @@ for s in seqs:
     print(s.metadata)
 
 
-D1 = skbio.sequence.DNA("ACGTGTGTGT")
-R1 = skbio.sequence.RNA("ACGUGUGU")
-print(D1)
-print(R1)
+# D1 = skbio.sequence.DNA("ACGTGTGTGT")
+# R1 = skbio.sequence.RNA("ACGUGUGU")
+# print(D1)
+# print(R1)

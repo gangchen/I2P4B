@@ -28,8 +28,8 @@ def genMat(N, M):
 
 import time
 
-X = genMat(20, 60)
-Y = genMat(50, 20)
+X = genMat(60, 170)
+Y = genMat(150, 60)
 try:
     start = time.time()
     ret = multiply(X, Y)

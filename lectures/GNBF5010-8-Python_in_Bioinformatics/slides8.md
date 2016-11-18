@@ -56,7 +56,10 @@ Extensive documentation and help with using the modules, including this file, on
 * Package manager of your system
     * apt for Ubuntu
     * brew for MacOS
-
+* Anaconda (recommended for Windows)
+````shell
+conda install -c anaconda biopython=1.68
+````
 see doc for details.footnote[see http://biopython.org/DIST/docs/install/Installation.html].
 ---
 ## Quick Getting Started
