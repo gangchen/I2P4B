@@ -1,14 +1,13 @@
-# GNBF5010: Introduction to Programming
+# Introduction to Programming for Bioinformatics
 Introduction to Programming for Bioinformatics using Python and R.
 
 * Lecturer: Gang Chen (chengangcs@gmail.com)
 * Laptop is required for this courses
 * Most softwares and packages in this courses are available on Windows, Linux and Mac OS. However, Linux and Mac OS are recommended for Bioinformatics.
-* All slides of this courses are written in Markdown or LaTeX. You can check out source codes of these slides from GitHub.
+* All slides of this courses are written in Markdown or LaTeX. You can check out source codes of these slides from this repository.
 
 
 ## 1. Computer Architecture and Programming
-Date: 10 Sept 2016
 ### Pre-requests
 ### Contents:
 * Computer Architecture
@@ -20,7 +19,6 @@ Date: 10 Sept 2016
 * [CS301: COMPUTER ARCHITECTURE](https://learn.saylor.org/course/view.php?id=71)
 
 ## 2. Python Getting Started
-Date: 17 Sept 2016
 ### Contents:
 * Overview of Python
 * Setting Up Python Development Environment
@@ -34,7 +32,6 @@ Date: 17 Sept 2016
 * [The Hitchhiker’s Guide to Python](https://github.com/kennethreitz/python-guide)
 
 ## 3. Elements of Programming
-24 Sept 2016
 ### Contents
 * Data Type
 * Variable
@@ -48,19 +45,17 @@ Date: 17 Sept 2016
 * Algorithms, 4th
 
 ## 4. Object Oriented Programming
-8 Oct 2016
 
 ### References:
 See references of Lecture 2.
 
 ## 5. Data Structure and Algorithm
-15 Oct 2016
+
 
 ### References:
 See references of Lecture 2.
 
 ## 6. Web Programming and Database
-22 Oct 2016
 ### Contents
 * Web Development Overview
 	* Overview
@@ -75,7 +70,6 @@ See references of Lecture 2.
 * Django Documentations
 
 ## 7. Scientific Computing
-Date: 29 Oct 2016
 ### Contents
 * NumPy, SciPy, Pandas:
 Scientific computing
@@ -91,33 +85,28 @@ Exercises in Python for Andrew Ng's Machine Learning courses.
 * Building Machine Learning Systems with Python
 
 ## 8. Python in Bioinformatics
-5 Nov 2016
 
 ### References:
 * Bioinformatics Programming using Python
 
 ## 9. R Getting Started
-12 Nov 2016
 ### References:
 * R in Action, 2nd
 
 ## 10. R in Bioinformatics
-19 Nov 2016
 ### Contents:
 * BioConductor
 * Workflow of RNA-Seq data analysis
 * Visualization of Biological Data
 
 ## 11. Programming best practices I
-26 Nov 2016
 
 ### References:
 * The Code Complete 2nd
 
 ## 12. Programming best Practices II
-3 Dec 2016
 
 ## 13. Final Examination
-10 Dec 2016
+
 ### References:
 Review slides and assignments.
